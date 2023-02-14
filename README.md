@@ -14,12 +14,13 @@
 
 | Student Name | Student Email | GitHub Username |        Role         |
 |    :---:     |     :---:     |     :---:       |        :---:        | 
-| member1      |               |                 |   Team Lead         |
-| member2      |               |                 |   Frontend Lead     |
-| member3      |               |                 |   Backend Lead      |
-| member4      |               |                 |   Github Master     |
-| member5      |               |                 |   Database Master   |
-| member6      |               |                 |   Document Editor   |
+| Jonathan Valadez      | jvaladez3@sfsu.edu               |                 |   Team Lead         |
+| John Lee Santiago      | jsantiago2@sfsu.edu              |                 |   Frontend Lead     |
+| Nik Shahrul Nafiz Bin Nik Azhan      |  nnikazhan@mail.sfsu.edu             |                 |   Backend Lead      |
+| Steven Anthony Vasquez      | svasquez7@mail.sfsu.edu              |                 |   Github Master     |
+| Elias G Yetechalew      |  eyetechalew@mail.sfsu.edu             |                 |   Database Master   |
+| Sara Murad Ahmed Seid      |  sseid1@mail.sfsu.edu             |                 |   Document Editor   |
+| Aidan Carl Stivers.     | astivers@mail.sfsu.edu                  |              |                    |
 
 
 4. All the team members must sign the team contract found [here](https://forms.gle/PoTXjTmPGGKKZjsT6). Missing signatures from students will result in these students being dropped from the course since this means that they disagree with the policies and terms needed to work in a term environment. 
