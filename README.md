@@ -18,7 +18,7 @@
 | John Lee Santiago      | jsantiago2@sfsu.edu              |  aktails               |   Frontend Lead     |
 | Nik Shahrul Nafiz Bin Nik Azhan      |  nnikazhan@mail.sfsu.edu             |                 |   Backend Lead      |
 | Steven Anthony Vasquez      | svasquez7@mail.sfsu.edu              | Steven-Vasquez                |   Github Master     |
-| Elias G Yetechalew      |  eyetechalew@mail.sfsu.edu             |                 |   Database Master   |
+| Elias G Yetechalew      |  eyetechalew@mail.sfsu.edu             | eliasyet                |   Database Master   |
 | Sara Murad Ahmed Seid      |  sseid1@mail.sfsu.edu             |  saraseid1               |   Document Editor   |
 | Aidan Carl Stivers.     | astivers@mail.sfsu.edu                  |  AidanStivers            |                    |
 
