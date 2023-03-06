@@ -11,11 +11,14 @@
 2. SSH username: ec2-user
 3. SSH password or key.
     <br> If a ssh key is used please upload the key to the credentials folder.
+    SSH Key Name: JojosULingualKey.pem (Uploaded)
 4. Database URL or IP and port used.
     <br><strong> NOTE THIS DOES NOT MEAN YOUR DATABASE NEEDS A PUBLIC FACING PORT.</strong> But knowing the IP and port number will help with SSH tunneling into the database. The default port is more than sufficient for this class.
-    URL: database-1.cdfnojnzo4ui.us-east-2.rds.amazonaws.com
-5. Database username: admin
-6. Database password: Bobby2480.
+    
+    Database URL: database-1.cdfnojnzo4ui.us-east-2.rds.amazonaws.com
+    
+5. Database username (RDS): admin
+6. Database password (RDS): Bobby2480.
 7. Database name (basically the name that contains all your tables) : ULingualDB
 8. Clear instructions with examples on how to use all the above information.
 
