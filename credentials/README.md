@@ -7,14 +7,15 @@
 
 # Below is a list of items required. Missing items will causes points to be deducted from multiple milestone submissions.
 
-1. Server URL or IP
-2. SSH username
+1. Server URL or IP: 3.142.96.247
+2. SSH username: ec2-user
 3. SSH password or key.
     <br> If a ssh key is used please upload the key to the credentials folder.
 4. Database URL or IP and port used.
     <br><strong> NOTE THIS DOES NOT MEAN YOUR DATABASE NEEDS A PUBLIC FACING PORT.</strong> But knowing the IP and port number will help with SSH tunneling into the database. The default port is more than sufficient for this class.
-5. Database username
-6. Database password
+    URL: database-1.cdfnojnzo4ui.us-east-2.rds.amazonaws.com
+5. Database username: admin
+6. Database password: Bobby2480.
 7. Database name (basically the name that contains all your tables)
 8. Clear instructions with examples on how to use all the above information.
 
