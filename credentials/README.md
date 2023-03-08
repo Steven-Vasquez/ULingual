@@ -7,8 +7,8 @@
 
 # Below is a list of items required. Missing items will causes points to be deducted from multiple milestone submissions.
 
-1. Server URL or IP: 3.142.96.247
-2. SSH username: ec2-user
+1. Server URL or IP: http://18.216.113.91
+2. SSH username: ubuntu
 3. SSH password or key.
     <br> If a ssh key is used please upload the key to the credentials folder.
     
@@ -27,7 +27,7 @@ To acess the ec2 instance you will need to run these commands.
     1.)Download the .pem key uploaded.
     2.)Open your terminal and run the following commands.
         chmod 0400 <path to your .pem file>
-        ssh -i <path to your .pem file> ec2-user@<public IPv4 Address of instance>
+        ssh -i <path to your .pem file> ubuntu@<Public IPv4 Address of your instance>
     This should give you access to the ec2 instance.
     I would then do the following command to have full control of instance.
         sudo su
