@@ -24,10 +24,15 @@
 8. Clear instructions with examples on how to use all the above information.
 
 To acess the ec2 instance you will need to run these commands.
+    
     1.)Download the .pem key uploaded.
+    
     2.)Open your terminal and run the following commands.
+        
         chmod 0400 <path to your .pem file>
+    
         ssh -i <path to your .pem file> ubuntu@<Public IPv4 Address of your instance>
+    
     This should give you access to the ec2 instance.
     I would then do the following command to have full control of instance.
         sudo su
