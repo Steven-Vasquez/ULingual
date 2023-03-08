@@ -43,10 +43,6 @@ To acess the ec2 instance you will need to run these commands.
         mysql -u root -p
     This will prompt you to enter a password, for this user its Bobby2480.
         
-    2.)To access from grander scale via adminAccess1, type the following commands.
-        mysql -h <instance ip> -u adminAccess1 -p
-    This wil prompt you to enter a password, for this adminAccess1 its Csc64805!
-    
     You should now be able to reach the mysql access part within the instance.
     If you run,
         show databases;
