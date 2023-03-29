@@ -1,45 +1,64 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import teamData from './TeamData';
+import React from 'react'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer';
 
 function App() {
+
+  const getStarted = () => {
+    // some get started thing
+  };
+
   return (
-    <BrowserRouter>
-      <div style={{textAlign: 'center'}}>
-        <h1>Software Engineering Class SFSU</h1>
-        <h1>Spring 2023</h1>
-        <h1>Section 5</h1>
-        <h1>Team 6</h1>
+    <>
+      {/* OVERALL LAYOUT 
+      * [X] nav/burger bar
+      * [-] (basic about)
+      * [-] (start trial/get started)
+      * [ ] (Languages offered)- with flags
+      * 
+      * scroll down ->
+      * [-] why us vs others? what we offer
+      * [-] (website footer)
+      */}
 
-        <ul style={{listStyleType: 'none'}}>
-          {teamData.map((member, index) => (
-            <li key={index}>
-              <Link to={`/team/${index}`}>
-                <a>{member.name}'s introduction</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        <Routes>
-          {teamData.map((member, index) => (
-            <Route key={index} path={`/team/${index}`} element={<MemberPage member={member} />} />
-          ))}
-        </Routes>
+      <Navbar />
+      <div>
+        <h2>Learn languages with real people</h2>
+        <p>some further info or whatever</p>
+        <button type='button' onClick={getStarted}>
+          Get Started
+        </button>
       </div>
-    </BrowserRouter>
-  );
-}
 
-function MemberPage(props) {
-  const { member } = props;
+      <div>
+        {/* flag/languages offered list */}
+      </div>
 
-  return (
-    <div>
-      <h2>{member.name}'s introduction</h2>
-      <h3>Role: {member.role}</h3>
-      <p>{member.intro}</p>
-    </div>
+      <div>
+        <h3>Why ULingual?</h3>
+        {/* blah blah, what we offer 
+        *  (image)
+        *  - Live lessons with tutors
+        *     -
+        * 
+        *  (image)
+        *  - Live chat with native speakers & fellow learners for practice
+        * 
+        *  - Other language learning resources
+        * 
+        * What else do we offer? 
+        * [Learn more about ULingual] 
+        */}
+      </div>
+      
+      <Footer />
+
+      
+      
+
+      
+    </>
+
   );
 }
 
