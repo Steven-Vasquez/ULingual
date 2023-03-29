@@ -25,6 +25,10 @@ body{
   line-height: 1.5;
   font-family: 'Roboto Mono', monospace;
 }
-:primary-colort{
+:primary-color{
   color: var(--primary);
+}
+
+:mint-color{
+  color: var(--mint-green);
 }

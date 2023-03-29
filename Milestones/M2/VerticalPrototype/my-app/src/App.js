@@ -1,12 +1,10 @@
 import React from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer';
+import MainContent from './components/Maincontent';
 
 function App() {
 
-  const getStarted = () => {
-    // some get started thing
-  };
 
   return (
     <>
@@ -22,35 +20,7 @@ function App() {
       */}
 
       <Navbar />
-      <div>
-        <h2>Learn languages with real people</h2>
-        <p>some further info or whatever</p>
-        <button type='button' onClick={getStarted}>
-          Get Started
-        </button>
-      </div>
-
-      <div>
-        {/* flag/languages offered list */}
-      </div>
-
-      <div>
-        <h3>Why ULingual?</h3>
-        {/* blah blah, what we offer 
-        *  (image)
-        *  - Live lessons with tutors
-        *     -
-        * 
-        *  (image)
-        *  - Live chat with native speakers & fellow learners for practice
-        * 
-        *  - Other language learning resources
-        * 
-        * What else do we offer? 
-        * [Learn more about ULingual] 
-        */}
-      </div>
-      
+      <MainContent />
       <Footer />
 
       
