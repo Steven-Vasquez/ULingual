@@ -1,8 +1,13 @@
 import React from 'react'
+import './Footer.css'
 
 function Footer() {
     return(
-        <p>footer goes here</p>
+    <div className='footing'>
+        <a href=''>Socials</a>
+        <a href=''>About Us</a>
+        <a href=''>Terms & Privacy</a>
+    </div>
         /* FOOTER
         * - ULingual actions:
         * - Tutors by language
