@@ -1,13 +1,12 @@
 import React from "react"
+import './ComingSoon.css';
 
 const Tutors = () => {
     return(
-        <div className="tutorPage">
-        <br></br>
-        <h1>To be Produced in Future development...</h1>
-        <br></br>
-        <br></br>
-        <br></br>
+        <div className="pg">
+            <div class="middle">
+            <h1>COMING SOON</h1>
+            </div>
         </div>
     );
 }

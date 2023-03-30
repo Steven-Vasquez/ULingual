@@ -6,6 +6,10 @@
     align-items: center;
     padding: 1rem;
     background-color: var(--primary);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .footing a{
