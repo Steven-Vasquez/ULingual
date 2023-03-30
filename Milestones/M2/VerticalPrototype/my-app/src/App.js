@@ -1,4 +1,7 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import Login from './pages/Login';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer';
 import MainContent from './components/Maincontent';
@@ -19,9 +22,17 @@ function App() {
       * [-] (website footer)
       */}
 
+      
+      <Router>
       <Navbar />
-      <MainContent />
+        <Routes>
+          <Route exact path="/" element={<MainContent />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
       <Footer />
+      </Router>
+      
+      
 
       
       
