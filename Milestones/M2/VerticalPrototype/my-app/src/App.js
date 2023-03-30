@@ -15,7 +15,7 @@ function App() {
       * [X] nav/burger bar
       * [-] (basic about)
       * [-] (start trial/get started)
-      * [ ] (Languages offered)- with flags
+      * [-] (Languages offered)- with flags
       * 
       * scroll down ->
       * [-] why us vs others? what we offer
