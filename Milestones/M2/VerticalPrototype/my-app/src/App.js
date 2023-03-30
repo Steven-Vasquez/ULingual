@@ -2,7 +2,10 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Login from './pages/Login';
-import Navbar from './components/Navbar'
+import Tutors from './pages/TutorsPage';
+import ContactPage from './pages/ContactUsPage';
+import FAQ from './pages/FaqPage';
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import MainContent from './components/Maincontent';
 
@@ -28,6 +31,9 @@ function App() {
         <Routes>
           <Route exact path="/" element={<MainContent />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/TutorsPage" element={<Tutors />}/>
+          <Route path="/ContactUs" element={<ContactPage/>}/>
+          <Route path="/FAQ" element={<FAQ/>}/>
         </Routes>
       <Footer />
       </Router>
