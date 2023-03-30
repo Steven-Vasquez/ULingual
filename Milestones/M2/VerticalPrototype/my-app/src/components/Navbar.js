@@ -21,13 +21,13 @@ const Navbar = () => {
                     <Link to="/login">Login</Link> 
                 </li>
                 <li className="nav-item">
-                    <Link to="/" >Tutors</Link>
+                    <Link to="/TutorsPage" >Tutors</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/" >FAQ</Link>
+                    <Link to="/FAQ" >FAQ</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/" >Contact Us</Link>
+                    <Link to="/ContactUs" >Contact Us</Link>
                 </li>
             </ul>
             <div className='hamburger' onClick={handleClick}>
