@@ -105,7 +105,7 @@ function MainContent() {
                         <li className='Lang-Item'><img src={koreanFlag} alt='KoreanFlag'/></li>
                     </ul>
 
-                    <h4>View ULinguals Interative Courses for your desired language</h4>
+                    <h4>View ULinguals Interactive Courses for your desired language</h4>
                     <p className='courseDesc'>Browse ULinguals Courses that range from quizes, to readings, to picture identifiying & more!</p>
                     <br></br>
                     <br></br>
