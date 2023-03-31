@@ -5,7 +5,7 @@ const FAQ = () => {
     return(
         <div className="pg">
         <div class="middle">
-        <h1>COMING SOON</h1>
+        <h1>FAQ COMING SOON</h1>
         </div>
         </div>
     );
