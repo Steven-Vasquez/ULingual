@@ -12,10 +12,6 @@ import { Link } from 'react-router-dom'
 
 function MainContent() {
 
-    const getStarted = () => {
-        // some get started thing
-      };
-
     //const languages = {}
 
     return(
@@ -26,9 +22,11 @@ function MainContent() {
                 <p>Qualified instructors with customizable lessons.</p>
                 <p>Conversation practice with native speakers.</p>
                 <div className='btn-custom'>
-                    <button type='button' onClick={getStarted}>
-                    Get Started
-                    </button>
+                    <Link to='/login'>
+                        <button type='button'>
+                        Get Started
+                        </button>  
+                    </Link>
                 </div>
             </div>
 
