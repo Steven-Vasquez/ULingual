@@ -1,10 +1,11 @@
 import React from 'react'
 import './Maincontent.css'
 import americanFlag from '../images/americanFlag.png'
-import spanishFlag from '../images/spanishFlag.jpeg'
+import spanishFlag from '../images/spanishFlag.png'
 import frenchFlag from '../images/frenchFlag.png'
 import arabLeagueFlag from '../images/arabLeagueFlag.png'
 import koreanFlag from '../images/koreanFlag.png'
+import { Link } from 'react-router-dom'
 
 
 
