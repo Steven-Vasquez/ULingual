@@ -6,6 +6,7 @@
     align-items: center;
     padding: 1rem;
     background-color: var(--primary);
+    margin: auto;
 }
 
 .navbar img{
@@ -48,11 +49,48 @@ For smaller screens we display hamburger option menu.
 
     .nav-menu.active{
         left: 0;
-
+        margin: auto;
     }
 
     .hamburger{
         display: flex;
 
     }
+}
+
+/*search bar css*/
+.nav-search-item{
+    position: relative;
+}
+
+.searchAnim {
+    padding: 8px;
+    width: 60px;
+    height: 60px;
+    background: none;
+    border: 3px solid var(--mint-green);
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: var(--mint-green);
+    outline: none;
+    transition: .5s;
+}
+.nav-search-item:hover input{
+    width: 200px;
+    background: var(--secondary);
+    border-radius: 10px;
+}
+.nav-search-item i{
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translate(-50%,-50%);
+    font-size: 24px;
+    color: var(--mint-green);
+    transition: .2s;
+}
+.nav-search-item:hover i{
+    opacity: 0;
+    z-index: -1;
 }

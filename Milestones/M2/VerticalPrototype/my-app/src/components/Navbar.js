@@ -11,9 +11,18 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="logo">
+                <Link to="/" >
                 <img src={logo} alt='ULingual Logo' />
+                </Link>
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+               
+            <div class="nav-search-item">
+                <form name="search">
+                    <input type="text" class="searchAnim" name="txt" onmouseout="this.value = ''; this.blur();" placeholder="Search..."></input>
+                </form>
+            </div>
+               
                 <li className="nav-item"> 
                     <Link to="/" >Home</Link> 
                 </li>
