@@ -1,12 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './Login.css'
+import React from "react";
 
-function Login() {
+import './CreateAcc.css';
+
+
+const CreateAcc = () => {
     return(
         <form>
             <div className='layer-1'>
-                <h2>Login</h2>
+                <h2>Create Account</h2>
                 <div className='form-grouping'>
                     <label>Username:</label>
                     <input type={'text'} name="Username"/>
@@ -15,13 +16,17 @@ function Login() {
                     <label>Password:</label>
                     <input type={'password'} name="Password"/>
                 </div>
-                <input type={'submit'} value='Login'/>  
-                <p>
-                <Link to ='/CreateAcc'>New User?</Link>
-                </p>
+                <div className='form-grouping'>
+                    <label>Email:</label>
+                    <input type={'email'} name="Email@test.com"/>
+                </div>
+                <input type={'submit'} value='Create Account!'/>  
             </div>
         </form>
+
     );
+
+
 }
 
-export default Login;
+export default CreateAcc;
