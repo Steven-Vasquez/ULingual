@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import MainContent from './components/Maincontent';
 
 
+//This is to establish connectinn with database.
 const mysql = require("mysql");
 
 const db = mysql.createConnection({
@@ -21,6 +22,7 @@ const db = mysql.createConnection({
   database: 't6db'
 })
 
+//Connection testing.
 db.connect((error) => {
   if(error){
     console.log('Error connecting to the MySQL Database');
