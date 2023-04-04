@@ -12,6 +12,33 @@ import Footer from './components/Footer';
 import MainContent from './components/Maincontent';
 
 
+const mysql = require("mysql");
+
+const db = mysql.createConnection({
+  host: 'database-1.cjhdgriivebl.us-west-1.rds.amazonaws.com',
+  user: 'admin',
+  password: 'password1',
+  database: 't6db'
+})
+
+db.connect((error) => {
+  if(error){
+    console.log('Error connecting to the MySQL Database');
+    return;
+  }
+  console.log('Connection established sucessfully');
+});
+connection.end((error) => {
+});
+
+/*
+const sqlInsert = "INSERT INTO Tutors (TutorID,TutorFIrstName, TutorLastName, TutorPhone, TutorEmail) VALUES ('4', 'John','Doe', '559-123-4567','john.doe@gmail.com');"
+db.query(sqlInsert, (err,result)=> {
+  console.log('inserted to db');
+})
+*/
+
+
 function App() {
 
 
