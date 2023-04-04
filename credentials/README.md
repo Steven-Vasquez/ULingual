@@ -32,6 +32,9 @@ To acess the ec2 instance you will need to run these commands.
         chmod 0400 <path to your .pem file>
     
         ssh -i <path to your .pem file> ubuntu@<Public IPv4 Address of your instance>
+        
+        You can use: ec2-54-183-175-178.us-west-1.compute.amazonaws.com as the <Public IPv4 Address of your instance>
+        when ssh'ing.
     
     This should give you access to the ec2 instance.
     I would then do the following command to have full control of instance.
