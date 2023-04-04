@@ -8,8 +8,7 @@ const db = mysql.createConnection({
   database: 't6db'
 })
 
-//Connection testing.
-/*
+
 db.connect((error) => {
   if(error){
     console.log('Error connecting to the MySQL Database');
@@ -19,5 +18,5 @@ db.connect((error) => {
 });
 connection.end((error) => {
 });
-*/
+
 modules.exports = db;
