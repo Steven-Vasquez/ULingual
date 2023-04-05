@@ -1,0 +1,148 @@
+.SubHeader{
+    background-color: var(--lightgrey);
+    border-bottom-right-radius: 35%;
+    border-bottom-left-radius: 15%;
+    height: 300px;
+    padding-left: 20px;
+
+}
+
+.SubHeader h2{
+    font-size: 30px;
+    color: #AAF0C1;
+    padding-bottom: 10px;
+    padding-top: 25px;
+    
+}
+
+.SubHeader p{
+    color: #AAF0C1;
+    padding-bottom: 5px;
+   
+}
+
+.btn-custom {
+    padding-top: 20px;
+}
+
+button{
+    background-color: #AAF0C1;
+    border-radius: 10px;
+    width: 150px;
+    height: 35px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: large;
+    color: var(--primary);
+    font-weight: bold;
+    border-color: var(--primary);
+}
+
+.FlexContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    
+}
+
+.FlexItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 150px;
+    background-color: white;
+    margin: 10px;
+    font-size: small;
+    border-radius: 10px;
+}
+.FlexItem h4{
+    text-align: center;
+    text-decoration: underline;
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.FlexItem p{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+
+}
+
+.ExerptTitle{
+    text-align: center;
+    color:#AAF0C1;
+}
+
+.ExerptTitle h3{
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+.ExerptTitle p{
+    font-size: 22px;
+
+}
+
+.SubSection1{
+    background-color: var(--lightgrey);
+    border-top-right-radius: 35%;
+    border-top-left-radius: 10%;
+    height: 300px;
+}
+
+.SubSection2{
+    background-color: var(--lightgrey);
+    height: 1500px;
+}
+
+.SubSection2 h3{
+    padding-left: 20px;
+    font-size: 30px;
+    color: #AAF0C1;
+}
+.SubSection2 h4{
+    text-align: center;
+    color: #AAF0C1;
+    font-size: 25px;
+    text-decoration: underline;
+    padding-bottom: 15px;
+} 
+
+.SubSection2 p{
+    color: #AAF0C1;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.LangBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ 
+}
+
+.Lang-Item{
+    padding: 1rem;
+    color: #AAF0C1;
+    font-size: 20px;
+    align-items: center;
+    font-weight: bold;
+}
+
+.Lang-Item img{
+    width: 175px;
+    height: 125px;
+}
+
+.courseDesc{
+    text-decoration: none;
+
+}
+.br-style{
+    border-top-right-radius: 15%;
+}
