@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e477f2bb.css",
+    "main.js": "/static/js/main.6eb6eaa9.js",
+    "static/media/arabLeagueFlag.png": "/static/media/arabLeagueFlag.a956d4fc301692f87c8d.png",
+    "static/media/spanishFlag.png": "/static/media/spanishFlag.09111a444172964d7548.png",
+    "static/media/koreanFlag.png": "/static/media/koreanFlag.a093cfcc085a41669601.png",
+    "static/media/americanFlag.png": "/static/media/americanFlag.f64e3b21d357c623eeca.png",
+    "static/media/Logo.png": "/static/media/Logo.6ba2ebd1d8bdf203a278.png",
+    "index.html": "/index.html",
+    "main.e477f2bb.css.map": "/static/css/main.e477f2bb.css.map",
+    "main.6eb6eaa9.js.map": "/static/js/main.6eb6eaa9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e477f2bb.css",
+    "static/js/main.6eb6eaa9.js"
+  ]
+}
