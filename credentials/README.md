@@ -7,7 +7,7 @@
 
 # Below is a list of items required. Missing items will causes points to be deducted from multiple milestone submissions.
 
-1. Server URL or IP: http://54.183.175.178
+1. Server URL or IP: http://54.176.217.157/
 2. SSH username: ubuntu
 3. SSH password or key.
     <br> If a ssh key is used please upload the key to the credentials folder.
@@ -33,7 +33,7 @@ To acess the ec2 instance you will need to run these commands.
     
         ssh -i <path to your .pem file> ubuntu@<Public IPv4 Address of your instance>
         
-        You can use: ec2-54-183-175-178.us-west-1.compute.amazonaws.com as the <Public IPv4 Address of your instance>
+        You can use: ec2-54-176-217-157.us-west-1.compute.amazonaws.com as the <Public IPv4 Address of your instance>
         when ssh'ing.
     
     This should give you access to the ec2 instance.
