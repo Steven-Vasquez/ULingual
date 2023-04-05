@@ -17,7 +17,7 @@
 | Jonathan Valadez      | jvaladez3@sfsu.edu               |  Johnyboi21               |   Team Lead         |
 | Sara Murad Ahmed Seid    |  sseid1@mail.sfsu.edu             |  saraseid1            |   Frontend Lead     |
 | Steven Anthony Vasquez     | svasquez7@mail.sfsu.edu            |  Steven-Vasquez               |   Backend Lead      |
-
+| Nik Shahrul Nafiz Bin Nik Azhan | nnikazhan@mail.sfsu.edu | Niqueshahrulnafiz | Frontend Lead #2 |
 | Elias G Yetechalew    | eyetechalew@mail.sfsu.edu       |  eliasyet          |   Database Master   |
 | John Lee Santiago  |   jsantiago2@sfsu.edu         |  aktails             |   Document Editor & Github Master   |
 | Aidan Carl Stivers     |  astivers@mail.sfsu.edu                |  AidanStivers      | Backend Lead #2               |
@@ -29,6 +29,7 @@
 
 |             Name of the Project               |                            URL of the Project                          | 
 |                    :---:                      |                                 :---:                                  |
+| ULingual | http://54.176.217.157 |
 
  
 
