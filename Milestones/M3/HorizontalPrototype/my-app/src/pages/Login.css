@@ -1,0 +1,73 @@
+form{
+   display: block;
+   position: relative;
+   align-items: center;
+}
+
+form .layer-1{
+    position: relative;
+    display: block;
+    background-color: var(--secondary);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 83vh;
+}
+
+/*
+    Login css <h2>
+*/
+form .layer-1 h2{
+    color:#AAF0C1;
+    font-size: 20px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+form .layer-1 .form-grouping{
+    display: block;
+    color:white;
+    margin-bottom: 15px;
+    width: 250px;
+}
+
+.layer-1 .form-grouping label{
+    display: block;
+    color: white;
+    font-size: 15px;
+    margin-bottom: 5px;
+    transition: 0.3s;
+}
+/*
+    focus on label animation
+*/
+.layer-1 .form-grouping:focus-within label{
+    color: #AAF0C1;
+}
+
+form .layer-1 .form-grouping input{
+    display: block;
+    width: 100%;
+    padding: 10px 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/*
+button css
+*/
+form .layer-1 input[type='submit']{
+    display: inline-block;
+    padding: 8px 12px;
+    padding-right: 15px;
+    border-radius: 10px;
+    background-color: #AAF0C1;
+    width: 100px;
+}
+form p{
+    padding-top: 20px;
+    text-decoration: underline;
+    color:#AAF0C1;
+}
