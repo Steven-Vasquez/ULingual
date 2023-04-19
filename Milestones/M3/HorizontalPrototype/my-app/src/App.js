@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import axios from 'axios'
 
 import Login from './pages/Login';
 import Tutors from './pages/TutorsPage';
@@ -11,17 +12,21 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import MainContent from './components/Maincontent';
 
-// Import the database connection object from db.js in the backend folder
-import { getConnection } from './db.js'
 
 function App() {
-  let connection = getConnection();
-  // Example server-side code to execute a query (testing to see if it can be done on the server-side)
-  connection.query('SELECT * FROM users', (err, results) => {
-    if (err) throw err;
-    console.log(results);
-  });
-  
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:3001/users')
+      .then(res => {
+        setUsers(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
+
+  console.log(users);
 
   return (
     <>
