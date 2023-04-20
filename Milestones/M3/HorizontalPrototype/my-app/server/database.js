@@ -16,7 +16,7 @@ const db = mysql.createConnection({
   password: 'password1',
   database: 't6db',
   ssh: {
-    host: 'ec2-54-176-217-157.us-west-1.compute.amazonaws.com',
+    host: 'ec2-50-18-108-83.us-west-1.compute.amazonaws.com',
     user: 'ubuntu',
     privateKey: fs.readFileSync("../../../../../credentials/key.pem"),
   },
