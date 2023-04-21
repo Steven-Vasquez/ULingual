@@ -20,8 +20,10 @@ function App() {
     axios.get('http://localhost:3001/users')
       .then(res => {
         setUsers(res.data);
+        console.log("Users set!");
       })
       .catch(err => {
+        console.log("Error: Users not set!");
         console.log(err);
       });
   }, []);

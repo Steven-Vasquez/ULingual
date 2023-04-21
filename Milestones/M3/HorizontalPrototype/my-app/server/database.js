@@ -3,6 +3,10 @@ const express = require('express');
 
 //This is to establish connectinn with database.
 const mysql = require("mysql");
+
+// This is to allow cross-origin requests. So that the client-side react app can access the API endpoints
+const cors = require('cors');
+
 const fs = require('fs');
 
 const app = express();
@@ -16,7 +20,7 @@ const db = mysql.createConnection({
   password: 'password1',
   database: 't6db',
   ssh: {
-    host: 'ec2-54-176-217-157.us-west-1.compute.amazonaws.com',
+    host: 'ec2-50-18-108-83.us-west-1.compute.amazonaws.com',
     user: 'ubuntu',
     privateKey: fs.readFileSync("../../../../../credentials/key.pem"),
   },
@@ -29,6 +33,9 @@ db.connect((error) => {
   }
   console.log('Connection established sucessfully');
 });
+
+// CORS middleware to allow cross-origin requests
+app.use(cors());
 
 app.get('/users', (req, res) => {
   const sql = 'SELECT * FROM USERS';
