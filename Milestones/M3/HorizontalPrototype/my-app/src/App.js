@@ -17,7 +17,7 @@ function App() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/users')
+    axios.get('http://50.18.108.83:3001/users')
       .then(res => {
         setUsers(res.data);
         console.log("Users set!");

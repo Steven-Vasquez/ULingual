@@ -38,7 +38,7 @@ db.connect((error) => {
 app.use(cors());
 
 app.get('/users', (req, res) => {
-  const sql = 'SELECT * FROM USERS';
+  const sql = 'SELECT * FROM Users';
   db.query(sql, (error, result) => {
     if(error){
       console.error(error.message);
