@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Tutors from './pages/TutorsPage';
 import ContactPage from './pages/ContactUsPage';
 import FAQ from './pages/FaqPage';
+import AboutUs from './pages/AboutUs';
 import CreateAccount from './pages/CreateAcc';
 import Results from './pages/ResultPage';
 import Pricing from './pages/Pricing&Plans';
@@ -71,6 +72,7 @@ function App() {
           <Route path="/TutorsPage" element={<Tutors />}/>
           <Route path="/ContactUs" element={<ContactPage/>}/>
           <Route path="/FAQ" element={<FAQ/>}/>
+          <Route path="AboutUs" element={<AboutUs/>}/>
           <Route path="/CreateAcc" element={<CreateAccount/>}/>
           <Route path="/ResultsPage" element={<Results/>}/>
           <Route path="/Pricing&Plans" element={<Pricing/>}/>

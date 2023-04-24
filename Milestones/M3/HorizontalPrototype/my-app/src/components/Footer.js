@@ -4,9 +4,9 @@ import './Footer.css'
 function Footer() {
     return(
     <div className='footing'>
-        <a href=''>Socials</a>
-        <a href=''>About Us</a>
-        <a href=''>Terms & Privacy</a>
+        <Link to="ContactUs">Contact Us</Link>
+        <Link to="AboutUs">About Us</Link>
+        <Link to="FAQ">FAQ</Link>
     </div>
         /* FOOTER
         * - ULingual actions:

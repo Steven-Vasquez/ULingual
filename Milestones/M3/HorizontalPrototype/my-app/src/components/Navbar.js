@@ -22,9 +22,6 @@ const Navbar = () => {
                     <input type="text" class="searchAnim" name="txt" onmouseout="this.value = ''; this.blur();" placeholder="Search..."></input>
                 </form>
             </div>
-                <li className="nav-item"> 
-                    <Link to="/" >Home</Link> 
-                </li>
                 <li className="nav-item">
                     <Link to="/TutorsPage" >Tutors</Link>
                 </li>
