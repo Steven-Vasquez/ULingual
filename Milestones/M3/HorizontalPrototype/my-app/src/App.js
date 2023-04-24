@@ -14,6 +14,7 @@ import MainContent from './components/Maincontent';
 
 
 function App() {
+  // TESTING DB CONNECTION FOR USERS
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -29,6 +30,23 @@ function App() {
   }, []);
 
   console.log(users);
+
+  // TESTING DB CONNECTION FOR TUTORS
+  const [tutors, setTutors] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://50.18.108.83:3001/tutors')
+      .then(res => {
+        setTutors(res.data);
+        console.log("Tutors set!");
+      })
+      .catch(err => {
+        console.log("Error: Tutors not set!");
+        console.log(err);
+      });
+  }, []);
+
+  console.log(tutors);
 
   return (
     <>

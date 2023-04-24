@@ -48,6 +48,17 @@ app.get('/users', (req, res) => {
   });
 });
 
+app.get('/tutors', (req, res) => {
+  const sql = 'SELECT * FROM Tutors';
+  db.query(sql, (error, result) => {
+    if(error){
+      console.error(error.message);
+      return;
+    }
+    res.send(result);
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
