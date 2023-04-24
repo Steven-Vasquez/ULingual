@@ -22,24 +22,14 @@ const Navbar = () => {
                     <input type="text" class="searchAnim" name="txt" onmouseout="this.value = ''; this.blur();" placeholder="Search..."></input>
                 </form>
             </div>
-               
                 <li className="nav-item"> 
                     <Link to="/" >Home</Link> 
-                </li>
-                <li className="nav-item"> 
-                    <Link to="/login">Login</Link> 
                 </li>
                 <li className="nav-item">
                     <Link to="/TutorsPage" >Tutors</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/FAQ" >FAQ</Link>
-                </li>
-                <li className="nav-item">
-                    <Link to="/ContactUs" >Contact Us</Link>
-                </li>
-                <li className="nav-item"> 
-                    <Link to="/ResultsPage">Results Page</Link> 
+                    <Link to= "/PricingPage">Pricing & Plans</Link>
                 </li>
             </ul>
             <div className='hamburger' onClick={handleClick}>
