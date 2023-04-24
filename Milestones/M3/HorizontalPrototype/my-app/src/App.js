@@ -8,6 +8,7 @@ import ContactPage from './pages/ContactUsPage';
 import FAQ from './pages/FaqPage';
 import CreateAccount from './pages/CreateAcc';
 import Results from './pages/ResultPage';
+import Pricing from './pages/Pricing&Plans';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import MainContent from './components/Maincontent';
@@ -72,6 +73,7 @@ function App() {
           <Route path="/FAQ" element={<FAQ/>}/>
           <Route path="/CreateAcc" element={<CreateAccount/>}/>
           <Route path="/ResultsPage" element={<Results/>}/>
+          <Route path="/Pricing&Plans" element={<Pricing/>}/>
         </Routes>
       <Footer />
       </Router>
