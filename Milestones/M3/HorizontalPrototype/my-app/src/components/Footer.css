@@ -1,17 +1,18 @@
-.footing{
-    width: 100%;
-    height: 100px;
+
+footer{
+    background-color: var(--primary);
+    height: 75px;
+}
+.footing-item{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background-color: var(--primary);
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    padding: 1em;
+    margin: auto;
 }
 
-.footing a{
-    color: #AAF0C1;
+.footing-item li{
+    font-size: 22px;
 }
+
+

@@ -1,19 +1,23 @@
 import React from 'react'
 import './Footer.css'
 import { Link } from 'react-router-dom';
+//import { TiDevicePhone } from "react-icons/ti";
 
 function Footer() {
     return(
-    <div className='footing'>
-        <ul className="nav-item">
-        <li><Link to="ContactUs">Contact Us</Link>
-        </li>
-        <li><Link to="AboutUs">About Us</Link>
-        </li>
-        <li><Link to="FAQ">FAQ</Link>
-        </li>
+    <footer>
+        <ul className="footing-item">
+            <li>
+                <Link to="ContactUs">Contact Us</Link>
+            </li>
+            <li>
+                <Link to="AboutUs">About Us</Link>
+            </li>
+            <li>
+                <Link to="FAQ">FAQ</Link>
+            </li>
         </ul> 
-    </div>
+    </footer>
         /* FOOTER
         * - ULingual actions:
         * - Tutors by language
