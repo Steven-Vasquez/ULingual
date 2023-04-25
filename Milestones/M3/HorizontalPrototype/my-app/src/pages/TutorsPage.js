@@ -4,7 +4,7 @@ import './ComingSoon.css';
 const Tutors = () => {
     return(
         <div className="pg">
-            <div class="middle">
+            <div className="middle">
                 <h1>TUTORS COMING SOON</h1>
             </div>
         </div>

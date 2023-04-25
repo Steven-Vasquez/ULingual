@@ -72,6 +72,29 @@ app.post('/register', (req, res) => {
 });
 
 
+app.get('/login', (req, res) => {
+  const Uusername = req.body.Uusername;
+  const Upassword = req.body.Upassword;
+
+  const sql = 'SELECT * FROM Users WHERE Uusername = ? AND Upassword = ?';
+  
+  db.query(sql, 
+    [Uusername, Upassword], 
+    (error, result) => {
+    if(error){
+      //res.send({err: error})
+      console.error(error.message);
+      return;
+    }
+    if (result.length > 0) {
+      res.send(result);
+    }
+    else {
+      res.send({message: "Username or Password not found"})
+    }
+  });
+});
+
 // API endpoint that returns all the tutors from the database
 app.get('/tutors', (req, res) => {
   const sql = 'SELECT * FROM Tutors';

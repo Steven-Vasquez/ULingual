@@ -1,10 +1,10 @@
 import React from "react";
-
+import './ComingSoon.css';
 
  const Pricing = () => {
     return (
         <div className="pg">
-            <div class="middle">
+            <div className="middle">
                 <h1>COMING SOON</h1>
             </div>
         </div>

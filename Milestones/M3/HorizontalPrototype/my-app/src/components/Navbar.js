@@ -18,7 +18,7 @@ const Navbar = () => {
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                
-            <div class="nav-search-item">
+            <div className="nav-search-item">
                 <form name="search">
                     <input type="text" placeholder="Search..."></input>
                 </form>
@@ -27,7 +27,7 @@ const Navbar = () => {
                     <Link to="/TutorsPage" >Tutors</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to= "/PricingPage">Pricing & Plans</Link>
+                    <Link to= "/Pricing&Plans">Pricing & Plans</Link>
                 </li>
                 <li>
                     <div className='user-icon'>
