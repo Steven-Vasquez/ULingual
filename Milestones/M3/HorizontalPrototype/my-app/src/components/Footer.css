@@ -15,4 +15,6 @@ footer{
     font-size: 22px;
 }
 
-
+.footing-item li :hover{
+    color: white;
+}
