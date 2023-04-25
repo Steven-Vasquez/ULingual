@@ -12,6 +12,8 @@ const fs = require('fs');
 const app = express();
 const port = 3001;
 
+app.use(express.json());
+
 // Creating a connection to the MySQL database
 const db = mysql.createConnection({
   host: 'database-1.cjhdgriivebl.us-west-1.rds.amazonaws.com',
@@ -37,6 +39,8 @@ db.connect((error) => {
 // CORS middleware to allow cross-origin requests
 app.use(cors());
 
+
+// API endpoint that returns all the users from the database
 app.get('/users', (req, res) => {
   const sql = 'SELECT * FROM Users';
   db.query(sql, (error, result) => {
@@ -48,6 +52,50 @@ app.get('/users', (req, res) => {
   });
 });
 
+
+// API endpoint that registers a new user
+app.post('/register', (req, res) => {
+  const Uusername = req.body.Uusername;
+  const Upassword = req.body.Upassword;
+  const Uemail = req.body.Uemail;
+  const sql = 'INSERT INTO Users (Uusername, Upassword, Uemail) VALUES (?,?,?)';
+  
+  db.query(sql, 
+    [Uusername, Upassword, Uemail], 
+    (error, result) => {
+    if(error){
+      console.error(error.message);
+      return;
+    }
+    res.send(result);
+  });
+});
+
+
+app.get('/login', (req, res) => {
+  const Uusername = req.body.Uusername;
+  const Upassword = req.body.Upassword;
+
+  const sql = 'SELECT * FROM Users WHERE Uusername = ? AND Upassword = ?';
+  
+  db.query(sql, 
+    [Uusername, Upassword], 
+    (error, result) => {
+    if(error){
+      //res.send({err: error})
+      console.error(error.message);
+      return;
+    }
+    if (result.length > 0) {
+      res.send(result);
+    }
+    else {
+      res.send({message: "Username or Password not found"})
+    }
+  });
+});
+
+// API endpoint that returns all the tutors from the database
 app.get('/tutors', (req, res) => {
   const sql = 'SELECT * FROM Tutors';
   db.query(sql, (error, result) => {

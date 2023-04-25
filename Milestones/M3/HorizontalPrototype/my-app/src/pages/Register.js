@@ -1,20 +1,24 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 import axios from "axios";
-import { Link } from 'react-router-dom'
-import './Login.css'
+import './Register.css';
 
-function Login() {
-    
+
+
+
+const Register = () => {
+
     const [usernameReg, setUsernameReg] = useState("");
     const [passwordReg, setPasswordReg] = useState("");
-
-    const login = () => {
-        axios.post("http://50.18.108.83:3001/login", {
+    const [emailReg, setEmailReg] = useState("");
+  
+    const createAccount = () => {
+        axios.post("http://50.18.108.83:3001/register", {
             Uusername: usernameReg,
             Upassword: passwordReg,
+            Uemail: emailReg
         })
         .then(res => {
-            console.log(res.data);
+            console.log(res);
         })
         .catch(err => {
             console.log(err);
@@ -24,8 +28,7 @@ function Login() {
     return(
         <form>
             <div className='layer-1'>
-                <h2>Login</h2>
-                
+                <h2>Create Account</h2>
                 <div className='form-grouping'>
                     <label>Username:</label>
                     <input type={'text'} name="Username"
@@ -34,7 +37,6 @@ function Login() {
                     }}
                     />
                 </div>
-                
                 <div className='form-grouping'>
                     <label>Password:</label>
                     <input type={'password'} name="Password"
@@ -43,14 +45,21 @@ function Login() {
                     }}
                     />
                 </div>
-                
-                <input type={'submit'} onClick={login} value='Login'/>  
-                <p>
-                    <Link to ='/register'>New User?</Link>
-                </p>
+                <div className='form-grouping'>
+                    <label>Email:</label>
+                    <input type={'email'} name="Email@test.com"
+                    onChange={(e) => {
+                        setEmailReg(e.target.value)
+                    }}
+                    />
+                </div>
+                <input type={'submit'} onClick={createAccount} value='Create Account!'/>   
             </div>
         </form>
+
     );
+
+
 }
 
-export default Login;
+export default Register;

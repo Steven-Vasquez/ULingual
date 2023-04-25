@@ -4,7 +4,7 @@ import './ComingSoon.css';
 const ContactPage = () => {
     return(
         <div className="pg">
-            <div class="middle">
+            <div className="middle">
             <h1>COMING SOON</h1>
             </div>
         </div>
