@@ -12,6 +12,9 @@
 .navbar li{
     font-size: 20px;
 }
+.navbar li :hover{
+    color: white;
+}
 
 .navbar img{
     width: 80px;
