@@ -12,6 +12,8 @@ const fs = require('fs');
 const app = express();
 const port = 3001;
 
+app.use(express.json());
+
 // Creating a connection to the MySQL database
 const db = mysql.createConnection({
   host: 'database-1.cjhdgriivebl.us-west-1.rds.amazonaws.com',
@@ -40,6 +42,24 @@ app.use(cors());
 app.get('/users', (req, res) => {
   const sql = 'SELECT * FROM Users';
   db.query(sql, (error, result) => {
+    if(error){
+      console.error(error.message);
+      return;
+    }
+    res.send(result);
+  });
+});
+
+app.post('/users', (req, res) => {
+
+  const Uusername = req.body.Uusername;
+  const Upassword = req.body.Upassword;
+  const Uemail = req.body.Uemail;
+
+  const sql = 'INSERT INTO Users (Uusername, Upassword, Uemail) VALUES (?,?,?)';
+  db.query(sql, 
+    [Uusername, Upassword, Uemail], 
+    (error, result) => {
     if(error){
       console.error(error.message);
       return;
