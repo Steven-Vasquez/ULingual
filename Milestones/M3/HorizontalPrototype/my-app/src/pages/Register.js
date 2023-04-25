@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
-import './CreateAcc.css';
+import './Register.css';
 
 
 
 
-const CreateAcc = () => {
+const Register = () => {
 
     const [usernameReg, setUsernameReg] = useState("");
     const [passwordReg, setPasswordReg] = useState("");
     const [emailReg, setEmailReg] = useState("");
   
     const createAccount = () => {
-        axios.post("http://50.18.108.83:3001/users", {
+        axios.post("http://50.18.108.83:3001/register", {
             Uusername: usernameReg,
             Upassword: passwordReg,
             Uemail: emailReg
@@ -62,4 +62,4 @@ const CreateAcc = () => {
 
 }
 
-export default CreateAcc;
+export default Register;

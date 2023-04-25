@@ -7,17 +7,20 @@ function Login() {
         <form>
             <div className='layer-1'>
                 <h2>Login</h2>
+                
                 <div className='form-grouping'>
                     <label>Username:</label>
                     <input type={'text'} name="Username"/>
                 </div>
+                
                 <div className='form-grouping'>
                     <label>Password:</label>
                     <input type={'password'} name="Password"/>
                 </div>
+                
                 <input type={'submit'} value='Login'/>  
                 <p>
-                <Link to ='/CreateAcc'>New User?</Link>
+                    <Link to ='/register'>New User?</Link>
                 </p>
             </div>
         </form>

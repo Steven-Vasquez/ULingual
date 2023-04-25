@@ -39,6 +39,8 @@ db.connect((error) => {
 // CORS middleware to allow cross-origin requests
 app.use(cors());
 
+
+// API endpoint that returns all the users from the database
 app.get('/users', (req, res) => {
   const sql = 'SELECT * FROM Users';
   db.query(sql, (error, result) => {
@@ -50,13 +52,14 @@ app.get('/users', (req, res) => {
   });
 });
 
-app.post('/users', (req, res) => {
 
+// API endpoint that registers a new user
+app.post('/register', (req, res) => {
   const Uusername = req.body.Uusername;
   const Upassword = req.body.Upassword;
   const Uemail = req.body.Uemail;
-
   const sql = 'INSERT INTO Users (Uusername, Upassword, Uemail) VALUES (?,?,?)';
+  
   db.query(sql, 
     [Uusername, Upassword, Uemail], 
     (error, result) => {
@@ -68,6 +71,8 @@ app.post('/users', (req, res) => {
   });
 });
 
+
+// API endpoint that returns all the tutors from the database
 app.get('/tutors', (req, res) => {
   const sql = 'SELECT * FROM Tutors';
   db.query(sql, (error, result) => {
