@@ -20,6 +20,7 @@
 
 .nav-item{
     padding: 1rem;
+    margin-top: 8px;
 }
 .hamburger{
     display: none;
@@ -61,36 +62,30 @@ For smaller screens we display hamburger option menu.
 /*search bar css*/
 .nav-search-item{
     position: relative;
-}
-
-.searchAnim {
-    padding: 8px;
-    width: 60px;
+    width: 300px;
     height: 60px;
-    background: none;
-    border: 3px solid var(--mint-green);
-    border-radius: 50px;
-    box-sizing: border-box;
-    font-size: 20px;
-    color: var(--mint-green);
-    outline: none;
-    transition: .5s;
-}
-.nav-search-item:hover input{
-    width: 200px;
     background: var(--secondary);
     border-radius: 10px;
-}
-.nav-search-item i{
-    position: absolute;
-    top: 50%;
-    right: 12px;
-    transform: translate(-50%,-50%);
     font-size: 24px;
     color: var(--mint-green);
-    transition: .2s;
+    margin-right: 0px;
+    margin-top: 8px;
 }
-.nav-search-item:hover i{
-    opacity: 0;
-    z-index: -1;
+
+.nav-search-item input{
+    position: relative;
+    width: 300px;
+    background: none;
+    border-radius: 10px;
+    height: 60px;
+    border: 3px solid var(--mint-green);
+    font-size: 20px;
+    color: var(--mint-green);
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.user-icon{
+    padding: 1rem;
+    color: var(--mint-green);
 }

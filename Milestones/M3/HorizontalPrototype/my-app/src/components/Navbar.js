@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import './Navbar.css'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import { VscAccount } from "react-icons/vsc";
 import logo from '../images/Logo.png'
 
 const Navbar = () => {
@@ -19,7 +20,7 @@ const Navbar = () => {
                
             <div class="nav-search-item">
                 <form name="search">
-                    <input type="text" class="searchAnim" name="txt" onmouseout="this.value = ''; this.blur();" placeholder="Search..."></input>
+                    <input type="text" placeholder="Search..."></input>
                 </form>
             </div>
                 <li className="nav-item">
@@ -27,6 +28,11 @@ const Navbar = () => {
                 </li>
                 <li className="nav-item">
                     <Link to= "/PricingPage">Pricing & Plans</Link>
+                </li>
+                <li>
+                    <div className='user-icon'>
+                    <VscAccount size={40}/>
+                    </div>
                 </li>
             </ul>
             <div className='hamburger' onClick={handleClick}>
