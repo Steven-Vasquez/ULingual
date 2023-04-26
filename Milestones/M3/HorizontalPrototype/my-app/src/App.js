@@ -12,6 +12,7 @@ import Pricing from './pages/Pricing&Plans';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import MainContent from './components/Maincontent';
+import Dashboard from './pages/Dashboard';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/register" element={<Register/>}/>
           <Route path="/ResultsPage" element={<Results/>}/>
           <Route path="/Pricing&Plans" element={<Pricing/>}/>
+          <Route path="/Dashboard" element={<Dashboard/>}/>
         </Routes>
       <Footer />
       </Router>
