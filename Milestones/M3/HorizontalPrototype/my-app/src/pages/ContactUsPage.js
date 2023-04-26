@@ -7,13 +7,13 @@ const ContactPage = () => {
         <div className="contact">
             <form className="form">
                 <h1>Contact Us</h1>
-                <div className="form-grouping">
+                <div>
                     <input type="text" placeholder="Username"/>
                 </div>
-                <div class="form__group">
+                <div>
                 <input type="email" placeholder="Email"/>
                 </div>
-                <div class="form__group">
+                <div>
                 <textarea name="Message" cols={30} rows={10} placeholder="Right your message here..."/>
                 </div>
                 <button className="btn">Send Form</button>
