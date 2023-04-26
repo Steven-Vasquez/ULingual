@@ -1,5 +1,5 @@
 import React from 'react'
-import "./StyleSheets/TutorCard.css"
+import "./stylesheets/TutorCard.css"
 
 
 function TutorCard(props) {

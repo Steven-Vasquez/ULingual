@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import './StyleSheets/Recommendation.css'
+import './stylesheets/Recommendation.css'
 
 const RecommendationPage= () => {
     return( 

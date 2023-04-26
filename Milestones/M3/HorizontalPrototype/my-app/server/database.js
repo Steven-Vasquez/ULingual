@@ -107,6 +107,19 @@ app.get('/tutors', (req, res) => {
   });
 });
 
+// API endpoint that returns a search retult for tutors from the database
+app.get('/tutors/:search', (req, res) => {
+  const search = req.params.search;
+  const sql = `SELECT * FROM Tutors WHERE TutorFirstName LIKE '%${search}%' OR TutorLastName LIKE '%${search}%'`;
+  db.query(sql, (error, result) => {
+    if (error) {
+      console.error(error.message);
+      return;
+    }
+    res.send(result);
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

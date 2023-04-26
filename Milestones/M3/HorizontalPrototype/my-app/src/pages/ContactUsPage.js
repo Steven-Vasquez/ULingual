@@ -1,5 +1,5 @@
 import React from "react";
-import './StyleSheets/ComingSoon.css';
+import './stylesheets/ComingSoon.css';
 
 const ContactPage = () => {
     function SubmitMessage(){ 
