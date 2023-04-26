@@ -1,5 +1,5 @@
 .SubHeader{
-    background-color: var(--lightgrey);
+    background-color: var(white);
     border-bottom-right-radius: 35%;
     border-bottom-left-radius: 15%;
     height: 300px;
@@ -8,28 +8,31 @@
 }
 
 .SubHeader h2{
-    font-size: 30px;
-    color: #AAF0C1;
+    font-size: 50px;
+    color: var(--primary);
     padding-bottom: 10px;
     padding-top: 25px;
     
 }
 
 .SubHeader p{
-    color: #AAF0C1;
+    color: var(--primary);
     padding-bottom: 5px;
+    font-size: 25px;
+
    
 }
 
 .btn-custom {
     padding-top: 20px;
+    
 }
 
 button{
     background-color: #AAF0C1;
     border-radius: 10px;
-    width: 150px;
-    height: 35px;
+    width: 300px;
+    height: 45px;
     font-family: 'Roboto Mono', monospace;
     font-size: large;
     color: var(--primary);
@@ -44,87 +47,96 @@ button{
     align-items: center;
     padding: 10px;
     
+    
 }
 
 .FlexItem{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 250px;
-    height: 150px;
-    background-color: white;
+    width: 450px;
+    height: 200px;
     margin: 10px;
     font-size: small;
     border-radius: 10px;
+    border-style: solid;
+    border-color: #AAF0C1;
+    background-color: var(--primary);
 }
 .FlexItem h4{
     text-align: center;
-    text-decoration: underline;
-    color: var(--primary);
-    font-size: 14px;
+    text-decoration: solid;
+    font-size: 28px;
     font-weight: bold;
     padding-bottom: 10px;
+    color:white;
 }
 
 .FlexItem p{
     text-align: center;
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 20px;
+    color:white;
 
 }
 
 .ExerptTitle{
     text-align: center;
-    color:#AAF0C1;
+    color:var(--primary);
 }
 
 .ExerptTitle h3{
-    font-size: 30px;
+    font-size: 50px;
     padding-bottom: 10px;
 }
 
 .ExerptTitle p{
-    font-size: 22px;
+    font-size: 25px;
 
 }
 
 .SubSection1{
-    background-color: var(--lightgrey);
-    border-top-right-radius: 35%;
-    border-top-left-radius: 10%;
+    background-color: var(white);
     height: 300px;
 }
 
 .SubSection2{
-    background-color: var(--lightgrey);
-    height: 1500px;
+    background-color: var(white);
+    height: 400px;
+    margin-top: 75px;
 }
 
 .SubSection2 h3{
     padding-left: 20px;
-    font-size: 30px;
-    color: #AAF0C1;
+    font-size: 50px;
+    color: var(--primary);
 }
 .SubSection2 h4{
     text-align: center;
-    color: #AAF0C1;
-    font-size: 25px;
+    color: var(--primary);
+    font-size: 40px;
     text-decoration: underline;
     padding-bottom: 15px;
 } 
 
-.SubSection2 p{
-    color: #AAF0C1;
+.SubSection2 li{
+    color: var(--primary);
     padding-top: 10px;
-    padding-left: 20px;
+    font-size: 30px;
+    text-decoration: bold;
+
 }
 
 .LangBar{
     display: flex;
-    justify-content: space-between;
     align-items: center;
- 
+    justify-content: space-evenly;
+    padding-right: 50px;
 }
+
+.container-photos{
+    display: flex;
+}
+
 
 .Lang-Item{
     padding: 1rem;
@@ -134,7 +146,13 @@ button{
     font-weight: bold;
 }
 
-.Lang-Item img{
+.LangBar img{
+    padding-left: 20px;
+    width: 200px;
+    height: 125px;
+}
+
+.LangBar .flag1{
     width: 175px;
     height: 125px;
 }
@@ -146,3 +164,171 @@ button{
 .br-style{
     border-top-right-radius: 15%;
 }
+
+.SubSection3 h4{
+    font-size: 40px;
+    color: var(--primary);
+    padding-left: 20px;
+}
+
+.SubSection3 p{
+    font-size: 25px;
+    color: var(--primary);
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+
+}
+
+.sub-section3-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+}
+
+.sub-section3-content li{
+    margin-top: 45px;
+    font-size: 45px;
+    color:black;
+    text-decoration: solid;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    background-color: #AAF0C1;
+
+}
+
+.sub-section3-content-icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.SubSection4 h4{
+    font-size: 40px;
+    color: var(--primary);
+    padding-left: 20px;
+}
+.SubSection4 p{
+    font-size: 25px;
+    color: var(--primary);
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.sub-section4-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+}
+
+.sub-section4-content li{
+    margin-top: 45px;
+    font-size: 45px;
+    color:black;
+    text-decoration: solid;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    background-color: #AAF0C1;
+
+}
+
+.SubSection5 h4{
+    font-size: 40px;
+    color: var(--primary);
+    padding-left: 20px;
+}
+.SubSection5 p{
+    font-size: 25px;
+    color: var(--primary);
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.sub-section5-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+}
+
+.sub-section5-content li{
+    margin-top: 45px;
+    font-size: 45px;
+    color:black;
+    text-decoration: solid;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    background-color: #AAF0C1;
+}
+
+.SubSection6 h4{
+    font-size: 40px;
+    color: var(--primary);
+    padding-left: 20px;
+}
+.SubSection6 p{
+    font-size: 25px;
+    color: var(--primary);
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.sub-section6-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+}
+
+.sub-section6-content li{
+    margin-top: 45px;
+    font-size: 45px;
+    color:black;
+    text-decoration: solid;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    background-color: #AAF0C1;
+}
+
+.SubSection7 h4{
+    font-size: 40px;
+    color: var(--primary);
+    padding-left: 20px;
+}
+.SubSection7 p{
+    font-size: 25px;
+    color: var(--primary);
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.sub-section7-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+}
+
+.sub-section7-content li{
+    margin-top: 45px;
+    font-size: 45px;
+    color:black;
+    text-decoration: solid;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    background-color: #AAF0C1;
+}
+
+
+
+

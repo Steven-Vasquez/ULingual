@@ -6,7 +6,12 @@ import frenchFlag from '../images/frenchFlag.png'
 import arabLeagueFlag from '../images/arabLeagueFlag.png'
 import koreanFlag from '../images/koreanFlag.png'
 import { Link } from 'react-router-dom'
-
+import { FcGraduationCap, FcPicture,FcReading,FcFilmReel } from "react-icons/fc";
+import { FaUserFriends,FaRegLaughBeam } from "react-icons/fa";
+import { MdVideoCall,MdOutlineForum} from "react-icons/md";
+import { GiTeacher } from "react-icons/gi";
+import { BiMusic } from "react-icons/bi";
+import { ImBooks } from "react-icons/im";
 
 
 
@@ -66,7 +71,7 @@ function MainContent() {
                 <div className='SubSection1'> 
                     <div className='ExerptTitle'>
                         <h3>Why ULingual?</h3>
-                        <p>Safe and affordable social language learning platform</p>
+                        <p>Safe and affordable social language learning platform.</p>
                     </div>
 
                     <div className='FlexContainer'>
@@ -95,67 +100,93 @@ function MainContent() {
                         <li className='Lang-Item'>Arabic</li>
                         <li className='Lang-Item'>Korean</li>
                     </ul>
-                    <ul className='LangBar'>
-                        <li className='Lang-Item'><img src={americanFlag} alt='AmericanFlag'/></li>
-                        <li className='Lang-Item'><img src={spanishFlag} alt='SpanishFlag'/></li>
-                        <li className='Lang-Item'><img src={frenchFlag} alt='FrenchFlag'/></li>
-                        <li className='Lang-Item'><img src={arabLeagueFlag} alt='ArabLeagueFlag'/></li>
-                        <li className='Lang-Item'><img src={koreanFlag} alt='KoreanFlag'/></li>
+                    <div className='LangBar'>
+                            <div className='flag1'>
+                                    <img src={americanFlag} alt='AmericanFlag'/>
+                            </div>
+                            <div className='flag2'>
+                                <img src={spanishFlag} alt='SpanishFlag'/>
+                            </div>
+                            <div className='flag3'>
+                                <img src={frenchFlag} alt='FrenchFlag'/>
+                            </div>
+                            <div className='flag4'>
+                                <img src={arabLeagueFlag} alt='ArabLeagueFlag'/>
+                            </div>
+                            <div className='flag5'>
+                                <img src={koreanFlag} alt='KoreanFlag'/>
+                            </div>
+                    </div>
+
+            </div>
+            <div className='SubSection3'>
+                    <h4>ULinguals Interactive Courses</h4>
+                    <p className='courseDesc'>Browse ULinguals Courses where you can take your learning experience to the next level!</p>
+                    <p className='courseDesc'>We offer custom quizes, curated readings, and photo identifying tests in your desired language.</p>
+                    <ul className='sub-section3-content'>
+                        <li className='sub-section3-content'>Quizes <FcGraduationCap size={80}/></li>
+                        <li className='sub-section3-content'>Readings <FcReading  size={80}/></li>
+                        <li className='sub-section3-content'>Photos <FcPicture size={80}/></li>
                     </ul>
-
-                    <h4>View ULinguals Interactive Courses for your desired language</h4>
-                    <p className='courseDesc'>Browse ULinguals Courses that range from quizes, to readings, to picture identifiying & more!</p>
+            </div>
                     <br></br>
                     <br></br>
                     <br></br>
-                    <br></br>
-
-                    <h4>Connect with a Native Speaker via Video Connection!</h4>
+            <div className='SubSection4'>
+                    <h4>Connect with a Native Speaker</h4>
                     <p>Connect with other users around the world and learn from their mother tongue!</p>
-                    <p>Chat on call, make friends, laugh, and learn!</p>
+                    <p>Chat on video call, make friends, laugh, and learn!</p>
+                    <ul className='sub-section4-content'>
+                        <li className='sub-section4-content'>Video Calls <MdVideoCall size={60}/></li>
+                        <li className='sub-section4-content'>Make Friends <FaUserFriends size={60}/></li>
+                        <li className='sub-section4-content'>Laugh & Learn <FaRegLaughBeam size={60}/></li>
+                    </ul>
                     <br></br>
                     <br></br>
                     <br></br>
-                    <br></br>
-
-                    <h4>Find a Tutor and book a Private Appointment!</h4>
+            </div>
+            <div className='SubSection5'>
+                    <h4>Tutors & Private Appointments</h4>
                     <p>ULingual offers users a catelog of trained Tutors who
-                        will teach users a language. These trained Tutors have
-                        free reign on the way they teach their students. Making the
+                        will teach users a language.
+                    </p>
+                        <p>Tutors have
+                        free reign on how they teach their students. Making the
                         experience personal and unique.
                     </p>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
 
-                    <h4>Browse forums and see what users are talking about!</h4>
-                    <p>ULingual has a forums section where users can chat 
+                    <ul className='sub-section5-content'>
+                        <li className='sub-section5-content'>Tutoring  <GiTeacher size={50}/></li>
+                    </ul>
+            </div>
+                    <br></br>
+                    <br></br>
+            <div className='SubSection6'>
+                    <h4>Browse Forums</h4>
+                    <p>ULingual offers forums where users can chat 
                         share stories, and leave recommendations on learning
                         strategies.
                     </p>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-
-                    <h4>View ULingual's curated content towards your desired language</h4>
-                    <ul className='LangBar'>
-                        <li className='Lang-Item'>Music Playlists</li>
-                        <li className='Lang-Item'>Movies & Show Recommendations</li>
-                        <li className='Lang-Item'>Book Recommendations</li>
+                    <ul className='sub-section6-content'>
+                        <li className='sub-section6-content'>Forums  <MdOutlineForum size={50}/></li>
                     </ul>
-             </div> 
-
-                    {/* 
-                    1. Live classes 
-                    2. Live conversation practice with native speakers
-                    3. community interaction & other features
-
-                     */}
-                
-        </div>
-
+            </div>
+                    <br></br>
+                    <br></br>
+            <div className='SubSection7'>
+                    <h4>Curated Content for you</h4>
+                    <p>At ULingual, we believe learning should be a constant flow, 
+                        this is why we offer curated content for you to explore outside
+                        of ULingual.</p>
+                    <ul className='sub-section7-content'>
+                        <li className='sub-section7-content'>Music Playlists <BiMusic size={60}/></li>
+                        <li className='sub-section7-content'>Movies & Shows<FcFilmReel size={60}/></li>
+                        <li className='sub-section7-content'>Book Recs<ImBooks size={60}/></li>
+                    </ul>
+            </div>
+            <br></br>
+            <br></br>
+        </div> 
 
     );
 
