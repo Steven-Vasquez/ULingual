@@ -36,7 +36,9 @@ const Navbar = () => {
                     </div>
                     <div className={`drop-menu ${open? 'active' : 'inactive'}`}>
                         <ul>
-                            <li className='drop-menu-item'>Dashboard</li>
+                            <li className='drop-menu-item'>
+                                <Link to= "/Dashboard">Dashboard</Link>
+                            </li>
                             <li className='drop-menu-item'>Profile</li>
                             <li className='drop-menu-item'>Sign Out</li>  
                         </ul>
