@@ -9,6 +9,7 @@ import logo from '../images/Logo.png'
 const Navbar = () => {
     const [click, setClick] = useState(false)
     const handleClick = () => setClick(!click)
+    const [open, setOpen] = useState(false);
     return (
         <div className="navbar">
             <div className="logo">
@@ -30,8 +31,15 @@ const Navbar = () => {
                     <Link to= "/Pricing&Plans">Pricing & Plans</Link>
                 </li>
                 <li>
-                    <div className='user-icon'>
+                    <div className='user-icon' onClick={()=>{setOpen(!open)}}>
                     <VscAccount size={40}/>
+                    </div>
+                    <div className={`drop-menu ${open? 'active' : 'inactive'}`}>
+                        <ul>
+                            <li className='drop-menu-item'>Dashboard</li>
+                            <li className='drop-menu-item'>Profile</li>
+                            <li className='drop-menu-item'>Sign Out</li>  
+                        </ul>
                     </div>
                 </li>
             </ul>
@@ -41,6 +49,6 @@ const Navbar = () => {
         </div>
 
     );
-
 }
+
 export default Navbar
