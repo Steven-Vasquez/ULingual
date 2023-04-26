@@ -1,0 +1,67 @@
+.TutorsCard {
+    background-color: #000000;
+    padding: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor:pointer;
+}
+
+.TutorsCard:hover {
+    background-color: mediumspringgreen;
+}
+
+.TutorsCard .ProfileImage {
+    width: 25%;
+    color: white;
+}
+
+.TutorsCard .ProfileImage img {
+    border-radius: 50%;
+}
+
+.TutorsCard .ProfileDesc {
+    background-color: white;
+    width: 65%;
+    margin: 5%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+
+.TutorsProfile {
+    background-color: #000000;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+.TutorsProfile .UserInfo,.TutorsProfile .UserDetails {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.TutorsProfile .UserInfo .ProfileCost, .TutorsProfile .UserDetails div {
+    width: 45%;
+    margin: 5%;
+    padding: 5%;
+    background-color: white;
+    color: black;
+}
+
+
+.TutorsProfile .UserInfo img {
+    border-radius: 50%;
+}
+
+.TutorsProfile button{
+    align-self: flex-end;
+}
