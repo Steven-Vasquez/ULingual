@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import './StyleSheets/Dashboard.css'
+import './stylesheets/Dashboard.css'
 
 const VideoRoom = () => {
     return( 
