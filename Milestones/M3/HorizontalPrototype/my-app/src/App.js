@@ -13,7 +13,12 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import MainContent from './components/Maincontent';
 import Dashboard from './pages/Dashboard';
-
+import Exercise from './pages/ExercisePage';
+import FriendsList from './pages/FriendsListPage';
+import GlobalForum from './pages/GlobalForumPage';
+import Lesson from './pages/LessonPage';
+import VideoRoom from './pages/VideoRoomPage';
+import RecommendationPage from './pages/RecommendationPage';
 
 function App() {
   
@@ -32,6 +37,12 @@ function App() {
           <Route path="/ResultsPage" element={<Results/>}/>
           <Route path="/Pricing&Plans" element={<Pricing/>}/>
           <Route path="/Dashboard" element={<Dashboard/>}/>
+          <Route path="/Exercise" element={<Exercise/>}/>
+          <Route path="/FriendsList" element={<FriendsList/>}/>
+          <Route path="/GlobalForum" element={<GlobalForum/>}/>
+          <Route path="/Forum" element={<Lesson/>}/>
+          <Route path="/VideoRoom" element={<VideoRoom/>}/>
+          <Route path="/RecommendationPage" element={<RecommendationPage/>}/>
         </Routes>
       <Footer />
       </Router>
