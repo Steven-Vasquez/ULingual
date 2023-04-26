@@ -1,5 +1,5 @@
 import React from 'react'
-import './Maincontent.css'
+import './StyleSheets/Maincontent.css'
 import americanFlag from '../images/americanFlag.png'
 import spanishFlag from '../images/spanishFlag.png'
 import frenchFlag from '../images/frenchFlag.png'

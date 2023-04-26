@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import './Register.css';
+import './StyleSheets/Register.css';
 
 
 

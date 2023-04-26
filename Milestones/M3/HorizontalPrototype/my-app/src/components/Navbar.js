@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import './Navbar.css'
+import './StyleSheets/Navbar.css'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { VscAccount } from "react-icons/vsc";
 import logo from '../images/Logo.png'

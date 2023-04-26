@@ -1,5 +1,5 @@
 import React from "react";
-import './ComingSoon.css';
+import './StyleSheets/ComingSoon.css';
 
 const ContactPage = () => {
     return(
