@@ -5,7 +5,7 @@
   --line_color : white ;
   --back_color : #AAF0C1; 
   margin: auto;
-  height: 100vh;
+  height: 83vh;
   width: 100vw;
 }
 
@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: center;
   justify-content: center;
-  margin-top: 100px; /* adjust the value as needed */
+  margin-top: 180px;
 }
 
 .check {

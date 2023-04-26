@@ -1,0 +1,33 @@
+.container{
+    display:grid;
+
+    /*size of box
+    grid-template-columns: 200px 100px;
+    grid-template-columns: 200px 100px;
+    */
+    grid-auto-rows: minmax(100px, auto);
+    grid-auto-columns: auto;
+
+    /*determine space*/
+    grid-column-gap:10px;
+    grid-row-gap: 20px;
+
+    /*template header
+    grid-template-areas: 
+    "header header"
+    "sidebar sidebar"
+    "sidebar content"
+    */
+}
+
+.container1{
+    justify-content: center;
+    color: white;
+    grid-area: header;
+}
+.container2{
+    grid-area: sidebar;
+}
+.container3{
+    grid-area: content;
+}

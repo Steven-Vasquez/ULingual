@@ -9,7 +9,7 @@ const Dashboard = () => {
             <h1>Welcome to your own personal Dashboard!</h1>
             </div>
                 <div class = "check">
-                <a href="#" class="button">
+                <a href="LessonPage" class="button">
                 <div class="button__line"></div>
                 <div class="button__line"></div>
                 <span class="button__text">Lesson</span>
@@ -17,7 +17,7 @@ const Dashboard = () => {
                 <div class="button__drow2"></div>
                 </a>
 
-                <a href="#" class="button">
+                <a href="ExercisePage" class="button">
                 <div class="button__line"></div>
                 <div class="button__line"></div>
                 <span class="button__text">Exercise</span>
@@ -25,7 +25,7 @@ const Dashboard = () => {
                 <div class="button__drow2"></div>
                 </a>
 
-                <a href="#" class="button">
+                <a href="GlobalRoomPage" class="button">
                 <div class="button__line"></div>
                 <div class="button__line"></div>
                 <span class="button__text">Global Forums</span>
@@ -33,7 +33,7 @@ const Dashboard = () => {
                 <div class="button__drow2"></div>
                 </a>
 
-                <a href="#" class="button">
+                <a href="VideoRoomPage" class="button">
                 <div class="button__line"></div>
                 <div class="button__line"></div>
                 <span class="button__text">Video Room</span>
@@ -41,7 +41,7 @@ const Dashboard = () => {
                 <div class="button__drow2"></div>
                 </a>
 
-                <a href="#" class="button">
+                <a href="RecommendationPage" class="button">
                 <div class="button__line"></div>
                 <div class="button__line"></div>
                 <span class="button__text">Recommendations</span>
