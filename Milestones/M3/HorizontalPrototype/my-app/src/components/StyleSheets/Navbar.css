@@ -102,3 +102,41 @@ For smaller screens we display hamburger option menu.
     padding: 1rem;
     color: var(--mint-green);
 }
+
+.drop-menu{
+    background-color: var(--primary);
+    border-radius: 15px;
+    top: 110px;
+    right: 20px;
+    position: absolute;
+    padding: 10px 20px;
+}   
+.drop-menu::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    right:20px;
+    height: 15px;
+    width: 20px;
+    background-color: var(--primary);
+    transform: rotate(45deg);
+}
+
+.drop-menu.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 0.3s;
+}
+.drop-menu.inactive{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: 0.3s;
+}
+.drop-menu ul li{
+    padding: 10px 0px;
+    border-bottom: 1px solid white;
+    color:var(--mint-green);
+    
+}
