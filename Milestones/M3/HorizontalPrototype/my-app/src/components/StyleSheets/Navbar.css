@@ -134,6 +134,20 @@ For smaller screens we display hamburger option menu.
     transform: translateY(-20px);
     transition: 0.3s;
 }
+.arrow-menu{
+    color: var(--mint-green);
+    position: absolute;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.arrow-menu.active{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: 0.3s;
+}
+
 .drop-menu ul li{
     padding: 10px 0px;
     border-bottom: 1px solid white;

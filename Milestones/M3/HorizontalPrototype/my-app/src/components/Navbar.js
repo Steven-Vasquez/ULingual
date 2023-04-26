@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import './StyleSheets/Navbar.css'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import { GoChevronDown } from "react-icons/go";
 import { VscAccount } from "react-icons/vsc";
 import logo from '../images/Logo.png'
 
@@ -33,6 +34,7 @@ const Navbar = () => {
                 <li>
                     <div className='user-icon' onClick={()=>{setOpen(!open)}}>
                     <VscAccount size={40}/>
+                    <GoChevronDown className={`arrow-menu ${open? 'active' : 'inactive'}`} size={30}/>
                     </div>
                     <div className={`drop-menu ${open? 'active' : 'inactive'}`}>
                         <ul>
