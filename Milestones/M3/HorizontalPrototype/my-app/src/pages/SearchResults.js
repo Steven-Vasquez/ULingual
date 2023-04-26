@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useLocation } from 'react-router-dom';
 
 import './stylesheets/SearchResults.css'
-import queryString from 'query-string';
+//import queryString from 'query-string';
 
 const Results = () => {
   const location = useLocation();
