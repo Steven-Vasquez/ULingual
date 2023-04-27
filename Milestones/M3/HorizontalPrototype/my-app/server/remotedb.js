@@ -136,7 +136,7 @@ app.get('/tutors', (req, res) => {
 });
 
 // API endpoint that returns a search retult for tutors from the database
-app.get('/tutors/:search', (req, res) => {
+app.get('/tutors/search', (req, res) => {
   const search = req.query.search;
   const sql = `SELECT * FROM Tutors WHERE TutorFirstName LIKE '%${search}%' OR TutorLastName LIKE '%${search}%'`;
   db.query(sql, (error, result) => {
