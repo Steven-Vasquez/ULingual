@@ -6,28 +6,33 @@ import { Link } from "react-router-dom";
 const TutorProfile = () => {
 
     return(
-    <div className="tutor-profile-page">
-       <h1>Tutor Proflile</h1>
-        <div className='TutorsProfile1'>
-                    <div className="UserInfo1">
-                        <img className="ProfileImage1" src={"https://placehold.jp/150x150.png"}/>
-                        <h2 className="ProfileName1">Tutor Name</h2>
-                            <div className="ProfileCost1">
-                                <h3>Cost:</h3>
-                            </div>  
+<div className="tutor-prof-pg">
+    <div className="bkg-tutor">
+        <section class="profile-container">
+            <div class="profile-img-section">
+                <img class="profile-img" src="https://placehold.jp/150x150.png"/>
+            </div>
+                <div class="profile-desc-section">
+                    <h2>Tutor Name</h2>
+                    <h3>Cost: </h3>
+                    <p class="description">
+                        Description: </p>
+                    <p class="description">
+                        Availability: </p>
+                    <div class="interests">
+                        <span class="int-item">Language Profession:</span>
+                        <span class="int-item">Language Profession:</span>
+                        <span class="int-item">Language Profession:</span>
                     </div>
-            <div className="bottom-cont" >
-            <label><Link to="/TutorsPage">Return</Link></label> 
-            </div>
+                <span class="back">
+                <label>
+                    <Link to="/TutorsPage">Go Back</Link>
+                </label>
+            </span>
         </div>
-            <div className="descpt">
-            <label>Description</label>
-            </div>
-            <div className="avail">
-            <label>Availability</label>
-            </div>
-            <label><Link to="/TutorsPage">Return</Link></label> 
-        </div>
+    </section>
+    </div>
+</div>
     );
 }
 export default TutorProfile;
