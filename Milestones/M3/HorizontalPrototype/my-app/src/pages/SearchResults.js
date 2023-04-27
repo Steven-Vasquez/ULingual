@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useLocation } from 'react-router-dom';
 
 import './stylesheets/SearchResults.css'
-//import queryString from 'query-string';
+import queryString from 'query-string';
 
 const Results = () => {
   const location = useLocation();
@@ -14,7 +14,7 @@ const Results = () => {
   const [tutors, setTutors] = useState([]);
 
     useEffect(() => {
-      axios.get('http://50.18.108.83:3001/tutors?search=${queryParams.search}')
+      axios.get(`http://localhost:3001/tutors/search?search=${queryParams.search}`)
         .then(res => {
           setTutors(res.data);
           console.log("Tutors retrieved via search");

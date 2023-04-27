@@ -34,6 +34,7 @@ const forwardConfig = {
     dstHost: dbServer.host,
     dstPort: dbServer.port
 };
+let db;
 const SSHConnection = new Promise((resolve, reject) => {
     sshClient.on('ready', () => {
         sshClient.forwardOut(
@@ -47,8 +48,8 @@ const SSHConnection = new Promise((resolve, reject) => {
                  ...dbServer,
                  stream
             };
-            const connection =  mysql.createConnection(updatedDbServer);
-            connection.connect((error) => {
+            db =  mysql.createConnection(updatedDbServer);
+            db.connect((error) => {
             if (error) {
                 //reject(error);
                 console.log('Error connecting to the MySQL Database', error);
@@ -127,6 +128,19 @@ app.get('/tutors', (req, res) => {
   const sql = 'SELECT * FROM Tutors';
   db.query(sql, (error, result) => {
     if(error){
+      console.error(error.message);
+      return;
+    }
+    res.send(result);
+  });
+});
+
+// API endpoint that returns a search retult for tutors from the database
+app.get('/tutors/:search', (req, res) => {
+  const search = req.query.search;
+  const sql = `SELECT * FROM Tutors WHERE TutorFirstName LIKE '%${search}%' OR TutorLastName LIKE '%${search}%'`;
+  db.query(sql, (error, result) => {
+    if (error) {
       console.error(error.message);
       return;
     }
