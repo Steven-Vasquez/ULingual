@@ -11,16 +11,16 @@ const Navbar = () => {
     const handleClick = () => setClick(!click)
     const [open, setOpen] = useState(false);
 
-    const [searchQuery, setSearchQuery] = useState('');
-    const navigate = useNavigate();
+    // const [searchQuery, setSearchQuery] = useState('');
+    // const navigate = useNavigate();
 
     const handleSearchSubmit = (event) => {
-        event.preventDefault();
-        navigate(`/SearchResults?search=${searchQuery}`);
+        // event.preventDefault();
+        // navigate(`/SearchResults?search=${searchQuery}`);
     }
 
     const handleSearchInputChange = (event) => {
-        setSearchQuery(event.target.value);
+        // setSearchQuery(event.target.value);
     }
     
     return (
