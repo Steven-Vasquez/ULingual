@@ -24,6 +24,10 @@ import BookRecommendationPage from './pages/BookRecommendation';
 import VideoRecommendationPage from './pages/VideoRecommendation';
 import TVShowRecommendationPage from './pages/TVShowRecommendation';
 import TermsAndConditions from './pages/Terms&Conditions';
+import TutorProfile from './pages/TutorProfile';
+import UserProfile from './pages/UserProfile';
+import UserProfileEdit from './pages/UserProfileEdit';
+
 
 function App() {
   
@@ -52,6 +56,9 @@ function App() {
           <Route path="/VideoRecommendation" element={<VideoRecommendationPage/>}/>
           <Route path="/TVShowRecommendation" element={<TVShowRecommendationPage/>}/>
           <Route path="/TermsAndConditions" element={<TermsAndConditions/>}/>
+          <Route path="/TutorProfile" element={<TutorProfile/>}/>
+          <Route path="/UserProfile" element={<UserProfile/>}/>
+          <Route path="/UserProfileEdit" element={<UserProfileEdit/>}/>
           <Route path="/Forum1" element={<Forum1/>}/>
         </Routes>
       <Footer />

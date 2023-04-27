@@ -1,19 +1,66 @@
 import React,{useState} from "react"
-import './stylesheets/ComingSoon.css';
+import './stylesheets/Tutors.css';
 import TutorCard from "../components/TutorCard";
 import TutorProfile from "../components/TutorProfile";
+import { Link } from "react-router-dom";
 
 const Tutors = () => {
-    const[isProfileView,setIsProfileView]= useState(false);
+
     return(
         <div className="pg">
-            <div class="middle">
-            <h1>Tutors</h1>
-            {isProfileView===false?
-            <TutorCard setIsProfileView={setIsProfileView} img={"https://placehold.jp/150x150.png"} name={"Amal Ahmed"} desc={"Arabic tutor"} avab={"Mon-Thur"} cost={"40"}/>
-            :
-            <TutorProfile setIsProfileView={setIsProfileView} img={"https://placehold.jp/150x150.png"} name={"Amal Ahmed"} desc={"Arabic tutor"} avab={"Mon-Thur"} cost={"40"}/>
-        }
+            <h1>Tutors Page</h1>
+            <div className="tutor-display">
+                <div className="wrapper">
+                    <div className="tutor-1">
+                        <img src={"https://placehold.jp/150x150.png"}/>
+                        <ul>
+                            <li>
+                                <Link to="/TutorProfile">
+                                    <label>Tutor Name</label>
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="tutor-1-desc">
+                        <p>Description:</p>
+                        <p>Availability:</p>
+                        <p>Cost:</p>
+                    </div>
+
+                    <div className="tutor-2">
+                        <img src={"https://placehold.jp/150x150.png"}/>
+                        <ul>
+                            <li>
+                                 <Link to="/TutorProfile">
+                                    <label>Tutor Name</label>
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="tutor-2-desc">
+                        <p>Description:</p>
+                        <p>Availability:</p>
+                        <p>Cost:</p>
+                    </div>
+
+                    <div className="tutor-3">
+                        <img src={"https://placehold.jp/150x150.png"}/>
+                        <ul>
+                            <li>
+                                <Link to="/TutorProfile">
+                                    <label>Tutor Name</label>
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="tutor-3-desc">
+                        <p>Description:</p>
+                        <p>Availability:</p>
+                        <p>Cost:</p>
+                    </div>
+
+
+                </div>
             </div>
         </div>
     );
