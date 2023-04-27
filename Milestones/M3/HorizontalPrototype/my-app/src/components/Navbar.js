@@ -11,16 +11,16 @@ const Navbar = () => {
     const handleClick = () => setClick(!click)
     const [open, setOpen] = useState(false);
 
-    // const [searchQuery, setSearchQuery] = useState('');
-    // const navigate = useNavigate();
+    const [searchQuery, setSearchQuery] = useState('');
+    const navigate = useNavigate();
 
     const handleSearchSubmit = (event) => {
-        // event.preventDefault();
+        event.preventDefault();
         // navigate(`/SearchResults?search=${searchQuery}`);
     }
 
     const handleSearchInputChange = (event) => {
-        // setSearchQuery(event.target.value);
+        setSearchQuery(event.target.value);
     }
     
     return (
@@ -51,13 +51,7 @@ const Navbar = () => {
                     <div className={`drop-menu ${open ? 'active' : 'inactive'}`}>
                         <ul>
                             <li className='drop-menu-item'>
-                                <Link to="/Login">Login</Link>
-                            </li>
-                            <li className='drop-menu-item'>
                                 <Link to="/Dashboard">Dashboard</Link>
-                            </li>
-                            <li className='drop-menu-item'>
-                                <Link to="">Friends</Link>
                             </li>
                             <li className='drop-menu-item'>
                                 <Link to="/UserProfile">Profile</Link>
