@@ -64,7 +64,6 @@ function MainContent() {
                 *  - Live chat with native speakers & fellow learners for practice
                 * 
                 *  - Other language learning resources
-                * 
                 * What else do we offer? 
                 * [Learn more about ULingual] 
                 */}
@@ -72,7 +71,7 @@ function MainContent() {
                     <div className='ExerptTitle'>
                         <h3>Why ULingual?</h3>
                         <p>Safe and affordable social language learning platform.</p>
-                    </div>
+                    </div> 
 
                     <div className='FlexContainer'>
                         <div className='FlexItem'>
