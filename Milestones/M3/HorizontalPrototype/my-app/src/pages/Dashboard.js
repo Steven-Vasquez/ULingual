@@ -6,7 +6,7 @@ const Dashboard = () => {
     return( 
         <div class = "container">
             <div class = "header">
-            <h1>Welcome to your own personal Dashboard!</h1>
+            <h1>Welcome to DASHBOARD!</h1>
             </div>
                 <div class = "check">
                 <a href="LessonPage" class="button">
@@ -25,7 +25,7 @@ const Dashboard = () => {
                 <div class="button__drow2"></div>
                 </a>
 
-                <a href="GlobalRoomPage" class="button">
+                <a href="GlobalForumPage" class="button">
                 <div class="button__line"></div>
                 <div class="button__line"></div>
                 <span class="button__text">Global Forums</span>

@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import './StyleSheets/Dashboard.css'
+import './StyleSheets/ComingSoon.css'
 
 const Lesson = () => {
     return( 
-        <div class = "container">
-            
+        <div class = "center">
+            <h1>Coming Soon!</h1>
         </div>
     );
 }

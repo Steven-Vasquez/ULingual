@@ -15,10 +15,14 @@ import MainContent from './components/Maincontent';
 import Dashboard from './pages/Dashboard';
 import Exercise from './pages/ExercisePage';
 import FriendsList from './pages/FriendsListPage';
-import GlobalForum from './pages/GlobalForumPage';
 import Lesson from './pages/LessonPage';
-import VideoRoom from './pages/VideoRoomPage';
+import VideoRoomPage from './pages/VideoRoomPage';
 import RecommendationPage from './pages/RecommendationPage';
+import GlobalForumPage from './pages/GlobalForumPage.js';
+import Forum1 from './pages/Forum1';
+import BookRecommendationPage from './pages/BookRecommendation';
+import VideoRecommendationPage from './pages/VideoRecommendation';
+import TVShowRecommendationPage from './pages/TVShowRecommendation';
 
 function App() {
   
@@ -37,12 +41,16 @@ function App() {
           <Route path="/ResultsPage" element={<Results/>}/>
           <Route path="/Pricing&Plans" element={<Pricing/>}/>
           <Route path="/Dashboard" element={<Dashboard/>}/>
-          <Route path="/Exercise" element={<Exercise/>}/>
+          <Route path="/ExercisePage" element={<Exercise/>}/>
           <Route path="/FriendsList" element={<FriendsList/>}/>
-          <Route path="/GlobalForum" element={<GlobalForum/>}/>
-          <Route path="/Forum" element={<Lesson/>}/>
-          <Route path="/VideoRoom" element={<VideoRoom/>}/>
+          <Route path="/GlobalForumPage" element={<GlobalForumPage/>}/>
+          <Route path="/LessonPage" element={<Lesson/>}/>
+          <Route path="/VideoRoomPage" element={<VideoRoomPage/>}/>
           <Route path="/RecommendationPage" element={<RecommendationPage/>}/>
+          <Route path="/BookRecommendation" element={<BookRecommendationPage/>}/>
+          <Route path="/VideoRecommendation" element={<VideoRecommendationPage/>}/>
+          <Route path="/TVShowRecommendation" element={<TVShowRecommendationPage/>}/>
+          <Route path="/Forum1" element={<Forum1/>}/>
         </Routes>
       <Footer />
       </Router>
