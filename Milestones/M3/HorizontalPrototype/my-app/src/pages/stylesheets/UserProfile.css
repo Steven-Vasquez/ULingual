@@ -1,0 +1,83 @@
+.user-entire{
+    height: 900px;
+}
+
+.UserProfile {
+    background-color: var(--secondary);
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    width: 900px;
+    height: 800px;
+    border-radius: 10px;
+    margin-left: 400px;
+    margin-top: 100px;
+}
+
+
+.UserProfile .User-Info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+
+}
+
+.UserProfile .User-Info img {
+    border-radius: 50%;
+    border-style: solid;
+    border-color: var(--mint-green);
+ 
+}
+.User-Info h2{
+    font-size: 35px;
+    margin-left: -100px;
+    color: var(--mint-green);
+}
+
+.UserDetails h3{
+    margin-top:-200px;
+    color: var(--mint-green);
+}
+
+.UserDetails h4{
+    font-size: 22px;
+    margin-top:-34.5px;
+    margin-left: 600px;
+    text-decoration: underline;
+    color: var(--mint-green);
+}
+.desc li{
+    border-radius: 10px;
+    border-style: solid;
+    margin-top: 10px;
+    border-color: black;
+    margin-bottom: 25px;
+}
+.friends li{
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+.lang-sel li{
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.UserProfile label{
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--mint-green);
+    background-color: black;
+}
+
+.UserProfile label:hover{
+    border-color: whitesmoke;
+}
