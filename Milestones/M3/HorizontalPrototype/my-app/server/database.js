@@ -55,13 +55,15 @@ app.get('/users', (req, res) => {
 
 // API endpoint that registers a new user
 app.post('/register', (req, res) => {
+  const Ufirstname = req.body.Ufirstname;
+  const Ulastname = req.body.Ulastname;
   const Uusername = req.body.Uusername;
   const Upassword = req.body.Upassword;
   const Uemail = req.body.Uemail;
-  const sql = 'INSERT INTO Users (Uusername, Upassword, Uemail) VALUES (?,?,?)';
+  const sql = 'INSERT INTO Users (Ufirstname, Ulastname, Uusername, Upassword, Uemail) VALUES (?,?,?,?,?)';
   
   db.query(sql, 
-    [Uusername, Upassword, Uemail], 
+    [Ufirstname, Ulastname, Uusername, Upassword, Uemail], 
     (error, result) => {
     if(error){
       console.error(error.message);
