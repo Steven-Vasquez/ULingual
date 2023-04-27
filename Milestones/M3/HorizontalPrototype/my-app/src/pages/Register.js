@@ -26,36 +26,51 @@ const Register = () => {
     }
 
     return(
-        <form>
-            <div className='layer-1'>
-                <h2>Create Account</h2>
-                <div className='form-grouping'>
-                    <label>Username:</label>
-                    <input type={'text'} name="Username"
-                    onChange={(e) => {
-                        setUsernameReg(e.target.value)
-                    }}
-                    />
-                </div>
-                <div className='form-grouping'>
-                    <label>Password:</label>
-                    <input type={'password'} name="Password"
-                    onChange={(e) => {
-                        setPasswordReg(e.target.value)
-                    }}
-                    />
-                </div>
-                <div className='form-grouping'>
-                    <label>Email:</label>
-                    <input type={'email'} name="Email@test.com"
-                    onChange={(e) => {
-                        setEmailReg(e.target.value)
-                    }}
-                    />
-                </div>
-                <input type={'submit'} onClick={createAccount} value='Create Account!'/>   
-            </div>
-        </form>
+    <div className="register-page">
+        <div className="register-box">
+            <form className="register-form">
+                <h1>Create Account</h1>
+
+                    <div>
+                    <label>First Name:</label>
+                        <input type={'text'} name="Username"></input>
+                    </div>
+                    <div>
+                    <label>Last Name:</label>
+                        <input type={'text'} name="Username"></input>
+                    </div>
+                    <div>
+                        <label>Username:</label>
+                        <input type={'text'} name="Username"
+                        onChange={(e) => {
+                            setUsernameReg(e.target.value)
+                        }}
+                        />
+                    </div>
+                    <div>
+                        <label>Email:</label>
+                        <input type={'email'} name="Email@test.com"
+                        onChange={(e) => {
+                            setEmailReg(e.target.value)
+                        }}
+                        />
+                    </div>
+                    <div>
+                        <label>Password:</label>
+                        <input type={'password'} name="Password"
+                        onChange={(e) => {
+                            setPasswordReg(e.target.value)
+                        }}
+                        />
+                    </div>
+                    <div className="TOS">
+                        <label>Accept Terms & Conditions</label>
+                        <input type="checkbox" required/>
+                    </div>
+                    <button onClick={createAccount}>Create Account</button>  
+            </form>
+        </div>
+    </div>
 
     );
 
