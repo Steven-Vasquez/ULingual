@@ -6,12 +6,12 @@ import frenchFlag from '../images/frenchFlag.png'
 import arabLeagueFlag from '../images/arabLeagueFlag.png'
 import koreanFlag from '../images/koreanFlag.png'
 import { Link } from 'react-router-dom'
-import { FcGraduationCap, FcPicture,FcReading,FcFilmReel } from "react-icons/fc";
-import { FaUserFriends,FaRegLaughBeam } from "react-icons/fa";
-import { MdVideoCall,MdOutlineForum} from "react-icons/md";
-import { GiTeacher } from "react-icons/gi";
-import { BiMusic } from "react-icons/bi";
-import { ImBooks } from "react-icons/im";
+// import { FcGraduationCap, FcPicture,FcReading,FcFilmReel } from "react-icons/fc";
+// import { FaUserFriends,FaRegLaughBeam } from "react-icons/fa";
+// import { MdVideoCall,MdOutlineForum} from "react-icons/md";
+// import { GiTeacher } from "react-icons/gi";
+// import { BiMusic } from "react-icons/bi";
+// import { ImBooks } from "react-icons/im";
 
 
 
@@ -123,9 +123,9 @@ function MainContent() {
                     <p className='courseDesc'>Browse ULinguals Courses where you can take your learning experience to the next level!</p>
                     <p className='courseDesc'>We offer custom quizes, curated readings, and photo identifying tests in your desired language.</p>
                     <ul className='sub-section3-content'>
-                        <li className='sub-section3-content'>Quizes <FcGraduationCap size={80}/></li>
-                        <li className='sub-section3-content'>Readings <FcReading  size={80}/></li>
-                        <li className='sub-section3-content'>Photos <FcPicture size={80}/></li>
+                        {/* <li className='sub-section3-content'>Quizes <FcGraduationCap size={80}/></li> */}
+                        {/* <li className='sub-section3-content'>Readings <FcReading  size={80}/></li> */}
+                        {/* <li className='sub-section3-content'>Photos <FcPicture size={80}/></li> */}
                     </ul>
             </div>
                     <br></br>
@@ -136,9 +136,9 @@ function MainContent() {
                     <p>Connect with other users around the world and learn from their mother tongue!</p>
                     <p>Chat on video call, make friends, laugh, and learn!</p>
                     <ul className='sub-section4-content'>
-                        <li className='sub-section4-content'>Video Calls <MdVideoCall size={60}/></li>
-                        <li className='sub-section4-content'>Make Friends <FaUserFriends size={60}/></li>
-                        <li className='sub-section4-content'>Laugh & Learn <FaRegLaughBeam size={60}/></li>
+                        {/* <li className='sub-section4-content'>Video Calls <MdVideoCall size={60}/></li> */}
+                        {/* <li className='sub-section4-content'>Make Friends <FaUserFriends size={60}/></li> */}
+                        {/* <li className='sub-section4-content'>Laugh & Learn <FaRegLaughBeam size={60}/></li> */}
                     </ul>
                     <br></br>
                     <br></br>
@@ -155,7 +155,7 @@ function MainContent() {
                     </p>
 
                     <ul className='sub-section5-content'>
-                        <li className='sub-section5-content'>Tutoring  <GiTeacher size={50}/></li>
+                        {/* <li className='sub-section5-content'>Tutoring  <GiTeacher size={50}/></li> */}
                     </ul>
             </div>
                     <br></br>
@@ -167,7 +167,7 @@ function MainContent() {
                         strategies.
                     </p>
                     <ul className='sub-section6-content'>
-                        <li className='sub-section6-content'>Forums  <MdOutlineForum size={50}/></li>
+                        {/* <li className='sub-section6-content'>Forums  <MdOutlineForum size={50}/></li> */}
                     </ul>
             </div>
                     <br></br>
@@ -178,9 +178,9 @@ function MainContent() {
                         this is why we offer curated content for you to explore outside
                         of ULingual.</p>
                     <ul className='sub-section7-content'>
-                        <li className='sub-section7-content'>Music Playlists <BiMusic size={60}/></li>
-                        <li className='sub-section7-content'>Movies & Shows<FcFilmReel size={60}/></li>
-                        <li className='sub-section7-content'>Book Recs<ImBooks size={60}/></li>
+                        {/* <li className='sub-section7-content'>Music Playlists <BiMusic size={60}/></li> */}
+                        {/* <li className='sub-section7-content'>Movies & Shows<FcFilmReel size={60}/></li> */}
+                        {/* <li className='sub-section7-content'>Book Recs<ImBooks size={60}/></li> */}
                     </ul>
             </div>
             <br></br>
