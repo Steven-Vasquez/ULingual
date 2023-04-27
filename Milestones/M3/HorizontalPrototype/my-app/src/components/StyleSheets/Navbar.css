@@ -72,13 +72,13 @@ For smaller screens we display hamburger option menu.
     }
 }
 
-/*search bar css*/
+/* seach bar code*/
 .nav-search-item{
     position: relative;
     width: 300px;
     height: 60px;
     background: var(--secondary);
-    border-radius: 10px;
+    border-radius: 15px;
     font-size: 24px;
     color: var(--mint-green);
     margin-right: 0px;
@@ -97,6 +97,7 @@ For smaller screens we display hamburger option menu.
     box-sizing: border-box;
     padding: 10px;
 }
+
 
 .user-icon{
     padding: 1rem;

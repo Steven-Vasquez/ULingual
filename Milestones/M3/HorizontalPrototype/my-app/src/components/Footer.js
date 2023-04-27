@@ -1,5 +1,5 @@
 import React from 'react'
-import './StyleSheets/Footer.css'
+import './stylesheets/Footer.css'
 import { Link } from 'react-router-dom';
 //import { TiDevicePhone } from "react-icons/ti";
 

@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import axios from "axios";
 import { Link } from 'react-router-dom'
-import './StyleSheets/Login.css'
+import './stylesheets/Login.css'
+
 
 function Login() {
     
@@ -20,36 +21,36 @@ function Login() {
             console.log(err);
         });
     }
-
+ 
     return(
-        <form>
-            <div className='layer-1'>
-                <h2>Login</h2>
-                
-                <div className='form-grouping'>
-                    <label>Username:</label>
-                    <input type={'text'} name="Username"
-                    onChange={(e) => {
-                        setUsernameReg(e.target.value)
-                    }}
-                    />
-                </div>
-                
-                <div className='form-grouping'>
-                    <label>Password:</label>
-                    <input type={'password'} name="Password"
-                    onChange={(e) => {
-                        setPasswordReg(e.target.value)
-                    }}
-                    />
-                </div>
-                
-                <input type={'submit'} onClick={login} value='Login'/>  
-                <p>
-                    <Link to ='/register'>New User?</Link>
-                </p>
-            </div>
-        </form>
+     <div className="login-page">
+        <div className="login-box">
+            <form className='login-form'>
+                <h1>Login</h1>  
+                    <div className='login-sectioning'>
+                        <label>Username:</label>
+                        <input type={'text'} name="Username"
+                        onChange={(e) => {
+                            setUsernameReg(e.target.value)
+                        }}
+                        /> 
+                    </div>
+                    <div className='login-sectioning'>
+                        <label>Password:</label>
+                        <input type={'password'} name="Password"
+                        onChange={(e) => {
+                            setPasswordReg(e.target.value)
+                        }}
+                        />
+                    </div> 
+                     
+                    <button onClick={login}>Login</button> 
+                    <p>
+                        <Link to ='/register'>New User?</Link>
+                    </p>
+            </form>
+        </div>
+    </div>
     );
 }
 

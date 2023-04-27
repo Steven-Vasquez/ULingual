@@ -1,5 +1,5 @@
 import React,{useState} from "react"
-import './StyleSheets/ComingSoon.css';
+import './stylesheets/ComingSoon.css';
 import TutorCard from "../components/TutorCard";
 import TutorProfile from "../components/TutorProfile";
 
