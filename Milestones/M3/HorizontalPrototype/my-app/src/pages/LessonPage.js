@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import './StyleSheets/ComingSoon.css'
+import './stylesheets/ComingSoon.css'
 
 const Lesson = () => {
     return( 

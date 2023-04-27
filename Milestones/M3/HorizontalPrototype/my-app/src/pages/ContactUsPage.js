@@ -14,7 +14,7 @@ const ContactPage = () => {
                 <input type="email" placeholder="Email"/>
                 </div>
                 <div>
-                <textarea name="Message" cols={30} rows={10} placeholder="Right your message here..."/>
+                <textarea name="Message" cols={30} rows={10} placeholder="Write your message here..."/>
                 </div>
                 <button className="btn">Send Form</button>
             </form>

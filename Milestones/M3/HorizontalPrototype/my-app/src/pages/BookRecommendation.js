@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import './StyleSheets/OptionRecommendation.css'
-import BookImage from './StyleSheets/alex-lvrs-2zDw14yCYqk-unsplash.jpg'
-import TVImage from './StyleSheets/clement-m-JIOP2qvo8yk-unsplash.jpg'
-import VideoImage from './StyleSheets/leon-bublitz-uDTzfsGJihw-unsplash.jpg'
+import './stylesheets/OptionRecommendation.css'
+import BookImage from './stylesheets/alex-lvrs-2zDw14yCYqk-unsplash.jpg'
+import TVImage from './stylesheets/clement-m-JIOP2qvo8yk-unsplash.jpg'
+import VideoImage from './stylesheets/leon-bublitz-uDTzfsGJihw-unsplash.jpg'
 
 const BookRecommendationPage= () => {
     return( 

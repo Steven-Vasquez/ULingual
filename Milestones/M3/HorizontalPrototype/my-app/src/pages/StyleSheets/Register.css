@@ -40,7 +40,6 @@
     padding-top: 10px;
     padding-left: 45px;
     padding-bottom: 10px;
-
 }
 
 .register-form button{
@@ -53,9 +52,14 @@
     text-decoration: underline;
 }
 
+.TOS a:hover{
+    color: whitesmoke;
+}
+
 .register-form button:hover{
     background-color: whitesmoke;
 }
+
 
 
 

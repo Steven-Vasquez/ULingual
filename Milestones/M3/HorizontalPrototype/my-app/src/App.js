@@ -23,6 +23,7 @@ import Forum1 from './pages/Forum1';
 import BookRecommendationPage from './pages/BookRecommendation';
 import VideoRecommendationPage from './pages/VideoRecommendation';
 import TVShowRecommendationPage from './pages/TVShowRecommendation';
+import TermsAndConditions from './pages/Terms&Conditions';
 
 function App() {
   
@@ -50,6 +51,7 @@ function App() {
           <Route path="/BookRecommendation" element={<BookRecommendationPage/>}/>
           <Route path="/VideoRecommendation" element={<VideoRecommendationPage/>}/>
           <Route path="/TVShowRecommendation" element={<TVShowRecommendationPage/>}/>
+          <Route path="/TermsAndConditions" element={<TermsAndConditions/>}/>
           <Route path="/Forum1" element={<Forum1/>}/>
         </Routes>
       <Footer />

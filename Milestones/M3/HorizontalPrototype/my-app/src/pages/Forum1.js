@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import './StyleSheets/Forum1.css'
+import './stylesheets/Forum1.css'
 
 const Forum1 = () => {
     return( 

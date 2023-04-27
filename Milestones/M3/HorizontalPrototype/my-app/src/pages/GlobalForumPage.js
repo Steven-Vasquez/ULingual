@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import './StyleSheets/GlobalForumPage.css'
+import './stylesheets/GlobalForumPage.css'
 
 const GlobalForumPage = () => {
     return( 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import './StyleSheets/VideoRoom.css'
+import './stylesheets/VideoRoom.css'
 
 const VideoRoomPage = () => {
     return( 

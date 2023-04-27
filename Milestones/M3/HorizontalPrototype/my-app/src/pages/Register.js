@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './stylesheets/Register.css';
+import { Link } from "react-router-dom";
 
 
 
@@ -64,7 +65,11 @@ const Register = () => {
                         />
                     </div>
                     <div className="TOS">
-                        <label>Accept Terms & Conditions</label>
+                        <label>
+                            <Link to="/TermsAndConditions">
+                            Accept Terms & Conditions
+                            </Link>
+                        </label>
                         <input type="checkbox" required/>
                     </div>
                     <button onClick={createAccount}>Create Account</button>  
