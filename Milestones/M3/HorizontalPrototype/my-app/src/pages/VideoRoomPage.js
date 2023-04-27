@@ -36,7 +36,7 @@ const VideoRoomPage = () => {
                 <span class="button__text">Lesson</span>
                 </a>
 
-                <a href="ExercisePage" class="button">
+                <a href="Exercise1Page" class="button">
                 <span class="button__text">Exercise</span>
                 </a>
 

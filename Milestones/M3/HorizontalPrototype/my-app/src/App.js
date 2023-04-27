@@ -13,9 +13,9 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import MainContent from './components/Maincontent';
 import Dashboard from './pages/Dashboard';
-import Exercise from './pages/ExercisePage';
+import Exercise1Page from './pages/Exercise1Page';
 import FriendsList from './pages/FriendsListPage';
-import Lesson from './pages/LessonPage';
+import Lesson from './pages/Lesson1Page';
 import VideoRoomPage from './pages/VideoRoomPage';
 import RecommendationPage from './pages/RecommendationPage';
 import GlobalForumPage from './pages/GlobalForumPage.js';
@@ -24,6 +24,12 @@ import BookRecommendationPage from './pages/BookRecommendation';
 import VideoRecommendationPage from './pages/VideoRecommendation';
 import TVShowRecommendationPage from './pages/TVShowRecommendation';
 import TermsAndConditions from './pages/Terms&Conditions';
+import ExerciseAns1 from './pages/ExerciseAns1';
+import Exercise2Page from './pages/Exercise2Page';
+import ExerciseAns2 from './pages/ExerciseAns2';
+import ExerciseResults from './pages/ExerciseResults';
+import Lesson2Page from './pages/Lesson2Page';
+import LessonComplete from './pages/LessonComplete';
 
 function App() {
   
@@ -42,7 +48,7 @@ function App() {
           <Route path="/SearchResults/" element={<Results/>}/>
           <Route path="/Pricing&Plans" element={<Pricing/>}/>
           <Route path="/Dashboard" element={<Dashboard/>}/>
-          <Route path="/ExercisePage" element={<Exercise/>}/>
+          <Route path="/Exercise1Page" element={<Exercise1Page/>}/>
           <Route path="/FriendsList" element={<FriendsList/>}/>
           <Route path="/GlobalForumPage" element={<GlobalForumPage/>}/>
           <Route path="/LessonPage" element={<Lesson/>}/>
@@ -53,6 +59,12 @@ function App() {
           <Route path="/TVShowRecommendation" element={<TVShowRecommendationPage/>}/>
           <Route path="/TermsAndConditions" element={<TermsAndConditions/>}/>
           <Route path="/Forum1" element={<Forum1/>}/>
+          <Route path="/ExerciseAns1" element={<ExerciseAns1/>}/>
+          <Route path="/ExerciseAns2" element={<ExerciseAns2/>}/>
+          <Route path="/Exercise2Page" element={<Exercise2Page/>}/>
+          <Route path="/ExerciseResults" element={<ExerciseResults/>}/>
+          <Route path="/Lesson2Page" element={<Lesson2Page/>}/>
+          <Route path="/LessonComplete" element={<LessonComplete/>}/>
         </Routes>
       <Footer />
       </Router>

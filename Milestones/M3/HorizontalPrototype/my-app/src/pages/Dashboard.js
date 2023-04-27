@@ -17,7 +17,7 @@ const Dashboard = () => {
                 <div class="button__drow2"></div>
                 </a>
 
-                <a href="ExercisePage" class="button">
+                <a href="Exercise1Page" class="button">
                 <div class="button__line"></div>
                 <div class="button__line"></div>
                 <span class="button__text">Exercise</span>
