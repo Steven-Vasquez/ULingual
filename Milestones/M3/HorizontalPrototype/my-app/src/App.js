@@ -30,6 +30,10 @@ import ExerciseAns2 from './pages/ExerciseAns2';
 import ExerciseResults from './pages/ExerciseResults';
 import Lesson2Page from './pages/Lesson2Page';
 import LessonComplete from './pages/LessonComplete';
+import TutorProfile from './pages/TutorProfile';
+import UserProfile from './pages/UserProfile';
+import UserProfileEdit from './pages/UserProfileEdit';
+
 
 function App() {
   
@@ -45,7 +49,7 @@ function App() {
           <Route path="/FAQ" element={<FAQ/>}/>
           <Route path="AboutUs" element={<AboutUs/>}/>
           <Route path="/register" element={<Register/>}/>
-          <Route path="/SearchResults/" element={<Results/>}/>
+          <Route path="/SearchResults" element={<Results/>}/>
           <Route path="/Pricing&Plans" element={<Pricing/>}/>
           <Route path="/Dashboard" element={<Dashboard/>}/>
           <Route path="/Exercise1Page" element={<Exercise1Page/>}/>
@@ -58,6 +62,9 @@ function App() {
           <Route path="/VideoRecommendation" element={<VideoRecommendationPage/>}/>
           <Route path="/TVShowRecommendation" element={<TVShowRecommendationPage/>}/>
           <Route path="/TermsAndConditions" element={<TermsAndConditions/>}/>
+          <Route path="/TutorProfile" element={<TutorProfile/>}/>
+          <Route path="/UserProfile" element={<UserProfile/>}/>
+          <Route path="/UserProfileEdit" element={<UserProfileEdit/>}/>
           <Route path="/Forum1" element={<Forum1/>}/>
           <Route path="/ExerciseAns1" element={<ExerciseAns1/>}/>
           <Route path="/ExerciseAns2" element={<ExerciseAns2/>}/>

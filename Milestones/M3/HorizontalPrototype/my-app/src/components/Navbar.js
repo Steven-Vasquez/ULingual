@@ -16,7 +16,7 @@ const Navbar = () => {
 
     const handleSearchSubmit = (event) => {
         event.preventDefault();
-        navigate(`/SearchResults?search=${searchQuery}`);
+        // navigate(`/SearchResults?search=${searchQuery}`);
     }
 
     const handleSearchInputChange = (event) => {
@@ -53,8 +53,12 @@ const Navbar = () => {
                             <li className='drop-menu-item'>
                                 <Link to="/Dashboard">Dashboard</Link>
                             </li>
-                            <li className='drop-menu-item'>Profile</li>
-                            <li className='drop-menu-item'>Sign Out</li>
+                            <li className='drop-menu-item'>
+                                <Link to="/UserProfile">Profile</Link>
+                            </li>
+                            <li className='drop-menu-item'>
+                                <Link to="/">Sign Out</Link>
+                            </li>
                         </ul>
                     </div>
                 </li>
