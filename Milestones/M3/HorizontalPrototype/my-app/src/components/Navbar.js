@@ -50,6 +50,9 @@ const Navbar = () => {
                     </div>
                     <div className={`drop-menu ${open ? 'active' : 'inactive'}`}>
                         <ul>
+                        <li className='drop-menu-item'>
+                                <Link to="/Login">Login</Link>
+                            </li>
                             <li className='drop-menu-item'>
                                 <Link to="/Dashboard">Dashboard</Link>
                             </li>
@@ -57,7 +60,7 @@ const Navbar = () => {
                                 <Link to="/UserProfile">Profile</Link>
                             </li>
                             <li className='drop-menu-item'>
-                                <Link to="/">Sign Out</Link>
+                                <Link to="/">Friends</Link>
                             </li>
                         </ul>
                     </div>
