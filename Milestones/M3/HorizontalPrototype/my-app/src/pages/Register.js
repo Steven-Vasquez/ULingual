@@ -83,7 +83,11 @@ const Register = () => {
                         </label>
                         <input type="checkbox" required/>
                     </div>
-                    <button onClick={createAccount}>Create Account</button>  
+                    <button onClick={createAccount} className="reg-1">
+                        <Link to="/Login">
+                        Create Account
+                        </Link>
+                        </button>  
             </form>
         </div>
     </div>

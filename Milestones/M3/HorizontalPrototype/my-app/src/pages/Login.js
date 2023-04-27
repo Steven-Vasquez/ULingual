@@ -44,7 +44,9 @@ function Login() {
                         />
                     </div> 
                      
-                    <button onClick={login}>Login</button> 
+                    <button onClick={login} className='log-1'>
+                        <Link to="/Dashboard">Login</Link>
+                        </button> 
                     <p>
                         <Link to ='/register'>New User?</Link>
                     </p>
