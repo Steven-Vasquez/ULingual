@@ -8,12 +8,16 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
 
+    const [firstnameReg, setFirstnameReg] = useState("");
+    const [lastnameReg, setLastnameReg] = useState("");
     const [usernameReg, setUsernameReg] = useState("");
     const [passwordReg, setPasswordReg] = useState("");
     const [emailReg, setEmailReg] = useState("");
   
     const createAccount = () => {
         axios.post("http://50.18.108.83:3001/register", {
+            Ufirstname: firstnameReg,
+            Ulastname: lastnameReg,
             Uusername: usernameReg,
             Upassword: passwordReg,
             Uemail: emailReg
@@ -34,11 +38,18 @@ const Register = () => {
 
                     <div>
                     <label>First Name:</label>
-                        <input type={'text'} name="Username"></input>
+                        <input type={'text'} name="Username"
+                        onChange={(e) => {
+                            setFirstnameReg(e.target.value)
+                        }}
+                        ></input>
                     </div>
                     <div>
                     <label>Last Name:</label>
-                        <input type={'text'} name="Username"></input>
+                        <input type={'text'} name="Username"
+                        onChange={(e) => {
+                            setLastnameReg(e.target.value)
+                        }}></input>
                     </div>
                     <div>
                         <label>Username:</label>
