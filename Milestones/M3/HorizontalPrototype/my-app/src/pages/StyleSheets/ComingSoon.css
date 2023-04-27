@@ -6,6 +6,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  color: white;
 }
 
 /*
@@ -41,22 +42,10 @@ body {
 */
 
 .center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  margin: auto;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(75, 75, 250, 0.3);
   border-radius: 3px;
-}
-
-.center h1 {
-  text-align: center;
-  color: white;
-  font-family: 'Source Code Pro', monospace;
-  text-transform: uppercase;
+  color: Black;
 }

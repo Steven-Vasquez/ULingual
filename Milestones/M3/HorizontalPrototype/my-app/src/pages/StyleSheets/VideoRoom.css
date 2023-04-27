@@ -1,0 +1,75 @@
+.containervr{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 70px 80px;
+    grid-gap: 10px;
+    padding: 25px;
+    height: 83vh;
+    background-color: #707070;
+  }
+  
+  .containervr1{
+    column-span: all;
+    color: white;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-color: blue;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .containervr2{
+    color:black;
+    background-color: white;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .containervr3 .button__text{
+    color:black;
+    background-color: white;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  
+  .containervr4 .button__text{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    background-color: white;
+    color: green;
+  }
+ 
+  .innercontainervr3{
+
+  }
+  .innercontainervr4{
+    
+  }
+
+
+.containervr5{
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+.containervr3 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+.containervr4 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }

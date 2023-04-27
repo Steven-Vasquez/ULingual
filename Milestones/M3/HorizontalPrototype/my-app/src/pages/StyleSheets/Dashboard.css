@@ -1,35 +1,33 @@
 .container {
   background-color: var(--secondary);
-  display:flex;
+  display: flex;
   flex-direction: column;
-  --line_color : white ;
-  --back_color : #AAF0C1; 
-  margin: auto;
+  justify-content: center;
+  align-items: center;
+  --line_color: white;
+  --back_color: #AAF0C1; 
   height: 83vh;
-  width: 100vw;
+  width: auto;
+  box-sizing: border-box;
 }
 
 .header {
-  order: 1;
   color: white;
   display: flex;
-  flex-direction: center;
   justify-content: center;
-  margin-top: 180px;
+  align-items: center; 
+
+  margin-top: 200px;
 }
 
 .check {
-  order: 2;
   color: white;
   display: flex;
-  flex-direction: center;
   justify-content: center;
-  position: absolute;
-  margin: auto;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  align-items: center; 
+  margin-top: 200px;
 }
+
 .button{
   order:2;
   position : relative ;
