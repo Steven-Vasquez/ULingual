@@ -12,7 +12,7 @@ const UserProfile = () => {
             </div>
             <div className="UserDetails1">
                 <h3>
-                    <
+                    <ul>
                         <div className="desc1" >
                             <li>Description</li>
                         </div>
