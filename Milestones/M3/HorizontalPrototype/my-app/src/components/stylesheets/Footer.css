@@ -1,0 +1,20 @@
+
+footer{
+    background-color: var(--primary);
+    height: 75px;
+}
+.footing-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    margin: auto;
+}
+
+.footing-item li{
+    font-size: 22px;
+}
+
+.footing-item li :hover{
+    color: white;
+}
