@@ -8,7 +8,7 @@
     background-color: #707070;
   }
   
-  .containerEx1{
+  .containerEx1 {
     display: grid;
     grid-gap: 20px;
     padding: 25px;
@@ -19,6 +19,9 @@
     background-color: white;
     justify-content: center;
     align-items: center;
+  }
+  .containerEx1 h2{
+    color: black;
   }
   
   .containerEx2{
@@ -109,11 +112,12 @@
   /*------------------------------------------------*/
   .containerAns{
     display: grid;
+    height: 90;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.35fr 1fr 0.5fr 0.5fr;
     grid-gap: 10px;
     padding: 25px; 
-    height: 83vh;
+    height: 100vh;
     background-color: #707070;
   }
   
@@ -211,7 +215,15 @@
         grid-column-start: 2;
         grid-column-end: 3;
       }
-  
+      .innercontainerAns135 h2{
+        color: black;
+      }
+      .containerAns1 h2{
+        color: black;
+      }
+      .innercontainerEx35 h2{
+        color: black;
+      }
   .containerAns5{
     display: grid;
       grid-template-columns: 1fr 1fr 1fr;

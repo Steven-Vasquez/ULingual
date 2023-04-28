@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import './stylesheets/Recommendation.css'
 import BookImage from './stylesheets/alex-lvrs-2zDw14yCYqk-unsplash.jpg'
-import TVImage from './stylesheets/clement-m-JIOP2qvo8yk-unsplash.jpg'
+import MusicImage from './stylesheets/filip-5LhSaUDgtZ8-unsplash.jpg'
 import VideoImage from './stylesheets/leon-bublitz-uDTzfsGJihw-unsplash.jpg'
 
 const RecommendationPage= () => {
@@ -40,13 +40,13 @@ const RecommendationPage= () => {
 
         <div class="container4">
                 <div class="innercontainer1">
-                <a href="TVShowRecommendation" class="button">
-                <img src={TVImage} alt="Book Recommendation"></img>
+                <a href="MusicRecommendation" class="button">
+                <img src={MusicImage} alt="Music Recommendation"></img>
                 </a>
                 </div>
                 <div class="innercontainer2">
                 <a href="TVShowRecommendation" class="button">
-                <span class="button__text">TV Show Recommendation</span>
+                <span class="button__text">Music Recommendation</span>
                 </a>
                 </div>
         </div>

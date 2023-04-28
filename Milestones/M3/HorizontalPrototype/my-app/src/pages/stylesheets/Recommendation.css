@@ -4,8 +4,8 @@
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 35px;
     padding: 50px;
+    height: 100vh;
   }
-  
   .container1{
     column-span: all;
     grid-column-start: 1;
@@ -38,7 +38,11 @@
     grid-column-end: 2;
     background-color: lightcyan;
   }
-  
+
+  .button-text{
+color: black;
+  }
+
 .container5{
     grid-row-start: 4;
     grid-row-end: 5;

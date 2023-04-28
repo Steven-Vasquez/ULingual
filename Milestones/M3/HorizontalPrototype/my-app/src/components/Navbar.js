@@ -60,7 +60,7 @@ const Navbar = () => {
                                 <Link to="/UserProfile">Profile</Link>
                             </li>
                             <li className='drop-menu-item'>
-                                <Link to="/">Friends</Link>
+                                <Link to="/FriendsListPage">Friends</Link>
                             </li>
                         </ul>
                     </div>

@@ -1,23 +1,26 @@
-.user-entire{
-    height: 900px;
+.user-entire1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.UserProfile {
+.UserProfile1 {
     background-color: var(--secondary);
     padding: 5%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 70px;
     color: white;
     width: 900px;
     height: 800px;
     border-radius: 10px;
-    margin-left: 400px;
-    margin-top: 100px;
+    margin: auto;
 }
 
 
-.UserProfile .User-Info{
+.UserProfile1 .User-Info1{
     display: flex;
     flex-direction: row;
     justify-content: space-between; 
@@ -25,45 +28,45 @@
 
 }
 
-.UserProfile .User-Info img {
+.UserProfile1 .User-Info img1 {
     border-radius: 50%;
     border-style: solid;
     border-color: var(--mint-green);
  
 }
-.User-Info h2{
+.User-Info1 h2{
     font-size: 35px;
     margin-left: -100px;
     color: var(--mint-green);
 }
 
-.UserDetails h3{
+.UserDetails1 h3{
     margin-top:-200px;
     color: var(--mint-green);
 }
 
-.UserDetails h4{
+.UserDetails1 h4{
     font-size: 22px;
     margin-top:-34.5px;
     margin-left: 600px;
     text-decoration: underline;
     color: var(--mint-green);
 }
-.desc li{
+.desc1 li{
     border-radius: 10px;
     border-style: solid;
     margin-top: 10px;
     border-color: black;
     margin-bottom: 25px;
 }
-.friends li{
+.friends1 li{
     border-radius: 10px;
     border-style: solid;
     border-color: black;
     margin-top: 10px;
     margin-bottom: 25px;
 }
-.lang-sel li{
+.lang-sel1 li{
     border-radius: 10px;
     border-style: solid;
     border-color: black;
@@ -71,13 +74,13 @@
     margin-bottom: 25px;
 }
 
-.UserProfile label{
+.UserProfile1 label{
     border-radius: 10px;
     border-style: solid;
     border-color: var(--mint-green);
     background-color: black;
 }
 
-.UserProfile label:hover{
+.UserProfile1 label:hover{
     border-color: whitesmoke;
 }

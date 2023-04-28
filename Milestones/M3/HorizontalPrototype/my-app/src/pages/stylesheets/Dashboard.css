@@ -9,6 +9,11 @@
   height: 83vh;
   width: auto;
   box-sizing: border-box;
+   display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 35px;
+    padding: 50px;
 }
 
 .header {

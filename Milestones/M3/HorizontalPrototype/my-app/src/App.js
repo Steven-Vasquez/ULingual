@@ -22,7 +22,7 @@ import GlobalForumPage from './pages/GlobalForumPage.js';
 import Forum1 from './pages/Forum1';
 import BookRecommendationPage from './pages/BookRecommendation';
 import VideoRecommendationPage from './pages/VideoRecommendation';
-import TVShowRecommendationPage from './pages/TVShowRecommendation';
+import MusicRecommendationPage from './pages/MusicRecommendation';
 import TermsAndConditions from './pages/Terms&Conditions';
 import ExerciseAns1 from './pages/ExerciseAns1';
 import Exercise2Page from './pages/Exercise2Page';
@@ -33,6 +33,7 @@ import LessonComplete from './pages/LessonComplete';
 import TutorProfile from './pages/TutorProfile';
 import UserProfile from './pages/UserProfile';
 import UserProfileEdit from './pages/UserProfileEdit';
+import FriendsProfile from './pages/FriendsProfile';
 
 
 function App() {
@@ -53,14 +54,14 @@ function App() {
           <Route path="/Pricing&Plans" element={<Pricing/>}/>
           <Route path="/Dashboard" element={<Dashboard/>}/>
           <Route path="/Exercise1Page" element={<Exercise1Page/>}/>
-          <Route path="/FriendsList" element={<FriendsList/>}/>
+          <Route path="/FriendsListPage" element={<FriendsList/>}/>
           <Route path="/GlobalForumPage" element={<GlobalForumPage/>}/>
           <Route path="/LessonPage" element={<Lesson/>}/>
           <Route path="/VideoRoomPage" element={<VideoRoomPage/>}/>
           <Route path="/RecommendationPage" element={<RecommendationPage/>}/>
           <Route path="/BookRecommendation" element={<BookRecommendationPage/>}/>
           <Route path="/VideoRecommendation" element={<VideoRecommendationPage/>}/>
-          <Route path="/TVShowRecommendation" element={<TVShowRecommendationPage/>}/>
+          <Route path="/MusicRecommendation" element={<MusicRecommendationPage/>}/>
           <Route path="/TermsAndConditions" element={<TermsAndConditions/>}/>
           <Route path="/TutorProfile" element={<TutorProfile/>}/>
           <Route path="/UserProfile" element={<UserProfile/>}/>
@@ -72,6 +73,7 @@ function App() {
           <Route path="/ExerciseResults" element={<ExerciseResults/>}/>
           <Route path="/Lesson2Page" element={<Lesson2Page/>}/>
           <Route path="/LessonComplete" element={<LessonComplete/>}/>
+          <Route path="/FriendsProfile" element={<FriendsProfile/>}/>
         </Routes>
       <Footer />
       </Router>
