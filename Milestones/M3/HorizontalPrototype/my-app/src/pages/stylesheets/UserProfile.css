@@ -70,6 +70,9 @@
     margin-top: 10px;
     margin-bottom: 25px;
 }
+.lang-sel li:hover{
+    background-color: whitesmoke;
+}
 
 .UserProfile label{
     border-radius: 10px;
