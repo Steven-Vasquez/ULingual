@@ -74,6 +74,8 @@ function App() {
           <Route path="/ExerciseResults" element={<ExerciseResults/>}/>
           <Route path="/Lesson2Page" element={<Lesson2Page/>}/>
           <Route path="/LessonComplete" element={<LessonComplete/>}/>
+          <Route path="/FriendsProfile" element={<FriendsProfile/>}/>
+          <Route path="/SelectLanguage" element={<SelectLanguage/>}/>
         </Routes>
       <Footer />
       </Router>
