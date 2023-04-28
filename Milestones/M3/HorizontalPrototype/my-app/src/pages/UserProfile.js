@@ -25,7 +25,6 @@ const UserProfile = () => {
                             </Link>
                         </div>
                         <div className="lang-sel1">
-                            <li>Language Selected</li>
                             <Link to="/UserProfileEdit">Edit Profile</Link>
                         </div>
                     </ul>
