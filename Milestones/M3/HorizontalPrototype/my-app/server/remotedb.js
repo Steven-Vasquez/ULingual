@@ -11,6 +11,10 @@ const fs = require('fs');
 const cors = require('cors');
 
 const app = express();
+
+//CORS middleware to allow cross-origin requests
+app.use(cors());
+
 const port = 3001;
 
 app.use(express.json());
@@ -63,8 +67,7 @@ const SSHConnection = new Promise((resolve, reject) => {
     }).connect(tunnelConfig);
 });
 
-//CORS middleware to allow cross-origin requests
-app.use(cors());
+
 
 
 // API endpoint that returns all the users from the database
