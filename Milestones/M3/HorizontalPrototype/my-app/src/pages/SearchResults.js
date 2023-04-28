@@ -30,16 +30,23 @@ const Results = () => {
     return(
       <div className="Seach-Results">
         <h2>Search from Database</h2>
-        <div className="search-bar">
+        {/* <div className="search-bar">
           <input type="text" placeholder="Seach Users or Tutors..." id="search Input">
           </input>
+        </div> */}
+
+        <div>
+          <ul>
+            {tutors.map(tutor => (
+              <li key={tutor.TutorID}>
+                <h3>{tutor.TutorFirstName} {tutor.TutorLastName}'s contact information:</h3>
+                <p>Email: {tutor.TutorEmail}</p>
+                <p>Phone Number: {tutor.TutorPhone}</p>
+              </li>
+              ))}
+          </ul>
         </div>
-        <ul>
-          <li>test</li>
-          <li>test</li>
-          <li>test</li>
-          <li>test</li>
-        </ul>
+
       </div>
     );
 
