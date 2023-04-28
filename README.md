@@ -29,8 +29,7 @@
 
 |             Name of the Project               |                            URL of the Project                          | 
 |                    :---:                      |                                 :---:                                  |
-<<<<<<< HEAD
-| ULingual | http://54.176.217.157 |
+| ULingual | http://50.18.108.83/  |
 
 =======
 | ULingual | http://50.18.108.83/ |
