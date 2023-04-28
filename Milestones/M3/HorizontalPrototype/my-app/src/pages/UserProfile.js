@@ -19,6 +19,11 @@ const UserProfile = () => {
                         <div className="friends1">
                             <li>Friends</li>
                         </div>
+                        <div className="lang-sel">
+                            <Link to="/SelectLanguage">
+                            <li>Language Selected</li>
+                            </Link>
+                        </div>
                         <div className="lang-sel1">
                             <li>Language Selected</li>
                             <Link to="/UserProfileEdit">Edit Profile</Link>
