@@ -15,6 +15,7 @@ const port = 3001;
 
 app.use(express.json());
 
+
 const dbServer = {
     host: 'database-1.cjhdgriivebl.us-west-1.rds.amazonaws.com',
     port: '3306',
@@ -136,17 +137,17 @@ app.get('/tutors', (req, res) => {
 });
 
 // API endpoint that returns a search retult for tutors from the database
-// app.get('/tutors/search', (req, res) => {
-//   const search = req.query.search;
-//   const sql = `SELECT * FROM Tutors WHERE TutorFirstName LIKE '%${search}%' OR TutorLastName LIKE '%${search}%'`;
-//   db.query(sql, (error, result) => {
-//     if (error) {
-//       console.error(error.message);
-//       return;
-//     }
-//     res.send(result);
-//   });
-// });
+app.get('/tutors/search', (req, res) => {
+  const search = req.query.search;
+  const sql = `SELECT * FROM Tutors WHERE TutorFirstName LIKE '%${search}%' OR TutorLastName LIKE '%${search}%'`;
+  db.query(sql, (error, result) => {
+    if (error) {
+      console.error(error.message);
+      return;
+    }
+    res.send(result);
+  });
+});
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

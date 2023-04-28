@@ -11,17 +11,17 @@ const Navbar = () => {
     const handleClick = () => setClick(!click)
     const [open, setOpen] = useState(false);
 
-    // const [searchQuery, setSearchQuery] = useState('');
-    // const navigate = useNavigate();
+    const [searchQuery, setSearchQuery] = useState('');
+    const navigate = useNavigate();
 
-    // const handleSearchSubmit = (event) => {
-    //     event.preventDefault();
-    //     // navigate(`/SearchResults?search=${searchQuery}`);
-    // }
+    const handleSearchSubmit = (event) => {
+        event.preventDefault();
+        navigate(`/SearchResults?search=${searchQuery}`);
+    }
 
-    // const handleSearchInputChange = (event) => {
-    //     setSearchQuery(event.target.value);
-    // }
+    const handleSearchInputChange = (event) => {
+        setSearchQuery(event.target.value);
+    }
     
     return (
         <div className="navbar">
@@ -33,8 +33,8 @@ const Navbar = () => {
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
 
                 <div className="nav-search-item">
-                <form name="search" /*onSubmit={handleSearchSubmit}*/>
-                        <input type="text" placeholder="Search..." /*value={searchQuery} onChange={handleSearchInputChange} *//>
+                <form name="search" onSubmit={handleSearchSubmit}>
+                        <input type="text" placeholder="Search..." value={searchQuery} onChange={handleSearchInputChange} />
                     </form>
                 </div>
                 <li className="nav-item">

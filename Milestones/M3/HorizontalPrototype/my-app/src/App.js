@@ -7,7 +7,7 @@ import ContactPage from './pages/ContactUsPage';
 import FAQ from './pages/FaqPage';
 import AboutUs from './pages/AboutUs';
 import Register from './pages/Register';
-// import Results from './pages/SearchResults';
+import Results from './pages/SearchResults';
 import Pricing from './pages/Pricing&Plans';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -49,7 +49,7 @@ function App() {
           <Route path="/FAQ" element={<FAQ/>}/>
           <Route path="AboutUs" element={<AboutUs/>}/>
           <Route path="/register" element={<Register/>}/>
-          {/* <Route path="/SearchResults" element={<Results/>}/> */}
+          <Route path="/SearchResults" element={<Results/>}/>
           <Route path="/Pricing&Plans" element={<Pricing/>}/>
           <Route path="/Dashboard" element={<Dashboard/>}/>
           <Route path="/Exercise1Page" element={<Exercise1Page/>}/>

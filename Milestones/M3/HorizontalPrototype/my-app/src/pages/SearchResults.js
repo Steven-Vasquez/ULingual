@@ -1,48 +1,56 @@
-// import React, { useState, useEffect} from 'react'
-// import axios from 'axios'
-// import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect} from 'react'
+import axios from 'axios'
+import { useLocation } from 'react-router-dom';
 
-// import './stylesheets/SearchResults.css'
-// //import queryString from 'query-string';
+import './stylesheets/SearchResults.css'
+import queryString from 'query-string';
 
-// const Results = () => {
-//   // const location = useLocation();
-//   // const queryParams = queryString.parse(location.search);
+const Results = () => {
+  const location = useLocation();
+  const queryParams = queryString.parse(location.search);
 
-//   // console.log(queryParams.search);
+  console.log(queryParams.search);
 
-//   // const [tutors, setTutors] = useState([]);
+  const [tutors, setTutors] = useState([]);
 
-//   // // useEffect(() => {
-//   //     if(queryParams.search) {
-//   //       axios.get(`http://50.18.108.83/:3001/tutors/search?search=${queryParams.search}`)
-//   //         .then(res => {
-//   //           setTutors(res.data);
-//   //           console.log("Tutors retrieved via search");
-//   //         })
-//   //         .catch(err => {
-//   //           console.log("Error: Tutors not retrieved via search");
-//   //           console.log(err);
-//   //         });
-//   //     }
-//   //   },[]);
-//   //   console.log(tutors);
-//     return(
-//       <div className="Seach-Results">
-//         <h2>Search from Database</h2>
-//         <div className="search-bar">
-//           <input type="text" placeholder="Seach Users or Tutors..." id="search Input">
-//           </input>
-//         </div>
-//         <ul>
-//           <li>test</li>
-//           <li>test</li>
-//           <li>test</li>
-//           <li>test</li>
-//         </ul>
-//       </div>
-//     );
+  useEffect(() => {
+      if(queryParams.search) {
+        axios.get(`http://50.18.108.83/:3001/tutors/search?search=${queryParams.search}`)
+          .then(res => {
+            setTutors(res.data);
+            console.log("Tutors retrieved via search");
+          })
+          .catch(err => {
+            console.log("Error: Tutors not retrieved via search");
+            console.log(err);
+          });
+      }
+    },[queryParams]);
+    console.log(tutors);
 
-// }
+    return(
+      <div className="Seach-Results">
+        <h2>Search from Database</h2>
+        <div className="search-bar">
+          <input type="text" placeholder="Seach Users or Tutors..." id="search Input">
+          </input>
+        </div>
 
-// export default Results;
+        <div>
+          <ul>
+            {tutors.map(tutor => (
+              <li key={tutor.TutorID}>
+                <h3>{tutor.FirstName} {tutor.LastName}'s contact information:</h3>
+                <p>Email: {tutor.TutorEmail}</p>
+                <p>Phone Number: {tutor.TutorPhone}</p>
+              </li>
+              ))}
+          </ul>
+        </div>
+
+      </div>
+    );
+
+}
+
+export default Results;
