@@ -21,6 +21,7 @@ const UserProfile = () => {
                         </div>
                         <div className="lang-sel1">
                             <li>Language Selected</li>
+                            </Link>
                         </div>
                     </ul>
                 </h3>
@@ -34,4 +35,3 @@ const UserProfile = () => {
 }
 
 export default UserProfile;
-
