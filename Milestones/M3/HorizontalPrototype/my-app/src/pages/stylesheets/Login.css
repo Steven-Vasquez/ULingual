@@ -44,6 +44,11 @@
     padding-bottom: 10px;
 }
 
+.login-sectioning span{
+    color:rgb(253, 34, 122);
+    padding-left: 45px;
+}
+
 .login-form button{
     color: var(--primary);
     margin-top: 20px;
