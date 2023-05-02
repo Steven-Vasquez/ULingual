@@ -14,6 +14,10 @@ const port = 3001;
 
 app.use(express.json());
 
+// Password encryption
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 // Creating a connection to the MySQL database
 const db = mysql.createConnection({
   host: 'database-1.cjhdgriivebl.us-west-1.rds.amazonaws.com',
@@ -60,10 +64,66 @@ app.post('/register', (req, res) => {
   const Uusername = req.body.Uusername;
   const Upassword = req.body.Upassword;
   const Uemail = req.body.Uemail;
-  const sql = 'INSERT INTO Users (Ufirstname, Ulastname, Uusername, Upassword, Uemail) VALUES (?,?,?,?,?)';
+
+  // For username verification
+  const usernameQuery = 'SELECT * FROM Users WHERE Uusername = ?';
+  db.query(usernameQuery, [Uusername], (error, result) => {
+    if(error){
+      console.error(error.message);
+      return;
+    }
+    if (result.length > 0) { // 1. Check if the username already exists in the database
+      // 1a. If it does, send an error message
+      res.send({message: "Username already exists"});
+    }
+    const usernameRegex = /^[a-zA-Z0-9_]{4,20}$/;
+    if(usernameRegex.test(Uusername) === false) { // 2. Check that length is 4-20 chars, only contains letters, numbers, and underscores (no spaces)
+      // 2a. If it doesn't, send an error message
+      res.send({message: "Username must be 4-20 characters long and only contain letters, numbers, and underscores (no spaces)"});
+    }
+  });
+
+  // For email verification
+  const emailQuery = 'SELECT * FROM Users WHERE Uemail = ?';
+  db.query(emailQuery, [Uemail], (error, result) => {
+    if(error){
+      console.error(error.message);
+      return;
+    }
+    if (result.length > 0) { // 1. Check if the email already exists in the database
+      // 1a. If it does, send an error message
+      res.send({message: "Email already exists"});
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(emailRegex.test(Uemail) === false) { // 2. Check if email is a valid email 
+      res.send({message: "Email is not valid"});
+    }
+  });
   
+  // For password verification
+  // 1. At least 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number, 1 special character
+  const passwordChecker = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,}$/;
+  if(passwordChecker.test(Upassword) === false) { // 1a. If it doesn't, send an error message
+    res.send({message: "Password must be at least 8 characters long and contain at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character"});
+  }
+  // TODO: If password not equals confirm password then error
+
+  // Encrypt the password
+  let hashedPass = '';
+  bcrypt.genSalt(saltRounds, (err, salt) => {
+    bcrypt.hash(Upassword, salt, (err, hash) => {
+      if (err) {
+        console.error(err.message);
+        return;
+      }
+      hashedPass = hash;
+    });
+  });
+  
+  // Register the user in the database
+  const sql = 'INSERT INTO Users (Ufirstname, Ulastname, Uusername, Upassword, Uemail) VALUES (?,?,?,?,?)';
   db.query(sql, 
-    [Ufirstname, Ulastname, Uusername, Upassword, Uemail], 
+    [Ufirstname, Ulastname, Uusername, hashedPass, Uemail], 
     (error, result) => {
     if(error){
       console.error(error.message);
@@ -73,29 +133,40 @@ app.post('/register', (req, res) => {
   });
 });
 
+  // API endpoint that logs in a user
+  app.get('/login', (req, res) => {
+    const Uusername = req.body.Uusername;
+    const Upassword = req.body.Upassword;
 
-app.get('/login', (req, res) => {
-  const Uusername = req.body.Uusername;
-  const Upassword = req.body.Upassword;
-
-  const sql = 'SELECT * FROM Users WHERE Uusername = ? AND Upassword = ?';
-  
-  db.query(sql, 
-    [Uusername, Upassword], 
-    (error, result) => {
-    if(error){
-      //res.send({err: error})
-      console.error(error.message);
-      return;
-    }
-    if (result.length > 0) {
-      res.send(result);
-    }
-    else {
-      res.send({message: "Username or Password not found"})
-    }
+    const sql = 'SELECT * FROM Users WHERE Uusername = ?';
+    
+    db.query(sql, [Uusername], (error, result) => {
+      if(error){
+        //res.send({message: "Error logging in. No such user found (?)"})
+        console.error(error.message);
+        return;
+      }
+      if(result)
+      if (result.length > 0) { // User found
+        const user = result[0];
+        bcrypt.compare(Upassword, user.Upassword, (err, response) => {
+          if (err) {
+            console.error(err.message);
+            return;
+          }
+          if (response) {
+            res.send(user);
+          }
+          else {
+            res.send({message: "Username or Password not found"})
+          }
+        });
+      }
+      else { // User not found
+        res.send({message: "Username or Password not found"})
+      }
+    });
   });
-});
 
 // API endpoint that returns all the tutors from the database
 app.get('/tutors', (req, res) => {
