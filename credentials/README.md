@@ -31,10 +31,7 @@ To acess the ec2 instance you will need to run these commands.
         
         chmod 0400 <path to your .pem file>
     
-        ssh -i <path to your .pem file> ubuntu@<Public IPv4 Address of your instance>
-        
-        You can use: ec2-50-18-108-83.us-west-1.compute.amazonaws.com as the <Public IPv4 Address of your instance>
-        when ssh'ing.
+        ssh -i <path to your .pem file> ubuntu@ec2-50-18-108-83.us-west-1.compute.amazonaws.com
     
     This should give you access to the ec2 instance.
     I would then do the following command to have full control of instance.
@@ -42,16 +39,29 @@ To acess the ec2 instance you will need to run these commands.
     This will give you root access to the instance instead of being just a user.
     
     To login and Access the Database within the instance there are two ways.
-    1.)To access the root user, type the following commands.
-        mysql -u root -p
-    This will prompt you to enter a password, for this user its Bobby2480.
+    1.)To access the database, type the following commands.
+        mysql -h database-1.cjhdgriivebl.us-west-1.rds.amazonaws.com -P 3306 -u admin -p
+    This will prompt you to enter a password, for this user its password1.
         
     You should now be able to reach the mysql access part within the instance.
     If you run,
         show databases;
     
     You should be able to see the ULingualDB in the instance.
-        
+
+    2.)Accessing the database via MySQL Workbench.
+    Select the Setup New Connection button.
+    For your connection method, choose Standard TCP/IP over SSH.
+    Under the Parameters tab, input the following information:
+    SSH Hostname: ec2-50-18-108-83.us-west-1.compute.amazonaws.com
+    SSH Username: ubuntu
+    SSH Password: *No password, we'll be using the private key file below.*
+    SSH Key File: <path to key.pem file in this credentials folder>
+    MySQL Hostname: database-1.cjhdgriivebl.us-west-1.rds.amazonaws.com
+    MySQL Server Port: 3306
+    Username: admin
+    Password: password1
+    Default Schema: t6db
 
 # Most important things to Remember
 ## These values need to kept update to date throughout the semester. <br>
