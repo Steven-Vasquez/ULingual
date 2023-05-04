@@ -109,27 +109,24 @@ app.post('/register', (req, res) => {
   // TODO: If password not equals confirm password then error
 
   // Encrypt the password
-  let hashedPass = '';
   bcrypt.genSalt(saltRounds, (err, salt) => {
     bcrypt.hash(Upassword, salt, (err, hash) => {
       if (err) {
         console.error(err.message);
         return;
       }
-      hashedPass = hash;
+      // Register the user in the database
+      const sql = 'INSERT INTO Users (Ufirstname, Ulastname, Uusername, Upassword, Uemail) VALUES (?,?,?,?,?)';
+      db.query(sql, 
+        [Ufirstname, Ulastname, Uusername, hash, Uemail], 
+        (error, result) => {
+        if(error){
+          console.error(error.message);
+          return;
+        }
+        res.send(result);
+      });
     });
-  });
-  
-  // Register the user in the database
-  const sql = 'INSERT INTO Users (Ufirstname, Ulastname, Uusername, Upassword, Uemail) VALUES (?,?,?,?,?)';
-  db.query(sql, 
-    [Ufirstname, Ulastname, Uusername, hashedPass, Uemail], 
-    (error, result) => {
-    if(error){
-      console.error(error.message);
-      return;
-    }
-    res.send(result);
   });
 });
 

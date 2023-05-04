@@ -31,7 +31,7 @@ function Login() {
       };
 
     const login = () => {
-        axios.post("http://50.18.108.83:3001/login", {
+        axios.get("http://50.18.108.83:3001/login", {
             Uusername: usernameReg,
             Upassword: passwordReg,
         })
