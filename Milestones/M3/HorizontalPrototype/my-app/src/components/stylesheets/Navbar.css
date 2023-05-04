@@ -111,6 +111,7 @@ For smaller screens we display hamburger option menu.
     right: 20px;
     position: absolute;
     padding: 10px 20px;
+    z-index: 100;   /* Z index fixes the drop menu from disapearing*/
 }   
 .drop-menu::before{
     content: '';
