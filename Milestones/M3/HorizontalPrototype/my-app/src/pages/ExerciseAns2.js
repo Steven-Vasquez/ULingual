@@ -11,12 +11,12 @@ const ExerciseAns2 = () => {
     return( 
         <div class="containerEx">
             <div class="containerEx1">
-                <h2>Select true or false answer.</h2>
+                <h2>Select true or false.</h2>
             </div>
 
             <div class="containerEx3">
                 <div class="containerEx1">
-                <h2>1. What is new in French?</h2>
+                <h2>2. Does 'Bonjour' mean hello in French?</h2>
                 </div>
                 <div class="innercontainerAns31">
                 <a href="#" class="button" onClick={toggleNewPage}>

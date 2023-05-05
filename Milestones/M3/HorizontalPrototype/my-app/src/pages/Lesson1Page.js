@@ -5,7 +5,7 @@ import './stylesheets/Lesson.css'
 const LessonPage = () => {
     return( 
         <div class = "containerL">
-                <div class="container1">
+                <div class="containerL1">
                     <h1>Lessons</h1>
             </div>
     

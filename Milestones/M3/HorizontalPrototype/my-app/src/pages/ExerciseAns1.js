@@ -16,7 +16,7 @@ const ExerciseAns1 = () => {
 
             <div class="containerEx3">
                 <div class="containerEx1">
-                <h2>1. What is new in French?</h2>
+                <h2>1. What is "new" in French?</h2>
                 </div>
                 <div class="innercontainerAns31">
                 <a href="#" class="button" onClick={toggleNewPage}>

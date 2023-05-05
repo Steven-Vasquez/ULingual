@@ -4,7 +4,7 @@
   grid-template-rows: 0.35fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
   padding: 25px;
-  height: 83vh;
+  height: 950px;
   background-color: #707070;
 }
 
@@ -16,10 +16,13 @@
   color: black;
   grid-column-start: 1;
   grid-column-end: 4;
-  background-color: #707070;
+  background-color: #3f3f3f;
   color: white;
   justify-content: center;
   align-items: center;
+  border: 10px solid #f44336;
+  border-image: linear-gradient(to bottom right, #f44336, #2196f3) 1;
+
 }
 
 .forum-comment {

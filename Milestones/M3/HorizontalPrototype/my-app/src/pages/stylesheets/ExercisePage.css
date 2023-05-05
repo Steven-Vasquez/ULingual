@@ -119,7 +119,7 @@
   /*------------------------------------------------*/
   .containerAns{
     display: grid;
-    height: 90;
+    height: 950px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.35fr 1fr 0.5fr 0.5fr;
     grid-gap: 10px;
@@ -167,19 +167,19 @@
         grid-column-end: 4;
       }
     .innercontainerAns31{
-      background-color: lightgreen;
+      background-color: green;
       grid-column-start: 1;
       grid-column-end: 2;
     }
     .innercontainerAns32{
         color: whitesmoke;
-        background-color: red;
+        background-color: rgb(176, 11, 11);
       grid-column-start: 2;
       grid-column-end: 3;
     }
     .innercontainerAns33{
         color: whitesmoke;
-        background-color: red;
+        background-color: rgb(176, 11, 11);
       grid-column-start: 3;
       grid-column-end: 4;
     }
@@ -212,7 +212,7 @@
       }
       .innercontainerAns42{
           color: whitesmoke;
-          background-color: lightgreen;
+          background-color: green;
         grid-column-start: 1;
         grid-column-end: 2;
       }
@@ -297,9 +297,10 @@
 
 .innercontainerAns243{
     color: whitesmoke;
-    background-color: Red;
+    background-color: rgb(176, 11, 11);
   grid-column-start: 2;
   grid-column-end: 3;
+  height: 70px;
 }
 .exercise-results-button-text{
   color: white;

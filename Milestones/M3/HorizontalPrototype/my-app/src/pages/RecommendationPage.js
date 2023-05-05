@@ -7,10 +7,11 @@ import VideoImage from './stylesheets/leon-bublitz-uDTzfsGJihw-unsplash.jpg'
 
 const RecommendationPage= () => {
     return( 
+        <div class = "doublecontainer">
         <div class = "container">
             <div class="container1">
                 <h1>Recommendations</h1>
-        </div>
+                </div>
 
         <div class="container2">
                 <div class="innercontainer1">
@@ -53,6 +54,7 @@ const RecommendationPage= () => {
                 <a href="Dashboard" class="button">
                 <span class="button__text">Return</span>
                 </a>
+    </div>
     </div>
     );
 }
