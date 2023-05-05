@@ -111,40 +111,37 @@ app.post('/register', (req, res) => {
   });
 });
 
-  // API endpoint that logs in a user
-  app.get('/login', (req, res) => {
-    const Uusername = req.body.Uusername;
-    const Upassword = req.body.Upassword;
-
-    const sql = 'SELECT * FROM Users WHERE Uusername = ?';
-    
-    db.query(sql, [Uusername], (error, result) => {
-      if(error){
-        //res.send({message: "Error logging in. No such user found (?)"})
-        console.error(error.message);
-        return;
-      }
-      if(result)
-      if (result.length > 0) { // User found
-        const user = result[0];
-        bcrypt.compare(Upassword, user.Upassword, (err, response) => {
-          if (err) {
-            console.error(err.message);
-            return;
-          }
-          if (response) {
-            res.send(user);
-          }
-          else {
-            res.send({message: "Username or Password not found"})
-          }
-        });
-      }
-      else { // User not found
-        res.send({message: "Username or Password not found"})
-      }
-    });
+// API endpoint that logs in a user
+app.get('/login', (req, res) => {
+  const Uusername = req.query.Uusername;
+  const Upassword = req.query.Upassword;
+  
+  const sql = 'SELECT * FROM Users WHERE Uusername = ?';
+  db.query(sql, [Uusername], (error, result) => {
+    if(error){
+      //res.send({message: "Error logging in. No such user found (?)"})
+      console.error(error.message);
+      return;
+    }
+    if (result.length > 0) { // User found
+      const user = result[0];
+      bcrypt.compare(Upassword, user.Upassword, (err, response) => {
+        if (err) {
+          console.error(err.message);
+          return;
+        }
+        if (response) {
+          res.send(user);
+        }
+        else {
+          res.send({message: "Invalid Username/Password."})
+        }
+      });
+    } else { // User not found
+      res.send({message: "Invalid Username/Password."})
+    }
   });
+});
 
 // API endpoint that returns all the tutors from the database
 app.get('/tutors', (req, res) => {

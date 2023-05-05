@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import axios from "axios";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './stylesheets/Login.css'
 
 
@@ -8,39 +8,37 @@ function Login() {
     
     const [usernameReg, setUsernameReg] = useState("");
     const [passwordReg, setPasswordReg] = useState("");
+    const navigate = useNavigate();
 
-    const [errorMessage, setErrorMessage] = useState({
-        username: '',
-        password: '',
-    });
-
-    const validateUsername = (username) => {
-        let error = '';
-        if (username.trim() === '') {
-          error = 'Username is required!';
+    const login = (e) => {
+        e.preventDefault();
+        const allConditionsMet = (
+            usernameReg.trim().length > 0 &&
+            passwordReg.trim().length > 0
+        );
+        console.log(usernameReg);
+        if(allConditionsMet) {
+            axios.get("http://50.18.108.83:3001/login", {
+                params: {
+                    Uusername: usernameReg,
+                    Upassword: passwordReg
+                }
+            })
+            .then(res => {
+                if(typeof res.data.message !== 'undefined' && res.data.message.length > 0) {
+                    alert(res.data.message);
+                } else {
+                    alert(`Welcome back, ${usernameReg}!`)
+                    navigate(`/Dashboard`);
+                }
+                console.log(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        } else {
+            alert("Enter your Username and Password to Log In.");
         }
-        setErrorMessage((prevState) => ({ ...prevState, username: error }));
-      };
-
-      const validatePassword = (password) => {
-        let error = '';
-        if (password.trim() === '') {
-          error = 'Password is required!';
-        }
-        setErrorMessage((prevState) => ({ ...prevState, password: error }));
-      };
-
-    const login = () => {
-        axios.get("http://50.18.108.83:3001/login", {
-            Uusername: usernameReg,
-            Upassword: passwordReg,
-        })
-        .then(res => {
-            console.log(res.data);
-        })
-        .catch(err => {
-            console.log(err);
-        });
     }
  
     return(
@@ -50,27 +48,23 @@ function Login() {
                 <h1>Login</h1>  
                     <div className='login-sectioning'>
                         <label>Username:</label>
-                        <input type={'text'} name="Username" required
+                        <input type={'text'} placeholder="Username" required
                         onChange={(e) => {
                             setUsernameReg(e.target.value)
                         }}
-                        onBlur={(e) => validateUsername(e.target.value)}
-                        /> 
-                        {errorMessage.username && (<span className="error">{errorMessage.username}</span>)}
+                        />
                     </div>
                     <div className='login-sectioning'>
                         <label>Password:</label>
-                        <input type={'password'} name="Password" required
+                        <input type={'password'} placeholder="Password" required
                         onChange={(e) => {
                             setPasswordReg(e.target.value)
                         }}
-                        onBlur={(e) => validatePassword(e.target.value)}
                         />
-                        {errorMessage.password && (<span className="error">{errorMessage.password}</span>)}
                     </div> 
                      
-                    <button onClick={login} className='log-1'>
-                        <Link to="/Dashboard">Login</Link>
+                    <button onClick={(e) => login(e)} className='log-1'>
+                        Login
                     </button> 
                     <div className='lg-nu'>
                     <p>
