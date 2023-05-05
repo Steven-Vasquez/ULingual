@@ -71,10 +71,12 @@ function Login() {
                      
                     <button onClick={login} className='log-1'>
                         <Link to="/Dashboard">Login</Link>
-                        </button> 
+                    </button> 
+                    <div className='lg-nu'>
                     <p>
-                        <Link to ='/register'>New User?</Link>
+                        <Link to="/register">New User? Click Here!</Link>
                     </p>
+                    </div>
             </form>
         </div>
     </div>

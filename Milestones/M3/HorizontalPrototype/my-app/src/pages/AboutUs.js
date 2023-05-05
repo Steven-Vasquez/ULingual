@@ -4,7 +4,8 @@ import './stylesheets/AboutUs.css';
 
 const AboutUs = () => {
     return (
-        <div className="AboutUs">
+  <div className="ab-pg">
+    <div className="AboutUs">
       <h1>About Us: Our Mission</h1>
         <p>ULingual is a language exchange platform that connects native speaker with non-native speakers of a given language.
            Users at ULingual can learn and practice speaking a language with each other over a video streaming connection 
@@ -31,7 +32,8 @@ const AboutUs = () => {
          <p>ULingual offers affordable plans that can suit to everyone.
            Sign up and get your first two weeks for free to see the great community
            and courses that ULingual offers.</p>
-        </div> 
+      </div>
+    </div> 
      );
 
 }
