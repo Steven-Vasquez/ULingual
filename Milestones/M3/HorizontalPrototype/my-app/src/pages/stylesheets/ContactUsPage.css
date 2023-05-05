@@ -10,8 +10,8 @@
     color: var(--mint-green);
     padding-bottom: 5px;
     text-decoration: solid;
+    text-align: center;
 }
-
 
 .contact form{
     display: block;
