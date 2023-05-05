@@ -11,7 +11,7 @@ const ContactPage = () => {
     const validateUsername = (username) => {
         let error = '';
         if (username.trim() === '') {
-          error = 'Username required';
+          error = 'Username is required';
         }
         setErrorMessage((prevState) => ({ ...prevState, username: error }));
       };
