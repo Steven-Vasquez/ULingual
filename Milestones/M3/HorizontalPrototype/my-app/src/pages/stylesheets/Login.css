@@ -10,7 +10,7 @@
     color: var(--mint-green);
     padding-bottom: 25px;
     margin: 15px auto;
-    padding-left: 45px;
+    text-align: center;
 
 
 }
@@ -97,6 +97,7 @@
     padding-top: 15px;
     text-decoration: underline;
     margin-top: 1em;
+    font-weight: 600;
 }
 
 

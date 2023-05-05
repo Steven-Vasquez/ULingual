@@ -1,5 +1,8 @@
 .register-page{
-    height:900px
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: whitesmoke;
 }
 
 .register-box form{
@@ -7,17 +10,16 @@
     background-color: var(--primary);
     border-radius: 6px;
     margin:40px auto;
-    max-width: 650px;
+    max-width: 850px;
     max-height: 1000px;
     padding: 20px;
-    margin-top: 100px;
-    padding-top: 10px;
 }
 
 .register-form h1{
     font-size: 50px;
     color: var(--mint-green);
     padding-bottom: 25px;
+    text-align: center;
 }
 .register-form input{
     width: 85%;
@@ -49,9 +51,20 @@
 }
 
 .register-form button{
-    margin-left: 150px;
-    margin-bottom: 25px;
+    margin: auto;
     cursor: pointer;
+    background: var(--mint-green);
+    width:250px;
+    height:35px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 17px;
+    font-weight: 700;
+    font-family: 'Comme', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
 }
 
 .TOS label{
@@ -68,6 +81,18 @@
 
 .reg-1 a{
     color: black;
+}
+
+.register-form p{
+    text-decoration: underline;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    font-weight: 600;
+    font-size: 22px;
+
 }
 
 
