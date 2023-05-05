@@ -1,4 +1,4 @@
-/*import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect} from 'react'
 import axios from 'axios'
 import { useLocation } from 'react-router-dom';
 
@@ -28,28 +28,24 @@ const Results = () => {
     },[]);
     console.log(tutors);
     return(
+    <div className='sr-pg'>
       <div className="Seach-Results">
-        <h2>Search from Database</h2>
-        {/* <div className="search-bar">
-          <input type="text" placeholder="Seach Users or Tutors..." id="search Input">
-          </input>
-        </div> *//*}
-
+        <h2>Results from Database</h2>
         <div>
           <ul>
             {tutors.map(tutor => (
               <li key={tutor.TutorID}>
-                <h3>{tutor.TutorFirstName} {tutor.TutorLastName}'s contact information:</h3>
+                <h3>{tutor.TutorFirstName} {tutor.TutorLastName}'s Contact Information:</h3>
                 <p>Email: {tutor.TutorEmail}</p>
                 <p>Phone Number: {tutor.TutorPhone}</p>
               </li>
               ))}
           </ul>
         </div>
-
       </div>
+    </div>
     );
 
 }
 
-export default Results;*/
+export default Results;
