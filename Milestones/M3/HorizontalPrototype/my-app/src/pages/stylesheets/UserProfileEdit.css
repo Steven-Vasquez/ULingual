@@ -1,5 +1,8 @@
 .user-entire{
-    height: 900px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: whitesmoke;
 }
 
 .UserProfile {
@@ -9,11 +12,12 @@
     flex-direction: column;
     justify-content: space-between;
     color: white;
-    width: 900px;
-    height: 800px;
+    width:900px;
+    height: 700px;
     border-radius: 10px;
-    margin-left: 400px;
-    margin-top: 100px;
+    margin-left: 250px;
+    margin-top: 50px;
+    
 }
 
 .UserProfile .User-Info{
@@ -37,8 +41,9 @@
 }
 
 .UserDetails h3{
-    margin-top:-200px;
+    padding-top:-200px;
     color: var(--mint-green);
+   
 }
 
 .UserDetails h4{
