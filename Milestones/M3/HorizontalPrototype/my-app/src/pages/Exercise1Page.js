@@ -16,20 +16,20 @@ const Exercise1Page = () => {
             </div>
 
             <div class="containerEx3">
-                <div class="innercontainerEx35">
-                <h2>1. What is new in French?</h2>
+                <div class="containerEx1">
+                <h2 class="containerEx1">1. What is "new" in French?</h2>
                 </div>
                 <div class="innercontainerEx31">
                 <a href="ExerciseAns1" class="button" onClick={toggleNewPage}>
                 <span class="button__text">nouveau</span>
                 </a>
                 </div>
-                <div class="innercontainerE32">
+                <div class="innercontainerEx32">
                 <a href="#" class="button" onClick={toggleNewPage}>
                 <span class="button__text">vieil</span>
                 </a>
                 </div>
-                <div class="innercontainerE33">
+                <div class="innercontainerEx33">
                 <a href="#" class="button" onClick={toggleNewPage}>
                 <span class="button__text">avenir</span>
                 </a>

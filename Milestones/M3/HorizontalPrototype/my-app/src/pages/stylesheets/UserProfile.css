@@ -1,8 +1,8 @@
 .user-entire1{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: whitesmoke;
 }
 
 .UserProfile1 {
@@ -13,8 +13,8 @@
     justify-content: space-between;
     padding: 70px;
     color: white;
-    width: 900px;
-    height: 800px;
+    width: 700px;
+    height: 600px;
     border-radius: 10px;
     margin: auto;
 }

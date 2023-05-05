@@ -4,54 +4,51 @@ import './stylesheets/Forum1.css'
 
 const Forum1 = () => {
     return( 
-        <div class = "containerf">
-            <div class="container1">
+        <div className="forum-container">
+            <div className="forum-header">
                 <h1>Forum Title</h1>
             </div>
-            <div class="containerf1">
-                <div class="innercontainerf1">
-                <a href="#" class="button">
-                <span class="button__text">The Comment Posted</span>
-                </a>
+            <div className="forum-comment">
+                <div className="inner-comment">
+                    <a href="#" className="comment-button">
+                        <span className="comment-button__text">The Comment Posted</span>
+                    </a>
                 </div>
             </div>
 
-            <div class="containerf1">
-                <div class="innercontainerf1">
-                <a href="#" class="button">
-                <span class="button__text">The Comment Posted</span>
-                </a>
+            <div className="forum-comment">
+                <div className="inner-comment">
+                    <a href="#" className="comment-button">
+                        <span className="comment-button__text">The Comment Posted</span>
+                    </a>
                 </div>
             </div>
 
-            <div class="containerf1">
-                <div class="innercontainerf1">
-                <a href="#" class="button">
-                <span class="button__text">The Comment Posted</span>
-                </a>
+            <div className="forum-comment">
+                <div className="inner-comment">
+                    <a href="#" className="comment-button">
+                        <span className="comment-button__text">The Comment Posted</span>
+                    </a>
                 </div>
             </div>
 
-            <div class="containerf2">
-                <div class="innercontainerf31">
-                <a href="#" class="button">
-                <span class="button__text">
-                <input type="text" placeholder="Something to say?!..." style={{ width: '50%', height: '25', fontSize: '20px' }}/>
-                </span>
-                </a>
-                </div>
-                <div class="innercontainerf32">
-                <a href="#" class="button">
-                <span class="button__text">Post</span>
+            <div className="forum-post">
+            <div className="inner-post">
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                <input type="text" className="post-input-for" placeholder="Something to say?!..." style={{ width: '8000000000000000000000000%', height: '25px', fontSize: '20px' }} />
+                <a href="#" className="post-button">
+                    <span className="post-button__text">Post</span>
                 </a>
                 </div>
             </div>
-            <div class="containerf4">
-                <a href="GlobalForumPage" class="button">
-                <span class="button__text">Return</span>
+            </div>
+
+            <div className="forum-return">
+                <a href="GlobalForumPage" className="return-button">
+                    <span className="return-button__text">Return</span>
                 </a>
             </div>
-    </div>
+        </div>
     );
 }
 

@@ -7,7 +7,9 @@ const TOS = () => {
     return(
         <div className="tos-page">
             <div className="tos-content">
-                <h1>Terms & Conditions</h1>
+                <div className="hd-style">
+                    <h1>Terms & Conditions</h1>
+                </div>
                 <p>
                 These terms and conditions govern your use of this website;
                 by using this website, you accept the terms and conditions in full.

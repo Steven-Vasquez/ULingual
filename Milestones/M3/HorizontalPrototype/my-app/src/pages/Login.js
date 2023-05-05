@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import axios from "axios";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './stylesheets/Login.css'
 
 
@@ -8,18 +8,37 @@ function Login() {
     
     const [usernameReg, setUsernameReg] = useState("");
     const [passwordReg, setPasswordReg] = useState("");
+    const navigate = useNavigate();
 
-    const login = () => {
-        axios.post("http://50.18.108.83:3001/login", {
-            Uusername: usernameReg,
-            Upassword: passwordReg,
-        })
-        .then(res => {
-            console.log(res.data);
-        })
-        .catch(err => {
-            console.log(err);
-        });
+    const login = (e) => {
+        e.preventDefault();
+        const allConditionsMet = (
+            usernameReg.trim().length > 0 &&
+            passwordReg.trim().length > 0
+        );
+        console.log(usernameReg);
+        if(allConditionsMet) {
+            axios.get("http://50.18.108.83:3001/login", {
+                params: {
+                    Uusername: usernameReg,
+                    Upassword: passwordReg
+                }
+            })
+            .then(res => {
+                if(typeof res.data.message !== 'undefined' && res.data.message.length > 0) {
+                    alert(res.data.message);
+                } else {
+                    alert(`Welcome back, ${usernameReg}!`)
+                    navigate(`/Dashboard`);
+                }
+                console.log(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        } else {
+            alert("Enter your Username and Password to Log In.");
+        }
     }
  
     return(
@@ -29,27 +48,29 @@ function Login() {
                 <h1>Login</h1>  
                     <div className='login-sectioning'>
                         <label>Username:</label>
-                        <input type={'text'} name="Username"
+                        <input type={'text'} placeholder="Username" required
                         onChange={(e) => {
                             setUsernameReg(e.target.value)
                         }}
-                        /> 
+                        />
                     </div>
                     <div className='login-sectioning'>
                         <label>Password:</label>
-                        <input type={'password'} name="Password"
+                        <input type={'password'} placeholder="Password" required
                         onChange={(e) => {
                             setPasswordReg(e.target.value)
                         }}
                         />
                     </div> 
                      
-                    <button onClick={login} className='log-1'>
-                        <Link to="/Dashboard">Login</Link>
-                        </button> 
+                    <button onClick={(e) => login(e)} className='log-1'>
+                        Login
+                    </button> 
+                    <div className='lg-nu'>
                     <p>
-                        <Link to ='/register'>New User?</Link>
+                        <Link to="/register">New User? Click Here!</Link>
                     </p>
+                    </div>
             </form>
         </div>
     </div>

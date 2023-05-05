@@ -18,6 +18,9 @@ app.use(cors());
 const port = 3001;
 
 app.use(express.json());
+// Password encryption
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 
 const dbServer = {
@@ -68,8 +71,6 @@ const SSHConnection = new Promise((resolve, reject) => {
 });
 
 
-
-
 // API endpoint that returns all the users from the database
 app.get('/users', (req, res) => {
   const sql = 'SELECT * FROM Users';
@@ -90,39 +91,82 @@ app.post('/register', (req, res) => {
   const Uusername = req.body.Uusername;
   const Upassword = req.body.Upassword;
   const Uemail = req.body.Uemail;
-  const sql = 'INSERT INTO Users (Ufirstname, Ulastname, Uusername, Upassword, Uemail) VALUES (?,?,?,?,?)';
-  
-  db.query(sql, 
-    [Ufirstname, Ulastname, Uusername, Upassword, Uemail], 
-    (error, result) => {
+
+  // For username verification
+  const usernameQuery = 'SELECT * FROM Users WHERE Uusername = ?';
+  db.query(usernameQuery, [Uusername], (error, result) => {
     if(error){
       console.error(error.message);
       return;
     }
-    res.send(result);
+    if (result.length > 0) { // 1. Check if the username already exists in the database
+      // 1a. If it does, send an error message
+      res.send({message: "Username already exists"});
+    } else {
+      const emailQuery = 'SELECT * FROM Users WHERE Uemail = ?';
+      db.query(emailQuery, [Uemail], (error, result) => {
+        if(error){
+          console.error(error.message);
+          return;
+        }
+        if (result.length > 0) { // 1. Check if the email already exists in the database
+          // 1a. If it does, send an error message
+          res.send({message: `Email "${Uemail}" is already in use.`});
+          return;
+        } else {
+          bcrypt.genSalt(saltRounds, (err, salt) => {
+            bcrypt.hash(Upassword, salt, (err, hash) => {
+              if (err) {
+                console.error(err.message);
+                return;
+              }
+              const sql = 'INSERT INTO Users (Ufirstname, Ulastname, Uusername, Upassword, Uemail) VALUES (?,?,?,?,?)';
+              db.query(sql, 
+                [Ufirstname, Ulastname, Uusername, hash, Uemail], 
+                (error, result) => {
+                if(error){
+                  console.error(error.message);
+                  return;
+                }
+                res.send(result);
+              });
+            });
+          });
+        };
+      });
+    };
   });
 });
 
-
+  // API endpoint that logs in a user
 app.get('/login', (req, res) => {
-  const Uusername = req.body.Uusername;
-  const Upassword = req.body.Upassword;
-
-  const sql = 'SELECT * FROM Users WHERE Uusername = ? AND Upassword = ?';
+  const Uusername = req.query.Uusername;
+  const Upassword = req.query.Upassword;
   
-  db.query(sql, 
-    [Uusername, Upassword], 
-    (error, result) => {
+  const sql = 'SELECT * FROM Users WHERE Uusername = ?';
+  db.query(sql, [Uusername], (error, result) => {
     if(error){
-      //res.send({err: error})
+      //res.send({message: "Error logging in. No such user found (?)"})
       console.error(error.message);
       return;
     }
-    if (result.length > 0) {
-      res.send(result);
+    if (result.length > 0) { // User found
+      const user = result[0];
+      bcrypt.compare(Upassword, user.Upassword, (err, response) => {
+        if (err) {
+          console.error(err.message);
+          return;
+        }
+        if (response) {
+          res.send(user);
+        }
+        else {
+          res.send({message: "Invalid Username/Password."})
+        }
+      });
     }
-    else {
-      res.send({message: "Username or Password not found"})
+    else { // User not found
+      res.send({message: "Invalid Username/Password."})
     }
   });
 });

@@ -1,5 +1,8 @@
 .contact-page{
-    height: 700px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: whitesmoke;
 }
 
 .contact h1{
@@ -7,8 +10,8 @@
     color: var(--mint-green);
     padding-bottom: 5px;
     text-decoration: solid;
+    text-align: center;
 }
-
 
 .contact form{
     display: block;
@@ -37,12 +40,31 @@
 }
 
 .form button{
-    margin-left: 162.5px;
+    margin: auto;
     cursor: pointer;
+    background: var(--mint-green);
+    width:150px;
+    height:35px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 17px;
+    font-weight: 700;
+    font-family: 'Comme', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+    
 }
 
 .form .btn:hover{
     background-color: whitesmoke;
+}
+
+.form span{
+    color:rgb(253, 34, 122);
+    padding-left: 5px;
 }
 
 

@@ -12,19 +12,19 @@ const Exercise2Page = () => {
     return( 
         <div class="containerEx">
             <div class="containerEx1">
-                <h2>Select true or false answer.</h2>
+                <h2>Select true or false.</h2>
             </div>
 
             <div class="containerEx3">
-                <div class="innercontainerEx35">
-                <h2>2. Is hello "Bonjour in french?"</h2>
+                <div class="containerEx1">
+                <h2>2. Does 'Bonjour' mean hello in French?"</h2>
                 </div>
                 <div class="innercontainerEx31">
                 <a href="#" class="button" onClick={toggleNewPage}>
                 <span class="button__text">true</span>
                 </a>
                 </div>
-                <div class="innercontainerE32">
+                <div class="innercontainerEx32">
                 <a href="ExerciseAns2" class="button" onClick={toggleNewPage}>
                 <span class="button__text">false</span>
                 </a>
