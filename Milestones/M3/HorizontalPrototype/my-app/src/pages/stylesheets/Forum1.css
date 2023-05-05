@@ -27,7 +27,7 @@
   grid-gap: 20px;
   padding: 25px;
   color: black;
-  background-color: #707070;
+  background-color: #3f3f3f;
   grid-column-start: 1;
   grid-column-end: 4;
   justify-content: center;
@@ -43,8 +43,9 @@
   justify-content: center;
   display: grid;
   padding: 25px;
+  height: 135px;
   color:black;
-  background-color: #707070;
+  background-color: #3f3f3f;
   grid-column-start: 1;
   grid-column-end: 4;
   border: 10px solid #f44336;

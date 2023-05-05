@@ -63,6 +63,7 @@
   border: 10px solid #f44336;
   border-image: linear-gradient(to bottom right, #f44336, #2196f3) 1;
   padding-left: 50px;
+  background-color: #3f3f3f;
   padding-right: 50px;
   font: bold;
 }

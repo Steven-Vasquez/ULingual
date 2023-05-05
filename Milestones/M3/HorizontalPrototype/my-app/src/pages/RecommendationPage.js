@@ -45,7 +45,7 @@ const RecommendationPage= () => {
                 </a>
                 </div>
                 <div class="innercontainer2">
-                <a href="TVShowRecommendation" class="button">
+                <a href="MusicRecommendation" class="button">
                 <span class="button__text">Music Recommendation</span>
                 </a>
                 </div>
