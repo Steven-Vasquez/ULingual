@@ -9,22 +9,22 @@ const ExerciseAns1 = () => {
       setShowNewPage(!showNewPage);
     }
     return( 
-        <div class="containerAns">
-            <div class="containerAns1">
+        <div class="containerEx">
+            <div class="containerEx1">
                 <h2>Select the correct answer.</h2>
             </div>
 
-            <div class="containerAns3">
-                <div class="innercontainerAns135">
+            <div class="containerEx3">
+                <div class="containerEx1">
                 <h2>1. What is new in French?</h2>
                 </div>
                 <div class="innercontainerAns31">
-                <a href="ExerciseAns1" class="button" onClick={toggleNewPage}>
+                <a href="#" class="button" onClick={toggleNewPage}>
                 <span class="button__text">nouveau</span>
                 </a>
                 </div>
                 <div class="innercontainerAns32">
-                <a href="ExerciseAns1" class="button" onClick={toggleNewPage}>
+                <a href="#" class="button" onClick={toggleNewPage}>
                 <span class="button__text">vieil</span>
                 </a>
                 </div>
@@ -33,37 +33,37 @@ const ExerciseAns1 = () => {
                 <span class="button__text">avenir</span>
                 </a>
                 </div>
-                <div class="innercontainerAns311">
+                <div class="innercontainerEx311">
                 <a href="#" class="button" onClick={toggleNewPage}>
                 <span class="button__text">correct(+1)</span>
                 </a>
                 </div>
-                <div class="innercontainerAns322">
+                <div class="innercontainerEx322">
                 <a href="#" class="button" onClick={toggleNewPage}>
                 <span class="button__text">incorrect</span>
                 </a>
                 </div>
-                <div class="innercontainerAns333">
+                <div class="innercontainerEx333">
                 <a href="#" class="button" onClick={toggleNewPage}>
                 <span class="button__text">incorrect</span>
                 </a>
                 </div>
             </div>
 
-            <div class="containerAns4">
-                <div class="innercontainerAns42">
+            <div class="containerEx4">
+                <div class="innercontainerEx42">
                 <a href="#" class="button">
                 <span class="button__text">Q1</span>
                 </a>
                 </div>
-                <div class="innercontainerAns43">
+                <div class="innercontainerEx43">
                 <a href="Exercise2Page" class="button">
                 <span class="button__text">Q2</span>
                 </a>
                 </div>
             </div>
-            <div class="containerAns5">
-                <div class="innercontainerAns51">
+            <div class="containerEx5">
+                <div class="innercontainerEx51">
                 <a href="Exercise2Page" class="button" onClick={toggleNewPage}>
                 <span class="button__text">Continue</span>
                 </a>
