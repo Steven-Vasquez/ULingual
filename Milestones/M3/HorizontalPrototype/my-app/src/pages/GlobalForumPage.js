@@ -4,57 +4,57 @@ import './stylesheets/GlobalForumPage.css'
 
 const GlobalForumPage = () => {
     return( 
-        <div class = "containergb">
-            <div class="containergb2">
-                <div class="innercontainergb11">
-                <a href="Forum1" class="button">
-                <span class="button__text">Name of Forum 1</span>
-                </a>
+        <div className="global-forum-container">
+            <div className="global-forum-section"> 
+                <div className="global-forum-name">
+                    <a href="Forum1" className="global-forum-button">
+                        <span className="global-forum-button-text">Name of Forum 1</span>
+                    </a>
                 </div>
-                <div class="innercontainergb12">
-                <a href="#" class="button">
-                <span class="button__text">Number of Participants</span>
-                </a>
-                </div>
-            </div>
-
-            <div class="containergb2">
-                <div class="innercontainergb21">
-                <a href="Forum1" class="button">
-                <span class="button__text">Name of Forum 2</span>
-                </a>
-                </div>
-                <div class="innercontainergb22">
-                <a href="#" class="button">
-                <span class="button__text">Number of Participants</span>
-                </a>
+                <div className="global-forum-participants">
+                    <a href="#" className="global-forum-button">
+                        <span className="global-forum-button-text">Number of Participants</span>
+                    </a>
                 </div>
             </div>
 
-            <div class="containergb3">
-                <div class="innercontainergb31">
-                <a href="Forum1" class="button">
-                <span class="button__text">Name of Forum 3</span>
-                </a>
+            <div className="global-forum-section">
+                <div className="global-forum-name">
+                    <a href="Forum1" className="global-forum-button">
+                        <span className="global-forum-button-text">Name of Forum 2</span>
+                    </a>
                 </div>
-                <div class="innercontainergb32">
-                <a href="#" class="button">
-                <span class="button__text">Number of Participants</span>
-                </a>
+                <div className="global-forum-participants">
+                    <a href="#" className="global-forum-button">
+                        <span className="global-forum-button-text">Number of Participants</span>
+                    </a>
                 </div>
             </div>
 
-            <div class="containergb4">
-                <a href="#" class="button">
-                <span class="button__text">Create Forum</span>
+            <div className="global-forum-section">
+                <div className="global-forum-name">
+                    <a href="Forum1" className="global-forum-button">
+                        <span className="global-forum-button-text">Name of Forum 3</span>
+                    </a>
+                </div>
+                <div className="global-forum-participants">
+                    <a href="#" className="global-forum-button">
+                        <span className="global-forum-button-text">Number of Participants</span>
+                    </a>
+                </div>
+            </div>
+
+            <div className="global-forum-create">
+                <a href="#" className="global-forum-button-text-create">
+                    <span className="gb">Create Forum</span>
                 </a>
             </div>
-            <div class="containergb4">
-                <a href="Dashboard" class="button">
-                <span class="button__text">Return</span>
+            <div className="global-forum-return">
+                <a href="Dashboard" className="global-forum-button">
+                    <span className="global-forum-button-text-return">Return</span>
                 </a>
             </div>
-    </div>
+        </div>
     );
 }
 

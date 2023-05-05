@@ -1,4 +1,21 @@
-.container {
+.Dashboard-container {
+  background-color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  --line_color: white;
+  --back_color: #AAF0C1; 
+  height: 83vh;
+  width: auto;
+  box-sizing: border-box;
+   display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 35px;
+    padding: 50px;
+}
+.container{
   background-color: var(--secondary);
   display: flex;
   flex-direction: column;
@@ -21,7 +38,6 @@
   display: flex;
   justify-content: center;
   align-items: center; 
-
   margin-top: 200px;
 }
 
@@ -53,7 +69,9 @@
   align-items : center ;
   width : 100% ;
   height : 100% ;
+  color: black;
 }
+
 .button::before,
 .button::after,
 .button__text::before,

@@ -4,7 +4,7 @@ import './stylesheets/Dashboard.css'
 
 const Dashboard = () => {
     return( 
-        <div class = "container">
+        <div class = "Dashboard-container">
             <div class = "header">
             <h1>Welcome to DASHBOARD!</h1>
             </div>
