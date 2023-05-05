@@ -2,14 +2,16 @@
 footer{
     background-color: var(--primary);
     height: 75px;
+    
 }
 .footing-item{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em;
-    margin: auto;
+    padding-top: 1em;
+  
 }
+
 
 .footing-item li{
     font-size: 22px;
