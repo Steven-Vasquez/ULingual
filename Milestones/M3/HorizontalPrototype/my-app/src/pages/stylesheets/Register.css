@@ -69,6 +69,10 @@
 
 .TOS label{
     text-decoration: underline;
+    display: inline-flex;
+    gap: 1rem;
+    align-items: center;
+    white-space: nowrap;
 }
 
 .TOS a:hover{

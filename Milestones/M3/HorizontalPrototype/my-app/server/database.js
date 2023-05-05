@@ -12,6 +12,9 @@ const fs = require('fs');
 const app = express();
 const port = 3001;
 
+// CORS middleware to allow cross-origin requests
+app.use(cors());
+
 app.use(express.json());
 
 // Password encryption
@@ -39,9 +42,6 @@ db.connect((error) => {
   }
   console.log('Connection established sucessfully');
 });
-
-// CORS middleware to allow cross-origin requests
-app.use(cors());
 
 
 // API endpoint that returns all the users from the database
@@ -75,58 +75,39 @@ app.post('/register', (req, res) => {
     if (result.length > 0) { // 1. Check if the username already exists in the database
       // 1a. If it does, send an error message
       res.send({message: "Username already exists"});
-    }
-    const usernameRegex = /^[a-zA-Z0-9_]{4,20}$/;
-    if(usernameRegex.test(Uusername) === false) { // 2. Check that length is 4-20 chars, only contains letters, numbers, and underscores (no spaces)
-      // 2a. If it doesn't, send an error message
-      res.send({message: "Username must be 4-20 characters long and only contain letters, numbers, and underscores (no spaces)"});
-    }
-  });
-
-  // For email verification
-  const emailQuery = 'SELECT * FROM Users WHERE Uemail = ?';
-  db.query(emailQuery, [Uemail], (error, result) => {
-    if(error){
-      console.error(error.message);
-      return;
-    }
-    if (result.length > 0) { // 1. Check if the email already exists in the database
-      // 1a. If it does, send an error message
-      res.send({message: "Email already exists"});
-    }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if(emailRegex.test(Uemail) === false) { // 2. Check if email is a valid email 
-      res.send({message: "Email is not valid"});
-    }
-  });
-  
-  // For password verification
-  // 1. At least 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number, 1 special character
-  const passwordChecker = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,}$/;
-  if(passwordChecker.test(Upassword) === false) { // 1a. If it doesn't, send an error message
-    res.send({message: "Password must be at least 8 characters long and contain at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character"});
-  }
-  // TODO: If password not equals confirm password then error
-
-  // Encrypt the password
-  bcrypt.genSalt(saltRounds, (err, salt) => {
-    bcrypt.hash(Upassword, salt, (err, hash) => {
-      if (err) {
-        console.error(err.message);
-        return;
-      }
-      // Register the user in the database
-      const sql = 'INSERT INTO Users (Ufirstname, Ulastname, Uusername, Upassword, Uemail) VALUES (?,?,?,?,?)';
-      db.query(sql, 
-        [Ufirstname, Ulastname, Uusername, hash, Uemail], 
-        (error, result) => {
+    } else {
+      const emailQuery = 'SELECT * FROM Users WHERE Uemail = ?';
+      db.query(emailQuery, [Uemail], (error, result) => {
         if(error){
           console.error(error.message);
           return;
         }
-        res.send(result);
+        if (result.length > 0) { // 1. Check if the email already exists in the database
+          // 1a. If it does, send an error message
+          res.send({message: `Email "${Uemail}" is already in use.`});
+          return;
+        } else {
+          bcrypt.genSalt(saltRounds, (err, salt) => {
+            bcrypt.hash(Upassword, salt, (err, hash) => {
+              if (err) {
+                console.error(err.message);
+                return;
+              }
+              const sql = 'INSERT INTO Users (Ufirstname, Ulastname, Uusername, Upassword, Uemail) VALUES (?,?,?,?,?)';
+              db.query(sql, 
+                [Ufirstname, Ulastname, Uusername, hash, Uemail], 
+                (error, result) => {
+                if(error){
+                  console.error(error.message);
+                  return;
+                }
+                res.send(result);
+              });
+            });
+          });
+        };
       });
-    });
+    };
   });
 });
 
