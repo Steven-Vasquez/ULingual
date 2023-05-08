@@ -1,0 +1,103 @@
+.tutor-prof-pg{
+    height: 900px;
+    
+}
+
+
+.bkg-tutor section{
+    background-color: var(--secondary);
+    border-radius: 20px;
+    margin-left: 325px;
+    height: 500px;
+}
+
+.profile-img{
+    margin-left: 50px;
+    margin-top: 50px;
+    
+}
+
+h2 {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 34px;
+	margin-bottom: 15px;
+    margin-top: 15px;
+    color:var(--mint-green);
+}
+
+h3 {
+	font-size: 24px;
+	font-weight: 500;
+	color:var(--mint-green);
+	margin-bottom: 25px;
+	margin-top: 0px;
+}
+
+h3, span, p {
+	font-family: 'Roboto Mono', monospace;
+    color:var(--mint-green);
+}
+
+.profile-container{
+	margin: 60px 100px 0px;
+	max-width: 900px;
+	display: flex;
+	overflow-x: hidden;
+}
+
+.back {
+	display: flex;
+	align-items: center;
+	color: black;
+}
+
+
+.profile-img {
+	height: 250px;
+	width: 250px;
+	border-radius: 50%;
+
+	object-fit: cover;
+	object-position: 50% 50%;
+
+	background-position: 40% 50%;
+}
+
+.description {
+	margin-bottom: 30px;
+	margin-top: 0px;
+}
+
+.profile-img-section {
+	margin-right: 50px;
+}
+
+.profile-desc-section {
+	display: flex;
+	flex-direction: column;
+
+	margin-left: 50px;
+}
+
+.int-item {
+	display: inline-block;
+	padding: 5px 15px;
+	margin-right: 7.5px;
+	margin-bottom: 10px;
+	line-height: 35px;
+	background-color: #e6e6e6;
+	border-radius: 5px;
+	color: black;
+}
+
+.back label{
+    border-radius: 10px;
+    border-style: solid; 
+    border-color: black;
+}
+.back label:hover{
+    background-color: whitesmoke;
+
+}
+
+

@@ -1,0 +1,64 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.01fr 1fr 1fr 1fr;
+    grid-gap: 35px;
+    padding: 50px;
+    padding-bottom: 100px;
+  }
+  .container1{
+    column-span: all;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    color: white;
+    justify-content: center;
+    justify-self: center;
+    display: grid;
+    grid-template-rows: 50px;
+    align-content: end;
+  }
+  
+  .container2 .button__text{
+    color:black;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: lightcyan;
+  }
+  
+  .container3 .button__text{
+    color:black;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: lightcyan;
+  }
+  
+  .container4 .button__text{
+    color:black;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: lightcyan;
+  }
+
+  .button-text{
+color: black;
+  }
+
+.container5{
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+  
+.innercontainer1 img{
+  max-width: 100%;
+  object-fit: cover;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    min-width: 768px;
+    height: 1100px;
+  }
+  .innercontainer1 img{
+    object-fit: cover;
+  }  
+}
