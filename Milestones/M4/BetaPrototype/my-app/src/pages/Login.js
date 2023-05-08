@@ -17,7 +17,7 @@ function Login() {
             usernameReg.trim().length > 0 &&
             passwordReg.trim().length > 0
         );
-        console.log(usernameReg);
+        //console.log(usernameReg);
         if(allConditionsMet) {
             //axios.post("http://50.18.108.83:3001/login", {
             axios.post("http://localhost:3001/login", {
@@ -33,9 +33,10 @@ function Login() {
                     alert(res.data.message);
                 } else {
                     alert(`Welcome back, ${usernameReg}!`)
-                    navigate(`/Dashboard`);
+                    //navigate(`/Dashboard`);
+                    window.location.href = '/Dashboard'; //Reloads the page so the session can update values in App.js. Then, the user is recognized as logged in
                 }
-                console.log(res.data);
+                //console.log(res.data);
             })
             .catch(err => {
                 console.log(err);

@@ -12,7 +12,6 @@ const cors = require('cors');
 
 const cookieParser = require('cookie-parser'); // For cookies to be stored in the browser
 const session = require('express-session'); // For sessions to be stored in the server
-const addSessionLocals = require('./middleware/addSessionLocals'); // Middleware to update session locals
 
 const app = express();
 const port = 3001;
@@ -34,11 +33,11 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    expires: 60 * 60 * 24, // User will stay logged in for 24 hours
+    expires: 60 * 60 * 24 * 10,// * 1000, // User will stay logged in for 24 hours
   },
 }));
 
-app.use(addSessionLocals); // Middleware to update session locals
+//app.use(addSessionLocals); // Middleware to update session locals
 
 
 // Password encryption
@@ -161,10 +160,20 @@ app.post('/register', (req, res) => {
 });
 
 app.post("/checkLogin", (req, res) => {
-  console.log("The session user is: " + req.session.user);
-  if (req.session.user) {
-    res.send({loggedIn: true, user: req.session.user});
+  /*
+  if (req.session.user !== undefined) {
+    req.app.locals.user = {
+      ...req.session.user,
+    };
+  }
+  */ 
+  console.log("The local session user is: ");
+  console.log(req.app.locals.user);
+  if (req.app.locals.user !== undefined) {
+    console.log("There is a session user");
+    res.send({loggedIn: true, user: req.app.locals.user});
   } else {
+    console.log("There is not a session user");
     res.send({ loggedIn: false });
    }
 });
@@ -190,8 +199,11 @@ app.post('/login', (req, res) => {
         }
         if (response) {
           req.session.user = foundUser;
+          req.app.locals.user = foundUser;
           console.log("The session.user from the /login post in remotedb.js is:");
           console.log(req.session.user);
+          // console.log("The request.app.locals.user is:");
+          // console.log(request.app.locals.user);
           res.send(foundUser);
         }
         else {
