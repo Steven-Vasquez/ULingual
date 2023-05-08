@@ -217,6 +217,22 @@ app.post('/login', (req, res) => {
   });
 });
 
+// API endpoint to logout (clears user session and resets the session local (req.app.locals.user)))
+app.post('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('An error occurred');
+    } else {
+      // Clear session cookie
+      res.clearCookie('userId');
+      res.send('User logged out successfully');
+    }
+  });
+  req.app.locals.user = undefined;
+});
+
+
 // API endpoint that returns all the tutors from the database
 app.get('/tutors', (req, res) => {
   const sql = 'SELECT * FROM Tutors';

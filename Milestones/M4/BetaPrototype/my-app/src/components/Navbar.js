@@ -5,6 +5,7 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 import { GoChevronDown } from "react-icons/go";
 import { VscAccount } from "react-icons/vsc";
 import logo from '../images/Logo.png'
+import axios from 'axios';
 
 const Navbar = () => {
     const [click, setClick] = useState(false)
@@ -23,6 +24,17 @@ const Navbar = () => {
         setSearchQuery(event.target.value);
     }
     
+    const handleLogoutRequest = async () => {
+        try {
+            await axios.post('http://localhost:3001/logout');
+            setOpen(false); // close the drop-menu after API request is performed
+            window.location.href = '/';
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+
     return (
         <div className="navbar">
             <div className="logo">
@@ -62,6 +74,10 @@ const Navbar = () => {
                             <li className='drop-menu-item'>
                                 <Link to="/FriendsListPage">Friends</Link>
                             </li>
+                            <li className='drop-menu-item' onClick={handleLogoutRequest}>
+                                <Link>Logout</Link>
+                            </li>
+
                         </ul>
                     </div>
                 </li>

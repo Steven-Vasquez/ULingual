@@ -7,7 +7,7 @@ import './stylesheets/Login.css'
 function Login() {
     const [usernameReg, setUsernameReg] = useState("");
     const [passwordReg, setPasswordReg] = useState("");
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
 
     axios.defaults.withCredentials = true; // Allow cookies to be stored in the browser
 
