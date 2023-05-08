@@ -44,7 +44,8 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.post("http://localhost:3001/checkLogin")
+    axios.post('http://50.18.108.83:3001/checkLogin')
+    //axios.post("http://localhost:3001/checkLogin")
       .then(res => {
         console.log("The response from the login get in App.js is: is: ");
         console.log(res.data.user);
@@ -73,7 +74,7 @@ function App() {
       </div>
     );
   }
-  
+
   return (
     <>
       <Router>

@@ -12,7 +12,6 @@ const fs = require('fs');
 
 const cookieParser = require('cookie-parser'); // For cookies to be stored in the browser
 const session = require('express-session'); // For sessions to be stored in the server
-const addSessionLocals = require('./middleware/addSessionLocals'); // Middleware to update session locals
 
 const app = express();
 const port = 3001;
@@ -34,11 +33,10 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    expires: 60 * 60 * 24, // User will stay logged in for 24 hours
+    expires: 1000 * 60 * 60 * 24, // User will stay logged in for 24 hours
   },
 }));
 
-app.use(addSessionLocals); // Middleware to update session locals
 
 // Password encryption
 const bcrypt = require('bcrypt');
@@ -134,6 +132,15 @@ app.post('/register', (req, res) => {
   });
 });
 
+// API endpoint that checks if a user is logged in
+app.post("/checkLogin", (req, res) => {
+  if (req.app.locals.user !== undefined) { // There is a user session active
+    res.send({loggedIn: true, user: req.app.locals.user});
+  } else { // There is no user session active
+    res.send({ loggedIn: false });
+   }
+});
+
 // API endpoint that logs in a user
 app.post('/login', (req, res) => {
   const Uusername = req.body.Uusername;
@@ -155,17 +162,32 @@ app.post('/login', (req, res) => {
         }
         if (response) {
           req.session.user = foundUser;
-          console.log(req.session.user);
+          req.app.locals.user = foundUser; // Set the session local to the user that just logged in so login session can persist across pages
           res.send(foundUser);
         }
-        else {
+        else { // Invalid password (display both for security reasons)
           res.send({message: "Invalid Username/Password."})
         }
       });
-    } else { // User not found
+    } else { // User not found (display both for security reasons)
       res.send({message: "Invalid Username/Password."})
     }
   });
+});
+
+// API endpoint to logout (clears user session and resets the session local (req.app.locals.user)))
+app.post('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('An error occurred');
+    } else {
+      // Clear session cookie
+      res.clearCookie('userId');
+      res.send('User logged out successfully');
+    }
+  });
+  req.app.locals.user = undefined; // Reset the session local to undefined
 });
 
 // API endpoint that returns all the tutors from the database

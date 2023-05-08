@@ -33,11 +33,9 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    expires: 60 * 60 * 24 * 10,// * 1000, // User will stay logged in for 24 hours
+    expires: 1000 * 60 * 60 * 24, // User will stay logged in for 24 hours
   },
 }));
-
-//app.use(addSessionLocals); // Middleware to update session locals
 
 
 // Password encryption
@@ -159,21 +157,11 @@ app.post('/register', (req, res) => {
   });
 });
 
+// API endpoint that checks if a user is logged in
 app.post("/checkLogin", (req, res) => {
-  /*
-  if (req.session.user !== undefined) {
-    req.app.locals.user = {
-      ...req.session.user,
-    };
-  }
-  */ 
-  console.log("The local session user is: ");
-  console.log(req.app.locals.user);
-  if (req.app.locals.user !== undefined) {
-    console.log("There is a session user");
+  if (req.app.locals.user !== undefined) { // There is a user session active
     res.send({loggedIn: true, user: req.app.locals.user});
-  } else {
-    console.log("There is not a session user");
+  } else { // There is no user session active
     res.send({ loggedIn: false });
    }
 });
@@ -199,19 +187,15 @@ app.post('/login', (req, res) => {
         }
         if (response) {
           req.session.user = foundUser;
-          req.app.locals.user = foundUser;
-          console.log("The session.user from the /login post in remotedb.js is:");
-          console.log(req.session.user);
-          // console.log("The request.app.locals.user is:");
-          // console.log(request.app.locals.user);
+          req.app.locals.user = foundUser; // Set the session local to the user that just logged in so login session can persist across pages
           res.send(foundUser);
         }
-        else {
+        else { // Invalid password (display both for security reasons)
           res.send({message: "Invalid Username/Password."})
         }
       });
     }
-    else { // User not found
+    else { // User not found (display both for security reasons)
       res.send({message: "Invalid Username/Password."})
     }
   });
@@ -229,7 +213,7 @@ app.post('/logout', (req, res) => {
       res.send('User logged out successfully');
     }
   });
-  req.app.locals.user = undefined;
+  req.app.locals.user = undefined; // Reset the session local to undefined
 });
 
 
