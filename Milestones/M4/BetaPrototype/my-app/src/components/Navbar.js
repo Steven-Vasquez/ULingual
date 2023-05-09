@@ -7,7 +7,8 @@ import { VscAccount } from "react-icons/vsc";
 import logo from '../images/Logo.png'
 import axios from 'axios';
 
-const Navbar = () => {
+const Navbar = (props) => {
+    const { loggedIn } = props;
     const [click, setClick] = useState(false)
     const handleClick = () => setClick(!click)
     const [open, setOpen] = useState(false);
@@ -63,9 +64,15 @@ const Navbar = () => {
                     </div>
                     <div className={`drop-menu ${open ? 'active' : 'inactive'}`}>
                         <ul>
-                        <li className='drop-menu-item'>
+                            {loggedIn ? (
+                            <li className='drop-menu-item' onClick={handleLogoutRequest}>
+                                <Link>Logout</Link>
+                            </li>
+                            ) : (
+                            <li className='drop-menu-item'>
                                 <Link to="/Login">Login</Link>
                             </li>
+                            )}
                             <li className='drop-menu-item'>
                                 <Link to="/Dashboard">Dashboard</Link>
                             </li>
@@ -75,10 +82,6 @@ const Navbar = () => {
                             <li className='drop-menu-item'>
                                 <Link to="/FriendsListPage">Friends</Link>
                             </li>
-                            <li className='drop-menu-item' onClick={handleLogoutRequest}>
-                                <Link>Logout</Link>
-                            </li>
-
                         </ul>
                     </div>
                 </li>

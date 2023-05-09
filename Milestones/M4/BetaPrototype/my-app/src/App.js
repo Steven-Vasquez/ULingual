@@ -78,7 +78,7 @@ function App() {
   return (
     <>
       <Router>
-      <Navbar />
+      <Navbar loggedIn={loggedIn}/>
         <Routes>
           <Route exact path="/" element={<MainContent />} />
           <Route path="/login" element={<Login />} />
