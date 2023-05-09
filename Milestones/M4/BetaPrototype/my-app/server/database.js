@@ -20,7 +20,7 @@ app.use(express.json());
 
 // CORS middleware to allow cross-origin requests
 app.use(cors({
-  origin: ["http://50.18.108.83:3001/login"], // Allow only the react app (the provided URL) to make requests to the API
+  origin: ["http://50.18.108.83"], // Allow only the react app (the provided URL) to make requests to the API
   methods: ["GET", "POST"], // Methods we want to allow
   credentials: true, // Allow cookies to be enabled and stored in the browser
 }));
