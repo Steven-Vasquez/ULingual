@@ -13,6 +13,8 @@ const fs = require('fs');
 const cookieParser = require('cookie-parser'); // For cookies to be stored in the browser
 const session = require('express-session'); // For sessions to be stored in the server
 
+const nodemailer = require('nodemailer'); // Allows emails to be sent to company email
+
 const app = express();
 const port = 3001;
 
@@ -61,7 +63,7 @@ db.connect((error) => {
     console.log('Error connecting to the MySQL Database', error);
     return;
   }
-  console.log('Connection established sucessfully');
+  console.log('Connection established successfully');
 });
 
 
@@ -188,6 +190,33 @@ app.post('/logout', (req, res) => {
     }
   });
   req.app.locals.user = undefined; // Reset the session local to undefined
+});
+
+// API endpoint that allows the user to send an email to the company email
+app.post('/contactus', (req, res) => {
+  const email = req.body.email;
+  const message = req.body.message;
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'ulingual6@gmail.com', //
+      pass: 'dgjrzmwcnxdhsigo' //
+    }
+  });
+  const mailOptions = {
+    from: 'ulingual6@gmail.com',
+    to: 'ulingual6@gmail.com',
+    subject: 'New Ticket From: ' + email,
+    text: message
+  };
+  transporter.sendMail(mailOptions, (err) => {
+    if(err) {
+      console.error(err);
+      return;
+    } else {
+      res.send({message: "Your email has been sent. You may expect a reply within 48 hours."})
+    }
+  })
 });
 
 // API endpoint that returns all the tutors from the database
