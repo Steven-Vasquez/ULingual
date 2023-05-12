@@ -47,17 +47,17 @@ const Navbar = (props) => {
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
 
                 <div className="nav-search-item">
-                <form name="search" onSubmit={handleSearchSubmit}>
+                <form name="search" onSubmit={handleSearchSubmit && handleClick}>
                         <input type="text" placeholder="Search for a Tutor..." value={searchQuery} onChange={handleSearchInputChange} />
                     </form>
                 </div>
-                <li className="nav-item">
+                <li className="nav-item" onClick={handleClick}>
                     <Link to="/TutorsPage" >Tutors</Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" onClick={handleClick}>
                     <Link to="/Pricing&Plans">Pricing & Plans</Link>
                 </li>
-                <li>
+                <li className='hamburger-container'>
                     <div className='user-icon' onClick={() => { setOpen(!open) }}>
                         <VscAccount size={40} />
                         <GoChevronDown className={`arrow-menu ${open ? 'active' : 'inactive'}`} size={30} />
@@ -69,17 +69,17 @@ const Navbar = (props) => {
                                 <Link>Logout</Link>
                             </li>
                             ) : (
-                            <li className='drop-menu-item'>
+                            <li className='drop-menu-item' onClick={handleClick}>
                                 <Link to="/Login">Login</Link>
                             </li>
                             )}
-                            <li className='drop-menu-item'>
+                            <li className='drop-menu-item' onClick={handleClick}>
                                 <Link to="/Dashboard">Dashboard</Link>
                             </li>
-                            <li className='drop-menu-item'>
+                            <li className='drop-menu-item' onClick={handleClick}>
                                 <Link to="/UserProfile">Profile</Link>
                             </li>
-                            <li className='drop-menu-item'>
+                            <li className='drop-menu-item' onClick={handleClick}>
                                 <Link to="/FriendsListPage">Friends</Link>
                             </li>
                         </ul>

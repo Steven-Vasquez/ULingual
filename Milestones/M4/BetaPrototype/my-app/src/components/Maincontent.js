@@ -21,7 +21,7 @@ function MainContent() {
     //const languages = {}
 
     return(
-    <div>
+    <div className='maincontender'>
         <div id="banner" className='sec-1'>
             <div className='content-one'> 
                 <div className='inter-1'>
