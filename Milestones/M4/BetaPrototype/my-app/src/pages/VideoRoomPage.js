@@ -1,8 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import './stylesheets/VideoRoom.css'
+import VideoChat from '../components/video_components/VideoChat';
 
 const VideoRoomPage = () => {
+
+    return(
+        <div>
+            <header>
+                <h1>Video Chat with Hooks</h1>
+            </header>
+            <main>
+                <VideoChat />
+            </main>
+        </div>
+    );
+    /*
     return( 
         <div className="container-video-room">
             <div className="container-video">
@@ -42,6 +55,7 @@ const VideoRoomPage = () => {
             </div>
         </div>
     );
+    */
 }
 
 export default VideoRoomPage; 

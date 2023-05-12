@@ -215,6 +215,9 @@ app.get('/tutors/search', (req, res) => {
   });
 });
 
+// A link to the video chat-related API endpoints
+app.use(videoIndex);
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

@@ -1,6 +1,7 @@
 // Using Express to create API endpoints that will be accessed by the client-side react app
 const express = require('express');
 
+const videoIndex = require('./video/videoIndex');
 //This is to establish connectinn with database.
 const mysql = require("mysql2");
 const { Client } = require('ssh2');
@@ -88,7 +89,6 @@ const SSHConnection = new Promise((resolve, reject) => {
         });
     }).connect(tunnelConfig);
 });
-
 
 // API endpoint that returns all the users from the database
 app.get('/users', (req, res) => {
@@ -241,6 +241,9 @@ app.get('/tutors/search', (req, res) => {
     res.send(result);
   });
 });
+
+// A link to the video chat-related API endpoints
+app.use(videoIndex);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
