@@ -14,6 +14,8 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser'); // For cookies to be stored in the browser
 const session = require('express-session'); // For sessions to be stored in the server
 
+const nodemailer = require('nodemailer'); // Allows emails to be sent to company email
+
 const app = express();
 const port = 3001;
 
@@ -84,7 +86,7 @@ const SSHConnection = new Promise((resolve, reject) => {
                 return;
             }
             //resolve(connection);
-            console.log('Connection established sucessfully');
+            console.log('Connection established successfully');
             });
         });
     }).connect(tunnelConfig);
@@ -216,6 +218,32 @@ app.post('/logout', (req, res) => {
   req.app.locals.user = undefined; // Reset the session local to undefined
 });
 
+// API endpoint that allows the user to send an email to the company email
+app.post('/contactus', (req, res) => {
+  const email = req.body.email;
+  const message = req.body.message;
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'ulingual6@gmail.com', //
+      pass: 'dgjrzmwcnxdhsigo' //
+    }
+  });
+  const mailOptions = {
+    from: 'ulingual6@gmail.com',
+    to: 'ulingual6@gmail.com',
+    subject: 'New Ticket From: ' + email,
+    text: message
+  };
+  transporter.sendMail(mailOptions, (err) => {
+    if(err) {
+      console.error(err);
+      return;
+    } else {
+      res.send({message: "Your email has been sent. You may expect a reply within 48 hours."})
+    }
+  })
+});
 
 // API endpoint that returns all the tutors from the database
 app.get('/tutors', (req, res) => {
@@ -229,7 +257,7 @@ app.get('/tutors', (req, res) => {
   });
 });
 
-// API endpoint that returns a search retult for tutors from the database
+// API endpoint that returns a search result for tutors from the database
 app.get('/tutors/search', (req, res) => {
   const search = req.query.search;
   const sql = `SELECT * FROM Tutors WHERE TutorFirstName LIKE '%${search}%' OR TutorLastName LIKE '%${search}%'`;

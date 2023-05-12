@@ -49,6 +49,7 @@ For smaller screens we display hamburger option menu.
         width: 100%;
         text-align: center;
         transition: 0.5s;
+        z-index: 1;
     }
     .nav-item{
         margin: 1.5rem;
@@ -64,6 +65,7 @@ For smaller screens we display hamburger option menu.
     .nav-menu.active{
         left: 0;
         margin: auto;
+        z-index: 1;
     }
 
     .hamburger{
@@ -75,6 +77,8 @@ For smaller screens we display hamburger option menu.
 /* seach bar code*/
 .nav-search-item{
     position: relative;
+    justify-content: center;
+    align-self: center;
     width: 300px;
     height: 60px;
     background: var(--secondary);

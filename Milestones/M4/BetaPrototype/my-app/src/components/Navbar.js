@@ -7,7 +7,8 @@ import { VscAccount } from "react-icons/vsc";
 import logo from '../images/Logo.png'
 import axios from 'axios';
 
-const Navbar = () => {
+const Navbar = (props) => {
+    const { loggedIn } = props;
     const [click, setClick] = useState(false)
     const handleClick = () => setClick(!click)
     const [open, setOpen] = useState(false);
@@ -46,39 +47,41 @@ const Navbar = () => {
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
 
                 <div className="nav-search-item">
-                <form name="search" onSubmit={handleSearchSubmit}>
+                <form name="search" onSubmit={handleSearchSubmit && handleClick}>
                         <input type="text" placeholder="Search for a Tutor..." value={searchQuery} onChange={handleSearchInputChange} />
                     </form>
                 </div>
-                <li className="nav-item">
+                <li className="nav-item" onClick={handleClick}>
                     <Link to="/TutorsPage" >Tutors</Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" onClick={handleClick}>
                     <Link to="/Pricing&Plans">Pricing & Plans</Link>
                 </li>
-                <li>
+                <li className='hamburger-container'>
                     <div className='user-icon' onClick={() => { setOpen(!open) }}>
                         <VscAccount size={40} />
                         <GoChevronDown className={`arrow-menu ${open ? 'active' : 'inactive'}`} size={30} />
                     </div>
                     <div className={`drop-menu ${open ? 'active' : 'inactive'}`}>
                         <ul>
-                        <li className='drop-menu-item'>
-                                <Link to="/Login">Login</Link>
-                            </li>
-                            <li className='drop-menu-item'>
-                                <Link to="/Dashboard">Dashboard</Link>
-                            </li>
-                            <li className='drop-menu-item'>
-                                <Link to="/UserProfile">Profile</Link>
-                            </li>
-                            <li className='drop-menu-item'>
-                                <Link to="/FriendsListPage">Friends</Link>
-                            </li>
+                            {loggedIn ? (
                             <li className='drop-menu-item' onClick={handleLogoutRequest}>
                                 <Link>Logout</Link>
                             </li>
-
+                            ) : (
+                            <li className='drop-menu-item' onClick={handleClick}>
+                                <Link to="/Login">Login</Link>
+                            </li>
+                            )}
+                            <li className='drop-menu-item' onClick={handleClick}>
+                                <Link to="/Dashboard">Dashboard</Link>
+                            </li>
+                            <li className='drop-menu-item' onClick={handleClick}>
+                                <Link to="/UserProfile">Profile</Link>
+                            </li>
+                            <li className='drop-menu-item' onClick={handleClick}>
+                                <Link to="/FriendsListPage">Friends</Link>
+                            </li>
                         </ul>
                     </div>
                 </li>
