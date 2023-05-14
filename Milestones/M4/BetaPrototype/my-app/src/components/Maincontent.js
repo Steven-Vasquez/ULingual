@@ -16,8 +16,8 @@ import LandingPage from '../images/Designer-girl.jpg'
 
 
 
-function MainContent() {
-
+function MainContent(props) {
+    const {loggedIn} = props;
     //const languages = {}
 
     return(
@@ -33,13 +33,24 @@ function MainContent() {
                                 Connect with native speakers from around the world
                                 with a click of a button.
                             </p>
+                            {loggedIn ? (
+                            <div className='sign-up'>
+                                <Link to="/Dashboard">
+                                    <label className='sign-up-btn'>
+                                        Get Started!
+                                    </label>
+                                </Link>
+                            </div>
+                            ) : (
                                 <div className='sign-up'>
-                                    <Link to="/register">
-                                        <label className='sign-up-btn'>
-                                            Sign Up Here!</label>
-                                    </Link>
-                                    <span className='spn'>Get your first two weeks free!</span>
-                                </div>
+                                <Link to="/register">
+                                    <label className='sign-up-btn'>
+                                        Sign Up Here!
+                                    </label>
+                                </Link>
+                                <span className='spn'>Get your first two weeks free!</span>
+                            </div>
+                            )}
                         </div>
                 </div>
             <div className='land-page-image-1'>

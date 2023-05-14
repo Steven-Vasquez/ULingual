@@ -245,6 +245,11 @@ app.post('/contactus', (req, res) => {
   })
 });
 
+//API endpoint that returns user id of logged in user.
+app.post('/userinfo', (req, res) => {
+  res.send(req.app.locals.user.UserID);
+});
+
 // API endpoint that returns all the tutors from the database
 app.get('/tutors', (req, res) => {
   const sql = 'SELECT * FROM Tutors';

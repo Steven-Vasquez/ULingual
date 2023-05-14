@@ -1,6 +1,7 @@
 // Using Express to create API endpoints that will be accessed by the client-side react app
 const express = require('express');
 
+const videoIndex = require('./video/videoIndex');
 //This is to establish connectinn with database.
 const mysql = require("mysql");
 

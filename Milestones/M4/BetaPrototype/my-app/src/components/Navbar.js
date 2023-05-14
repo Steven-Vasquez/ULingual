@@ -8,7 +8,7 @@ import logo from '../images/Logo.png'
 import axios from 'axios';
 
 const Navbar = (props) => {
-    const { loggedIn } = props;
+    const {loggedIn, username} = props;
     const [click, setClick] = useState(false)
     const handleClick = () => setClick(!click)
     const [open, setOpen] = useState(false);
@@ -47,7 +47,7 @@ const Navbar = (props) => {
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
 
                 <div className="nav-search-item">
-                <form name="search" onSubmit={handleSearchSubmit && handleClick}>
+                    <form name="search" onSubmit={handleSearchSubmit && handleClick}>
                         <input type="text" placeholder="Search for a Tutor..." value={searchQuery} onChange={handleSearchInputChange} />
                     </form>
                 </div>
@@ -57,6 +57,11 @@ const Navbar = (props) => {
                 <li className="nav-item" onClick={handleClick}>
                     <Link to="/Pricing&Plans">Pricing & Plans</Link>
                 </li>
+                {loggedIn ? (
+                <li className="nav-item">
+                    {username}
+                </li>
+                ) : null}
                 <li className='hamburger-container'>
                     <div className='user-icon' onClick={() => { setOpen(!open) }}>
                         <VscAccount size={40} />
