@@ -47,7 +47,7 @@ const Navbar = (props) => {
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
 
                 <div className="nav-search-item">
-                    <form name="search" onSubmit={handleSearchSubmit && handleClick}>
+                    <form name="search" onSubmit={handleSearchSubmit}>
                         <input type="text" placeholder="Search for a Tutor..." value={searchQuery} onChange={handleSearchInputChange} />
                     </form>
                 </div>
