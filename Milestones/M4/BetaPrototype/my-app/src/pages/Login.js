@@ -9,7 +9,7 @@ function Login() {
     const [passwordReg, setPasswordReg] = useState("");
     //const navigate = useNavigate();
 
-    //axios.defaults.withCredentials = true; // Allow cookies to be stored in the browser
+    axios.defaults.withCredentials = true; // Allow cookies to be stored in the browser
 
     const login = (e) => {
         e.preventDefault();
