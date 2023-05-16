@@ -25,7 +25,7 @@ const VideoChat = () => {
         async (event) => {
             event.preventDefault();
             setConnecting(true);
-            const data = await fetch("http://50.18.108.83:3001/video/token", {
+            const data = await fetch("https://50.18.108.83.nip.io:3001/video/token", {
             //const data = await fetch("http://localhost:3001/video/token", {
                 method: "POST",
                 body: JSON.stringify({

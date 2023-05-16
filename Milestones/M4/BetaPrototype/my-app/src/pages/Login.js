@@ -19,7 +19,7 @@ function Login() {
         );
         //console.log(usernameReg);
         if(allConditionsMet) {
-            axios.post("http://50.18.108.83:3001/login", {
+            axios.post("https://50.18.108.83.nip.io:3001/login", {
             //axios.post("http://localhost:3001/login", {
                 Uusername: usernameReg,
                 Upassword: passwordReg

@@ -29,7 +29,7 @@
 
 |             Name of the Project               |                            URL of the Project                          | 
 |                    :---:                      |                                 :---:                                  |
-| ULingual | http://50.18.108.83/  |
+| ULingual | https://50.18.108.83.nip.io/  |
 
  
 

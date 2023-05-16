@@ -15,7 +15,7 @@ const Results = () => {
 
   useEffect(() => {
       if(queryParams.search) {
-        axios.get(`http://50.18.108.83:3001/tutors/search?search=${queryParams.search}`)
+        axios.get(`https://50.18.108.83.nip.io:3001/tutors/search?search=${queryParams.search}`)
           .then(res => {
             setTutors(res.data);
             console.log("Tutors retrieved via search");

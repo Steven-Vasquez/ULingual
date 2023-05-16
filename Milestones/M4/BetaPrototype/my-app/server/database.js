@@ -9,7 +9,10 @@ const mysql = require("mysql");
 const cors = require('cors');
 
 const fs = require('fs');
-
+const https = require('https');
+const privateKey  = fs.readFileSync('../../../../../../privkey.pem', 'utf8');
+const certificate = fs.readFileSync('../../../../../../cert.pem', 'utf8');
+const credentials = {key: privateKey, cert: certificate};
 
 const cookieParser = require('cookie-parser'); // For cookies to be stored in the browser
 const session = require('express-session'); // For sessions to be stored in the server
@@ -23,7 +26,7 @@ app.use(express.json());
 
 // CORS middleware to allow cross-origin requests
 app.use(cors({
-  origin: ["http://50.18.108.83"], // Allow only the react app (the provided URL) to make requests to the API
+  origin: ["https://50.18.108.83.nip.io"], // Allow only the react app (the provided URL) to make requests to the API
   methods: ["GET", "POST"], // Methods we want to allow
   credentials: true, // Allow cookies to be enabled and stored in the browser
 }));
@@ -282,6 +285,7 @@ app.get('/tutors/search', (req, res) => {
 // A link to the video chat-related API endpoints
 app.use(videoIndex);
 
-app.listen(port, () => {
+const httpsServer = https.createServer(credentials, app);
+httpsServer.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

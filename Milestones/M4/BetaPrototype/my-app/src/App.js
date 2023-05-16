@@ -47,7 +47,7 @@ function App() {
   axios.defaults.withCredentials = true; // Allow cookies to be stored in the browser
 
   useEffect(() => {
-    axios.post('http://50.18.108.83:3001/checkLogin')
+    axios.post('https://50.18.108.83.nip.io:3001/checkLogin')
     //axios.post("http://localhost:3001/checkLogin")
       .then(res => {
         console.log("The response from the login get in App.js is: is: ");
