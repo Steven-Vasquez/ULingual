@@ -9,7 +9,7 @@ function Login() {
     const [passwordReg, setPasswordReg] = useState("");
     //const navigate = useNavigate();
 
-    axios.defaults.withCredentials = true; // Allow cookies to be stored in the browser
+    //axios.defaults.withCredentials = true; // Allow cookies to be stored in the browser
 
     const login = (e) => {
         e.preventDefault();
@@ -32,7 +32,7 @@ function Login() {
                 if(typeof res.data.message !== 'undefined' && res.data.message.length > 0) {
                     alert(res.data.message);
                 } else {
-                    alert(`Welcome back, ${usernameReg}!`)
+                    alert(`Welcome back, ${usernameReg}!`);
                     //navigate(`/Dashboard`);
                     window.location.href = '/Dashboard'; //Reloads the page so the session can update values in App.js. Then, the user is recognized as logged in
                 }
