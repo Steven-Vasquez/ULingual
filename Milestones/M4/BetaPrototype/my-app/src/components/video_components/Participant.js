@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const Participant = ({ participant }) => {
+const Participant = ({ participant, localParticipantIdentity }) => {
   // State variables to store the video and audio tracks
   const [videoTracks, setVideoTracks] = useState([]);
   const [audioTracks, setAudioTracks] = useState([]);
@@ -69,7 +69,7 @@ const Participant = ({ participant }) => {
   return (
     <div className="participant">
       <h3>{participant.identity}</h3>
-      <video ref={videoRef} autoPlay={true} />
+      <video ref={videoRef} autoPlay={true} id={participant.identity === localParticipantIdentity ? "local-video" : "remote-video"} />
       <audio ref={audioRef} autoPlay={true} muted={true} />
     </div>
   );

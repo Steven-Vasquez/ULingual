@@ -62,8 +62,8 @@ const Register = () => {
             isChecked
         );
         if(allConditionsMet) {
-            axios.post("http://50.18.108.83:3001/register", {
-            //axios.post("http://localhost:3001/register", {
+            //axios.post("http://50.18.108.83:3001/register", {
+            axios.post("http://localhost:3001/register", {
                 Ufirstname: firstnameReg,
                 Ulastname: lastnameReg,
                 Uusername: usernameReg,
