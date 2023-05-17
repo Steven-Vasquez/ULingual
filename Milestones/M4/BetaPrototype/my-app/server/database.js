@@ -273,7 +273,7 @@ app.get('/user/search', (req, res) => {
     FROM Users U, languages L
     WHERE L.LanguageID = U.NativeLanguageID AND U.Uusername LIKE '%${search}%'
     UNION
-    SELECT U.Uusername, L.Language
+    SELECT U.UserID, U.Uusername, L.Language
     FROM Users U, languages L
     WHERE L.LanguageID = U.NativeLanguageID AND L.Language = '${search}'`
   );
