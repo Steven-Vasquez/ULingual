@@ -5,6 +5,7 @@ import Video from "twilio-video";
 const Room = ({ roomName, room, handleLogout, }) => {
   const [participants, setParticipants] = useState([]);
   const [isVideoOn, setIsVideoOn] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
 
   useEffect(() => {
     // When a participant connects, the participantConnected function is called and the participant is added to the participants array.
@@ -38,6 +39,7 @@ const Room = ({ roomName, room, handleLogout, }) => {
     <Participant key={participant.sid} participant={participant} />
   ));
 
+  // Creates new video track for when the local participant re-enables their camera
   function createLocalVideoTrack() {
     return navigator.mediaDevices.getUserMedia({ video: true })
       .then((mediaStream) => {
@@ -49,64 +51,67 @@ const Room = ({ roomName, room, handleLogout, }) => {
       });
   }
 
+  // Creates new audio track for when the local participant re-enables their microphone
+  function createLocalAudioTrack() {
+    return navigator.mediaDevices.getUserMedia({ audio: true })
+      .then((mediaStream) => {
+        return new Video.LocalAudioTrack(mediaStream.getAudioTracks()[0]);
+      })
+      .catch((error) => {
+        console.error('Error creating local audio track:', error);
+        return null;
+      });
+  }
 
+  // Toggles the local participant's camera on and off
   const toggleCamera = useCallback(async () => {
     if (room) {
       console.log("isVideoOn: " + isVideoOn);
-      if (isVideoOn) {
+      if (isVideoOn) { // If the camera is already on, turn it off
         const localVideoTrack = room.localParticipant.videoTracks.values().next().value.track;
-        console.log("this happens");
         if (localVideoTrack.isEnabled) {
           room.localParticipant.unpublishTrack(localVideoTrack);
           localVideoTrack.disable();
           setIsVideoOn(false);
-          /*
-          const localVideoElement = document.getElementById('local-video');
-          if (localVideoElement) {
-            localVideoElement.srcObject = null; // Set the srcObject property to null
-            localVideoElement.poster = 'https://www.w3schools.com/w3images/fjords.jpg'; // Set the poster property to the placeholder image
-          }
-          */
         }
-      } else {
+      } else { // If the camera is off, turn it on by publishing the new video track
         const newLocalVideoTrack = await createLocalVideoTrack();
         if (newLocalVideoTrack) {
           room.localParticipant.publishTrack(newLocalVideoTrack);
           setIsVideoOn(true);
-          
+
           const localVideoElement = document.getElementById('local-video');
           if (localVideoElement) {
             const newMediaStream = new MediaStream([newLocalVideoTrack.mediaStreamTrack]);
             localVideoElement.srcObject = newMediaStream;
             localVideoElement.poster = null; // Set the poster property to null
           }
-
         }
       }
-
     }
   }, [room, isVideoOn]);
 
-
-  /*
-  const toggleCamera = useCallback(() => {
+  // Toggles the local participant's microphone on and off
+  const toggleMute = useCallback(async () => {
     if (room) {
-      if (isVideoOn) {
-        room.localParticipant.videoTracks.forEach((publication) => {
-          publication.track.disable();
-          room.localParticipant.unpublishTrack(publication.track);
-        })
-        setIsVideoOn(false);
-      } else {
-        room.localParticipant.videoTracks.forEach((publication) => { 
-          publication.track.enable();
-          room.localParticipant.publishTrack(publication.track);
-        })
-        setIsVideoOn(true);
+      if (!isMuted) { // If the microphone is already muted, unmute it
+        const localAudioTrack = room.localParticipant.audioTracks.values().next().value.track;
+        if (localAudioTrack.isEnabled) {
+          console.log("audio track was enabled");
+          room.localParticipant.unpublishTrack(localAudioTrack);
+          localAudioTrack.disable();
+          setIsMuted(true);
+        }
+      } else { // If the microphone is not muted, mute it by publishing the new audio track
+        console.log("audio track was not enabled");
+        const newLocalAudioTrack = await createLocalAudioTrack();
+        if (newLocalAudioTrack) {
+          room.localParticipant.publishTrack(newLocalAudioTrack);
+          setIsMuted(false);
+        }
       }
     }
-  }, [room, isVideoOn]);
-  */
+  }, [room, isMuted]);
 
   // Renders the video room
   return (
@@ -114,6 +119,7 @@ const Room = ({ roomName, room, handleLogout, }) => {
       <h2>Room: {roomName}</h2>
       <button onClick={handleLogout}>Log out</button>
       <button onClick={toggleCamera}> {isVideoOn ? "Turn Video Off" : "Turn Video On"}</button>
+      <button onClick={toggleMute}> {!isMuted ? "Mute" : "Unmute"}</button>
       <div className="local-participant">
         {room ? (
           <Participant
