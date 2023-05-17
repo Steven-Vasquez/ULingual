@@ -1,29 +1,29 @@
-.userHeader img{
+.friendsHeader img{
     width: 100%;
     height: 300px;
     background-size: cover;
     object-position: center center;
 }
-.userContainer{
+.friendsContainer{
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 10px;
     height: auto;
     padding: 10px;
 }
-.leftUser{
+.leftfriends{
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 1px solid black;
     height: auto;
 }
-.rightUser h3{
+.rightfriends h3{
     color: black;
     font:bold;
     font-family: 'Comme', sans-serif;
 }
-.leftUser img{
+.leftfriends img{
     height: 170px;
     width: 170px;
     object-fit: cover;
@@ -34,12 +34,13 @@
     box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.18);
     border: 10px solid black;
     border-style: solid;
-    border-color: var(--mint-green);
+    border-color: rgb(146, 87, 218);
 }
+
 .ProfileNames1{
     color: black;
 }
-.rightUser{
+.rightfriends{
     border: 1px solid black;
     display: grid;
     grid-template-rows: auto;
@@ -47,48 +48,52 @@
     padding: 10px;
 }
 
-.friendsBox{
-    border: 20px solid black;
-    border-image: linear-gradient(to bottom right, var(--mint-green), #2196f3) 1;  
+.friendsPacket{
+    border: 20px solid #f44336;
+    border-image: linear-gradient(to bottom right, rgb(118, 41, 212), #2196f3) 1;
     padding: 30px;
 }
-.descriptionBox{
-    border: 20px solid black;
-    border-image: linear-gradient(to bottom right, var(--mint-green), #2196f3) 1;  
+.descriptionPacket{
+    border: 20px solid #f44336;
+    border-image: linear-gradient(to bottom right, rgb(118, 41, 212), #2196f3) 1;
     padding: 30px;
 }
-.languageBox{
-    border: 20px solid black;
-    border-image: linear-gradient(to bottom right, var(--mint-green), #2196f3) 1;  
+.languagePacket{
+    border: 20px solid #f44336;
+    border-image: linear-gradient(to bottom right, rgb(118, 41, 212), #2196f3) 1;
     padding: 30px;
 }
 
-.leftUser .button .button__text{
+.friendsData li{ 
+    font-family: 'Montserrat', sans-serif;
+}
+
+.leftfriends .button .button__text{
+    margin-top: 5px;
     color: black;
 }
 
 /*follow button*/
-.button .purplebox{
+.button .bluebox{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: lightseagreen;
+    margin-top: 12px;
+    background-color: #2196f3;
     color: white;
     padding: 10px;
     font-size: 16px;
     text-decoration: none;
     border-radius: 5px;
-    gap: 10px;
-    margin-top: 12px;
 }
 
 @media (min-width: 1300px) {
-    .userContainer {
+    .friendsContainer {
       grid-template-columns: 0.4fr 1fr; 
       height: 950px;
     }
   
-    .rightUser {
+    .rightfriends {
       grid-template-rows: 0.4fr 0.3fr 0.3fr;
     }
   }

@@ -12,7 +12,7 @@ const Dashboard = () => {
                 <a href="LessonPage" class="button">
                 <div class="button__line"></div>
                 <div class="button__line"></div>
-                <span class="button__text">Lesson</span>
+                <span class="button__text">Flashcards</span>
                 <div class="button__drow1"></div>
                 <div class="button__drow2"></div>
                 </a>

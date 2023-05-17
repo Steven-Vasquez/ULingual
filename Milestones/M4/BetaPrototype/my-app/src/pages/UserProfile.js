@@ -1,36 +1,49 @@
 import React from "react";
 import './stylesheets/UserProfile.css'
+import Banner from './stylesheets/UlingualBanner.png'
 import { Link } from "react-router-dom";
 
 const UserProfile = () => {
     return(
-    <div className="user-entire1">
-        <div className='UserProfile1'>
-            <div className="User-Info1">
-                <img className="ProfileImage1" src ={"https://placehold.jp/150x150.png"}/>
-                <h2 className="ProfileName1">User Name</h2>
+    <div className="userHeader">
+        <header>
+            <img src={Banner} alt="Ulingual Banner"></img>
+        </header>
+        <div className="userContainer">
+            <div className="leftUser">
+                <img className="ProfileImages1" src ={"https://placehold.jp/150x150.png"}/>
+                <h2 className="ProfileNames1">UserName</h2>
+                <div className="button">
+                    <Link to="/FriendsListPage" className="purplebox">Inbox</Link>
+                </div>
+
+                <div className="button">
+                    <Link to="/UserProfileEdit" className="purplebox">Edit Profile</Link>
+                </div>
+                <div className="userData">
+                    <li>Email</li>
+                    <li>Followers</li>
+                    <li>Native Language</li>
+                </div>
             </div>
-            <div className="UserDetails1">
-                <h3>
-                    <ul>
-                        <div className="desc1" >
-                            <li>Description</li>
-                        </div>
-                        <div className="friends1">
-                            <li>Friends</li>
-                        </div>
-                        <div className="lang-sel">
-                            <Link to="/SelectLanguage">
-                            <li>Language Selected</li>
-                            </Link>
-                        </div>
-                        <div className="lang-sel1">
-                            <Link to="/UserProfileEdit">Edit Profile</Link>
-                        </div>
-                    </ul>
-                </h3>
+
+            <div className="rightUser">
+                <div className="descriptionBox" >
+                    <h3>Description</h3>
+                </div>
+                <div className="friendsBox">
+                    <Link to="/FriendsListPage" className="button">
+                    <h3>Friends</h3>
+                    </Link>
+                </div>
+                
+                <div className="languageBox">
+                    <Link to="/SelectLanguage" className="button">
+                    <h3>Language Selected</h3>
+                    </Link>
+                </div>
             </div>
-        </div>   
+        </div>
     </div>
     );
 }

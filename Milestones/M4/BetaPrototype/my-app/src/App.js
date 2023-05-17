@@ -42,9 +42,12 @@ function App() {
   
   const [loggedIn, setLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [username, setUsername] = useState("");
+
+  axios.defaults.withCredentials = true; // Allow cookies to be stored in the browser
 
   useEffect(() => {
-    axios.post('http://50.18.108.83:3001/checkLogin')
+    axios.post('https://50.18.108.83.nip.io:3001/checkLogin')
     //axios.post("http://localhost:3001/checkLogin")
       .then(res => {
         console.log("The response from the login get in App.js is: is: ");
@@ -52,6 +55,7 @@ function App() {
         console.log(res.data);
         if (res.data.loggedIn === true) {
           setLoggedIn(true);
+          setUsername(res.data.user.Uusername);
         } else {
           setLoggedIn(false);
         }
@@ -78,9 +82,9 @@ function App() {
   return (
     <>
       <Router>
-      <Navbar loggedIn={loggedIn}/>
+      <Navbar loggedIn={loggedIn} username={username}/>
         <Routes>
-          <Route exact path="/" element={<MainContent />} />
+          <Route exact path="/" element={<MainContent loggedIn={loggedIn}/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register/>}/>
           <Route path="/TutorsPage" element={<Tutors />}/>
@@ -89,6 +93,7 @@ function App() {
           <Route path="/AboutUs" element={<AboutUs/>}/>
           <Route path="/SearchResults" element={<Results/>}/>
           <Route path="/Pricing&Plans" element={<Pricing/>}/>
+          <Route path="/TermsAndConditions" element={<TermsAndConditions/>}/>
           {loggedIn ? (
             // Routes that can only be accessed if user is logged in
             <>
@@ -102,7 +107,6 @@ function App() {
               <Route path="/BookRecommendation" element={<BookRecommendationPage/>}/>
               <Route path="/VideoRecommendation" element={<VideoRecommendationPage/>}/>
               <Route path="/MusicRecommendation" element={<MusicRecommendationPage/>}/>
-              <Route path="/TermsAndConditions" element={<TermsAndConditions/>}/>
               <Route path="/TutorProfile" element={<TutorProfile/>}/>
               <Route path="/UserProfile" element={<UserProfile/>}/>
               <Route path="/UserProfileEdit" element={<UserProfileEdit/>}/>
