@@ -161,8 +161,8 @@ app.post('/register', (req, res) => {
 
 // API endpoint that checks if a user is logged in
 app.post("/checkLogin", (req, res) => {
-  if (req.app.locals.user !== undefined) { // There is a user session active
-    res.send({loggedIn: true, user: req.app.locals.user});
+  if (req.session.user) { // There is a user session active
+    res.send({loggedIn: true, user: req.session.user});
   } else { // There is no user session active
     res.send({ loggedIn: false });
    }
@@ -189,15 +189,13 @@ app.post('/login', (req, res) => {
         }
         if (response) {
           req.session.user = foundUser;
-          req.app.locals.user = foundUser; // Set the session local to the user that just logged in so login session can persist across pages
+          //req.app.locals.user = foundUser; // Set the session local to the user that just logged in so login session can persist across pages
           res.send(foundUser);
-        }
-        else { // Invalid password (display both for security reasons)
+        } else { // Invalid password (display both for security reasons)
           res.send({message: "Invalid Username/Password."})
         }
       });
-    }
-    else { // User not found (display both for security reasons)
+    } else { // User not found (display both for security reasons)
       res.send({message: "Invalid Username/Password."})
     }
   });
@@ -215,7 +213,7 @@ app.post('/logout', (req, res) => {
       res.send('User logged out successfully');
     }
   });
-  req.app.locals.user = undefined; // Reset the session local to undefined
+  //req.app.locals.user = undefined; // Reset the session local to undefined
 });
 
 // API endpoint that allows the user to send an email to the company email
@@ -245,6 +243,36 @@ app.post('/contactus', (req, res) => {
   })
 });
 
+//API endpoint that returns user's friend count
+app.post('/friends/count', (req, res) => {
+  const userID = req.session.user.userID;
+
+  const sql = 'SELECT COUNT(*) as count FROM friends WHERE UserID1 = ?';
+  db.query(sql, [userID], (err, results) => {
+    if(err) {
+      console.error(err.message);
+      return;
+    } else {
+    res.send({count: results[0].count});
+    }
+  });
+});
+
+//API endpoint that returns user's friends
+app.post('/friends', (req, res) => {
+  const userID = req.session.user.userID;
+
+  const sql = 'SELECT U.Uusername FROM Users U, friends F WHERE F.UserID1 = ? && U.UserID = F.UserID2';
+  db.query(sql, [userID], (err, results) => {
+    if(err) {
+      console.error(err.message);
+      return;
+    } else {
+    res.send(results);
+    }
+  });
+});
+
 // API endpoint that returns all the tutors from the database
 app.get('/tutors', (req, res) => {
   const sql = 'SELECT * FROM Tutors';
@@ -258,15 +286,28 @@ app.get('/tutors', (req, res) => {
 });
 
 // API endpoint that returns a search result for tutors from the database
-app.get('/tutors/search', (req, res) => {
+app.get('/user/search', (req, res) => {
   const search = req.query.search;
-  const sql = `SELECT * FROM Tutors WHERE TutorFirstName LIKE '%${search}%' OR TutorLastName LIKE '%${search}%'`;
+  //const sql = `SELECT * FROM Tutors WHERE TutorFirstName LIKE '%${search}%' OR TutorLastName LIKE '%${search}%'`;
+  const sql = (
+    `SELECT U.UserID, U.Uusername, L.Language
+    FROM Users U, languages L
+    WHERE L.LanguageID = U.NativeLanguageID AND U.Uusername LIKE '%${search}%'
+    UNION
+    SELECT U.UserID, U.Uusername, L.Language
+    FROM Users U, languages L
+    WHERE L.LanguageID = U.NativeLanguageID AND L.Language = '${search}'`
+  );
   db.query(sql, (error, result) => {
     if (error) {
       console.error(error.message);
       return;
     }
-    res.send(result);
+    if(result.length === 0) {
+      res.send({message: "No results found."})
+    } else {
+      res.send(result);
+    }
   });
 });
 

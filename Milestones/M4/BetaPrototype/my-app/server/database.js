@@ -1,6 +1,7 @@
 // Using Express to create API endpoints that will be accessed by the client-side react app
 const express = require('express');
 
+const videoIndex = require('./video/videoIndex');
 //This is to establish connectinn with database.
 const mysql = require("mysql");
 
@@ -8,7 +9,10 @@ const mysql = require("mysql");
 const cors = require('cors');
 
 const fs = require('fs');
-
+const https = require('https');
+const privateKey  = fs.readFileSync('../../../../../../privkey.pem', 'utf8');
+const certificate = fs.readFileSync('../../../../../../cert.pem', 'utf8');
+const credentials = {key: privateKey, cert: certificate};
 
 const cookieParser = require('cookie-parser'); // For cookies to be stored in the browser
 const session = require('express-session'); // For sessions to be stored in the server
@@ -22,7 +26,7 @@ app.use(express.json());
 
 // CORS middleware to allow cross-origin requests
 app.use(cors({
-  origin: ["http://50.18.108.83"], // Allow only the react app (the provided URL) to make requests to the API
+  origin: ["https://50.18.108.83.nip.io"], // Allow only the react app (the provided URL) to make requests to the API
   methods: ["GET", "POST"], // Methods we want to allow
   credentials: true, // Allow cookies to be enabled and stored in the browser
 }));
@@ -136,8 +140,8 @@ app.post('/register', (req, res) => {
 
 // API endpoint that checks if a user is logged in
 app.post("/checkLogin", (req, res) => {
-  if (req.app.locals.user !== undefined) { // There is a user session active
-    res.send({loggedIn: true, user: req.app.locals.user});
+  if (req.session.user) { // There is a user session active
+    res.send({loggedIn: true, user: req.session.user});
   } else { // There is no user session active
     res.send({ loggedIn: false });
    }
@@ -164,10 +168,9 @@ app.post('/login', (req, res) => {
         }
         if (response) {
           req.session.user = foundUser;
-          req.app.locals.user = foundUser; // Set the session local to the user that just logged in so login session can persist across pages
+          //req.app.locals.user = foundUser; // Set the session local to the user that just logged in so login session can persist across pages
           res.send(foundUser);
-        }
-        else { // Invalid password (display both for security reasons)
+        } else { // Invalid password (display both for security reasons)
           res.send({message: "Invalid Username/Password."})
         }
       });
@@ -189,7 +192,7 @@ app.post('/logout', (req, res) => {
       res.send('User logged out successfully');
     }
   });
-  req.app.locals.user = undefined; // Reset the session local to undefined
+  //req.app.locals.user = undefined; // Reset the session local to undefined
 });
 
 // API endpoint that allows the user to send an email to the company email
@@ -219,6 +222,36 @@ app.post('/contactus', (req, res) => {
   })
 });
 
+//API endpoint that returns user's friend count
+app.post('/friends/count', (req, res) => {
+  const userID = req.session.user.userID;
+
+  const sql = 'SELECT COUNT(*) as count FROM friends WHERE UserID1 = ?';
+  db.query(sql, [userID], (err, results) => {
+    if(err) {
+      console.error(err.message);
+      return;
+    } else {
+    res.send({count: results[0].count});
+    }
+  });
+});
+
+//API endpoint that returns user's friends
+app.post('/friends', (req, res) => {
+  const userID = req.session.user.userID;
+
+  const sql = 'SELECT U.Uusername FROM Users U, friends F WHERE F.UserID1 = ? && U.UserID = F.UserID2';
+  db.query(sql, [userID], (err, results) => {
+    if(err) {
+      console.error(err.message);
+      return;
+    } else {
+    res.send(results);
+    }
+  });
+});
+
 // API endpoint that returns all the tutors from the database
 app.get('/tutors', (req, res) => {
   const sql = 'SELECT * FROM Tutors';
@@ -231,22 +264,36 @@ app.get('/tutors', (req, res) => {
   });
 });
 
-// API endpoint that returns a search retult for tutors from the database
-app.get('/tutors/search', (req, res) => {
+// API endpoint that returns a search result for tutors from the database
+app.get('/user/search', (req, res) => {
   const search = req.query.search;
-  const sql = `SELECT * FROM Tutors WHERE TutorFirstName LIKE '%${search}%' OR TutorLastName LIKE '%${search}%'`;
+  //const sql = `SELECT * FROM Tutors WHERE TutorFirstName LIKE '%${search}%' OR TutorLastName LIKE '%${search}%'`;
+  const sql = (
+    `SELECT U.UserID, U.Uusername, L.Language
+    FROM Users U, languages L
+    WHERE L.LanguageID = U.NativeLanguageID AND U.Uusername LIKE '%${search}%'
+    UNION
+    SELECT U.UserID, U.Uusername, L.Language
+    FROM Users U, languages L
+    WHERE L.LanguageID = U.NativeLanguageID AND L.Language = '${search}'`
+  );
   db.query(sql, (error, result) => {
     if (error) {
       console.error(error.message);
       return;
     }
-    res.send(result);
+    if(result.length === 0) {
+      res.send({message: "No results found."})
+    } else {
+      res.send(result);
+    }
   });
 });
 
 // A link to the video chat-related API endpoints
 app.use(videoIndex);
 
-app.listen(port, () => {
+const httpsServer = https.createServer(credentials, app);
+httpsServer.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

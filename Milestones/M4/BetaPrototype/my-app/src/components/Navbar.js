@@ -8,7 +8,7 @@ import logo from '../images/Logo.png'
 import axios from 'axios';
 
 const Navbar = (props) => {
-    const { loggedIn } = props;
+    const {loggedIn, username} = props;
     const [click, setClick] = useState(false)
     const handleClick = () => setClick(!click)
     const [open, setOpen] = useState(false);
@@ -18,7 +18,7 @@ const Navbar = (props) => {
 
     const handleSearchSubmit = (event) => {
         event.preventDefault();
-        navigate(`/SearchResults?search=${searchQuery}`);
+        window.location.href = `/SearchResults?search=${searchQuery}`;
     }
 
     const handleSearchInputChange = (event) => {
@@ -27,7 +27,7 @@ const Navbar = (props) => {
     
     const handleLogoutRequest = async () => {
         try {
-            await axios.post('http://50.18.108.83:3001/logout');
+            await axios.post('https://50.18.108.83.nip.io:3001/logout');
             //await axios.post('http://localhost:3001/logout');
             setOpen(false); // close the drop-menu after API request is performed
             window.location.href = '/'; // redirect to home and reload the app so the session can update values in App.js. Then, the user is recognized as logged out
@@ -47,7 +47,7 @@ const Navbar = (props) => {
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
 
                 <div className="nav-search-item">
-                <form name="search" onSubmit={handleSearchSubmit && handleClick}>
+                    <form name="search" onSubmit={handleSearchSubmit}>
                         <input type="text" placeholder="Search for a Tutor..." value={searchQuery} onChange={handleSearchInputChange} />
                     </form>
                 </div>
@@ -57,6 +57,11 @@ const Navbar = (props) => {
                 <li className="nav-item" onClick={handleClick}>
                     <Link to="/Pricing&Plans">Pricing & Plans</Link>
                 </li>
+                {loggedIn ? (
+                <li className="nav-item">
+                    {username}
+                </li>
+                ) : null}
                 <li className='hamburger-container'>
                     <div className='user-icon' onClick={() => { setOpen(!open) }}>
                         <VscAccount size={40} />
