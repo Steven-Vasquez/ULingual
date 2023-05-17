@@ -8,38 +8,43 @@ import queryString from 'query-string';
 const Results = () => {
   const location = useLocation();
   const queryParams = queryString.parse(location.search);
+  var pageLoaded = true;
 
   console.log(queryParams.search);
 
-  const [tutors, setTutors] = useState([]);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
-      if(queryParams.search) {
-        axios.get(`https://50.18.108.83.nip.io:3001/tutors/search?search=${queryParams.search}`)
+      if(pageLoaded && queryParams.search) {
+        axios.get(`https://50.18.108.83.nip.io:3001/user/search?search=${queryParams.search}`)
+        //axios.get(`http://localhost:3001/user/search?search=${queryParams.search}`)
           .then(res => {
-            setTutors(res.data);
-            console.log("Tutors retrieved via search");
+            if(res.data.message) {
+              alert(res.data.message);
+            } else {
+              setUsers(res.data);
+              console.log("Users retrieved via search");
+            }
           })
           .catch(err => {
-            console.log("Error: Tutors not retrieved via search");
+            console.log("Error: Users not retrieved via search");
             console.log(err);
           });
       }
+      pageLoaded = false;
     },[]);
-    console.log(tutors);
+    console.log(users);
     return(
     <div className='sr-pg'>
       <div className="Seach-Results">
         <h2>Results from Database</h2>
         <div>
           <ul>
-            {tutors.map(tutor => (
-              <li key={tutor.TutorID}>
-                <h3>{tutor.TutorFirstName} {tutor.TutorLastName}'s Contact Information:</h3>
-                <p>Email: {tutor.TutorEmail}</p>
-                <p>Phone Number: {tutor.TutorPhone}</p>
+            {users.map(user => (
+              <li key={user.UserID}>
+                <h3>Username: {user.Uusername} || Native Language: {user.Language}</h3>
               </li>
-              ))}
+            ))}
           </ul>
         </div>
       </div>

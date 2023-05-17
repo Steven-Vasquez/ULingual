@@ -243,14 +243,9 @@ app.post('/contactus', (req, res) => {
   })
 });
 
-//API endpoint that returns user id of logged in user.
-app.post('/userinfo', (req, res) => {
-  res.send(req.session.user.UserID);
-});
-
 //API endpoint that returns user's friend count
 app.post('/friends/count', (req, res) => {
-  const userID = req.body.userID;
+  const userID = req.session.user.userID;
 
   const sql = 'SELECT COUNT(*) as count FROM friends WHERE UserID1 = ?';
   db.query(sql, [userID], (err, results) => {
@@ -265,7 +260,7 @@ app.post('/friends/count', (req, res) => {
 
 //API endpoint that returns user's friends
 app.post('/friends', (req, res) => {
-  const userID = req.body.userID;
+  const userID = req.session.user.userID;
 
   const sql = 'SELECT U.Uusername FROM Users U, friends F WHERE F.UserID1 = ? && U.UserID = F.UserID2';
   db.query(sql, [userID], (err, results) => {
@@ -291,15 +286,28 @@ app.get('/tutors', (req, res) => {
 });
 
 // API endpoint that returns a search result for tutors from the database
-app.get('/tutors/search', (req, res) => {
+app.get('/user/search', (req, res) => {
   const search = req.query.search;
-  const sql = `SELECT * FROM Tutors WHERE TutorFirstName LIKE '%${search}%' OR TutorLastName LIKE '%${search}%'`;
+  //const sql = `SELECT * FROM Tutors WHERE TutorFirstName LIKE '%${search}%' OR TutorLastName LIKE '%${search}%'`;
+  const sql = (
+    `SELECT U.UserID, U.Uusername, L.Language
+    FROM Users U, languages L
+    WHERE L.LanguageID = U.NativeLanguageID AND U.Uusername LIKE '%${search}%'
+    UNION
+    SELECT U.UserID, U.Uusername, L.Language
+    FROM Users U, languages L
+    WHERE L.LanguageID = U.NativeLanguageID AND L.Language = '${search}'`
+  );
   db.query(sql, (error, result) => {
     if (error) {
       console.error(error.message);
       return;
     }
-    res.send(result);
+    if(result.length === 0) {
+      res.send({message: "No results found."})
+    } else {
+      res.send(result);
+    }
   });
 });
 

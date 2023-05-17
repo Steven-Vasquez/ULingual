@@ -18,7 +18,7 @@ const Navbar = (props) => {
 
     const handleSearchSubmit = (event) => {
         event.preventDefault();
-        navigate(`/SearchResults?search=${searchQuery}`);
+        window.location.href = `/SearchResults?search=${searchQuery}`;
     }
 
     const handleSearchInputChange = (event) => {
