@@ -75,6 +75,7 @@
 }
 .bookLink{
     border: 1px solid black;
+    overflow-x: hidden;
 }
 
 .innerBook{

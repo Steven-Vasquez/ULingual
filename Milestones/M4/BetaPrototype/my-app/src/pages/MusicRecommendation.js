@@ -25,29 +25,19 @@ const MusicRecommendationPage= () => {
                         </div>
                         <div className = "secondary">
                                 <div className='bookRank'><h3>1</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
+                                <div className='bookName'><h3>Learn English through Singing 80's songs with lyrics!</h3></div>
+                                <div className='bookDescription'><h3>Playlist by Angel Mobile Apps</h3></div>
+                                <div className='bookLink'><h3>https://www.youtube.com/watch?v=-YUAbW_YDm4&list=PL0J5xb8JH3VukoRHgk86Yr9BSVeBewCuZ</h3></div>
 
                                 <div className='bookRank'><h3>2</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
+                                <div className='bookName'><h3>Improve English With Songs</h3></div>
+                                <div className='bookDescription'><h3>Playlist by R.T.</h3></div>
+                                <div className='bookLink'><h3>https://www.youtube.com/watch?v=sJQYoGyEtDs&list=PLeS553ZNGqNR7fJ9eznn1Z5mIuMZwT_bY</h3></div>
 
                                 <div className='bookRank'><h3>3</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
-
-                                <div className='bookRank'><h3>4</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
-
-                                <div className='bookRank'><h3>5</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
+                                <div className='bookName'><h3>Learn English with Songs - Perfect Tense - Lyric Lab</h3></div>
+                                <div className='bookDescription'><h3>Playlist by Learn English with EnglishClass101.com</h3></div>
+                                <div className='bookLink'><h3>https://www.youtube.com/watch?v=w-JUNYwstpo&list=RDQMOsqeSeqkm80&start_radio=1</h3></div>
                         </div>
                         </div>
                 </div>
@@ -64,29 +54,19 @@ const MusicRecommendationPage= () => {
                         </div>
                         <div className = "secondary">
                                 <div className='bookRank'><h3>1</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
+                                <div className='bookName'><h3>Songs to learn Spanish</h3></div>
+                                <div className='bookDescription'><h3>Playlist by Susan Vineyard</h3></div>
+                                <div className='bookLink'><h3>https://www.youtube.com/watch?v=4xgsJVsAFpk&list=PL2RLDc3Akk8snxqxgWYaQIRPNIJSf-Yvo</h3></div>
 
                                 <div className='bookRank'><h3>2</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
+                                <div className='bookName'><h3>Youtube learn spanish</h3></div>
+                                <div className='bookDescription'><h3>Playlist by Youtube Mix</h3></div>
+                                <div className='bookLink'><h3>https://www.youtube.com/watch?v=IKznbHvPFwc&list=RDQM1NGWA8WIQVo&start_radio=1</h3></div>
 
                                 <div className='bookRank'><h3>3</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
-
-                                <div className='bookRank'><h3>4</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
-
-                                <div className='bookRank'><h3>5</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
+                                <div className='bookName'><h3>Learn Spanish vocabulary with songs</h3></div>
+                                <div className='bookDescription'><h3>Playlist by WORDPIE</h3></div>
+                                <div className='bookLink'><h3>https://www.youtube.com/watch?v=_l6Oj3HdVik&list=PLWHCV00OLMW8_eBFkj7DdhFEz-6EfRIM6</h3></div>
                         </div>
                         </div>
                 </div>
@@ -103,29 +83,19 @@ const MusicRecommendationPage= () => {
                         </div>
                         <div className = "secondary">
                                 <div className='bookRank'><h3>1</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
+                                <div className='bookName'><h3>Learn French with a French Dude</h3></div>
+                                <div className='bookDescription'><h3>Playlist by LearnFrenchwithaFrenchDude</h3></div>
+                                <div className='bookLink'><h3>https://www.youtube.com/watch?v=SJ2FxKDpSBw&list=PL8aS91uAe39edrhLOfvQc_0Hxo8WDnMbH</h3></div>
 
                                 <div className='bookRank'><h3>2</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
+                                <div className='bookName'><h3>French songs for beginners</h3></div>
+                                <div className='bookDescription'><h3>Playlist by BlackUps__</h3></div>
+                                <div className='bookLink'><h3>https://www.youtube.com/watch?v=NU9qYbLtPog&list=PLWC3jTo5VQfCXN81Xr-J38E_wiupPzwCt</h3></div>
 
                                 <div className='bookRank'><h3>3</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
-
-                                <div className='bookRank'><h3>4</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
-
-                                <div className='bookRank'><h3>5</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
+                                <div className='bookName'><h3>french songs for children playlist - Learn French</h3></div>
+                                <div className='bookDescription'><h3>Playlist by Learn with me - ABC 123 International - how to learn languages fast</h3></div>
+                                <div className='bookLink'><h3>https://www.youtube.com/watch?v=ipnS8bipT1M&list=PLZ3H7o7zTVu-m_21L2R_k-ri3okzgOLcR</h3></div>
                         </div>
                         </div>
                 </div>
@@ -142,29 +112,19 @@ const MusicRecommendationPage= () => {
                         </div>
                         <div className = "secondary">
                                 <div className='bookRank'><h3>1</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
+                                <div className='bookName'><h3>Learn Arabic With Songs (No Music) - Apprendre l'arabe avec des chansons (Sans musique) </h3></div>
+                                <div className='bookDescription'><h3>Playlist by Osratouna tv - قناة أسرتنا</h3></div>
+                                <div className='bookLink'><h3>https://www.youtube.com/watch?v=NBI6uEFWVG8&list=PLUitXL66pnO8bf_TnT0ImSmR1Oc5GBgfJ</h3></div>
 
                                 <div className='bookRank'><h3>2</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
+                                <div className='bookName'><h3>Learn Arabic through short stories</h3></div>
+                                <div className='bookDescription'><h3>Playlist by Arabic blooms</h3></div>
+                                <div className='bookLink'><h3>https://www.youtube.com/watch?v=GFJATd868iI&list=PL7RpCYE5gLKF3Wus9QmIXHuy4p81lpaVA</h3></div>
 
                                 <div className='bookRank'><h3>3</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
-
-                                <div className='bookRank'><h3>4</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
-
-                                <div className='bookRank'><h3>5</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
+                                <div className='bookName'><h3>Let's Learn Arabic With Fun & Ease</h3></div>
+                                <div className='bookDescription'><h3>Playlist by Sirat Al Mustaqeem</h3></div>
+                                <div className='bookLink'><h3>https://www.youtube.com/watch?v=pA3Fdl2bAT4&list=PLIBMga6MApfJg9r5cn2yjvlIC-sZcq-9_</h3></div>
                         </div>
                         </div>
                 </div>
@@ -181,29 +141,19 @@ const MusicRecommendationPage= () => {
                         </div>
                         <div className = "secondary">
                                 <div className='bookRank'><h3>1</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
+                                <div className='bookName'><h3>Learn Korean with K-POP!</h3></div>
+                                <div className='bookDescription'>Playlist by Learn Korean with K-POP!<h3></h3></div>
+                                <div className='bookLink'><h3>https://www.youtube.com/watch?v=apAkOQnmtmc&list=PLxK8JX0gFX42v_hnhAcNSllp-8cJl22Ym</h3></div>
 
                                 <div className='bookRank'><h3>2</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
+                                <div className='bookName'><h3>Easy korean songs</h3></div>
+                                <div className='bookDescription'><h3>Playlist by McKenzie Dawson</h3></div>
+                                <div className='bookLink'><h3>https://www.youtube.com/watch?v=DGITM1V_Z44&list=PL9jA1_bnwY_XLAMHJ0V8lxoljg7mJ403X</h3></div>
 
                                 <div className='bookRank'><h3>3</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
-
-                                <div className='bookRank'><h3>4</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
-
-                                <div className='bookRank'><h3>5</h3></div>
-                                <div className='bookName'><h3>The Curious Incident of the Dog in the Night by Mark Haddo</h3></div>
-                                <div className='bookDescription'><h3>The Curious Incident of The Dog in the Night Time is the story of a young boy, Christopher, who suffers from autism. Christopher goes to a special school and finds it very hard to understand and communicate with people from the outside world.  He discovers that his neighbours’ dog has been murdered and decides to investigate the crime. This takes him on a terrifying and challenging journey that changes his life. The story is told by Christopher, which means the language is simple and easy to understand.  Its short length also makes this book easy to read, even for beginners!</h3></div>
-                                <div className='bookLink'><h3>Link</h3></div>
+                                <div className='bookName'><h3>Learn Korean with BTS Songs</h3></div>
+                                <div className='bookDescription'><h3>Playlist by Korean Emo</h3></div>
+                                <div className='bookLink'><h3>https://www.youtube.com/watch?v=isMZhwNl6dQ&list=PLl6ijEtKyvGiXo-1Z-Ctg_LFHn8wJFxcx</h3></div>
                         </div>
                         </div>
                 </div>
