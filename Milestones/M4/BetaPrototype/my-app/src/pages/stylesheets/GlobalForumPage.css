@@ -3,7 +3,7 @@
   display: grid;
   grid-template-rows: 0.75fr 0.75fr 0.75fr 0.65fr;
   padding: 25px;
-  height: 950px;
+  min-height: 100vh;
   background-color: #707070;
 }
 
