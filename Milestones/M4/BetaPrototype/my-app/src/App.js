@@ -35,7 +35,7 @@ import UserProfile from './pages/UserProfile';
 import UserProfileEdit from './pages/UserProfileEdit';
 import FriendsProfile from './pages/FriendsProfile';
 import SelectLanguage from './pages/SelectLanguage';
-import createVideo from './pages/createVideo';
+import createVid from './pages/createVid';
 import Lobby from './components/video_components/Lobby';
 
 
@@ -122,7 +122,7 @@ function App() {
               <Route path="/LessonComplete" element={<LessonComplete/>}/>
               <Route path="/FriendsProfile" element={<FriendsProfile/>}/>
               <Route path="/SelectLanguage" element={<SelectLanguage/>}/>
-              <Route path="/createVideo" element={<createVideo/>}/>
+              <Route path="/createVid" element={<createVid/>}/>
               <Route path="/Lobby" element={<Lobby/>}/>
             </>
           ) : null}

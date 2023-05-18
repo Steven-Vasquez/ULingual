@@ -159,6 +159,34 @@ const Register = () => {
                             Accept Terms & Conditions
                             </Link>
                         </label>
+                        {/*
+
+                            Note to backend team:
+                            This needs to be validated and stored in database:
+
+                            Both Native Language & Language Learning!
+                        
+                        */}
+                       <div className="language-inits">
+                       <label for="native-select">Select Native Language:</label>
+                        <select name="native-select" id="native-select">
+                            <option value="English">English</option>
+                            <option value="Spanish">Spanish</option>
+                            <option value="French">French</option>
+                            <option value="Korea">Korean</option>
+                            <option value="Arabic">Arabic</option>
+                        </select>
+                        
+                        <label for="learn-select">Select language to learn:</label>
+                        <select name="learn-select" id="learn-select">
+                            <option value="English">English</option>
+                            <option value="Spanish">Spanish</option>
+                            <option value="French">French</option>
+                            <option value="Korea">Korean</option>
+                            <option value="Arabic">Arabic</option>
+                        </select>
+
+                       </div>
                         
                     </div>
                     <button onClick={(e) => createAccount(e)} className="reg-1">
