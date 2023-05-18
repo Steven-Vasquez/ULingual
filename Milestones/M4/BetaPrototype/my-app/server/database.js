@@ -91,6 +91,8 @@ app.post('/register', (req, res) => {
   const Uusername = req.body.Uusername;
   const Upassword = req.body.Upassword;
   const Uemail = req.body.Uemail;
+  const NativeLanguageID = req.body.NativeLanguageID;
+  const LearningLanguageID = req.body.LearningLanguageID;
 
   // For username verification
   const usernameQuery = 'SELECT * FROM Users WHERE Uusername = ?';
@@ -120,9 +122,9 @@ app.post('/register', (req, res) => {
                 console.error(err.message);
                 return;
               }
-              const sql = 'INSERT INTO Users (Ufirstname, Ulastname, Uusername, Upassword, Uemail) VALUES (?,?,?,?,?)';
+              const sql = 'INSERT INTO Users (Ufirstname, Ulastname, Uusername, Upassword, Uemail, NativeLanguageID, LearningLanguageID) VALUES (?,?,?,?,?,?,?)';
               db.query(sql, 
-                [Ufirstname, Ulastname, Uusername, hash, Uemail], 
+                [Ufirstname, Ulastname, Uusername, hash, Uemail, NativeLanguageID, LearningLanguageID], 
                 (error, result) => {
                 if(error){
                   console.error(error.message);
@@ -284,14 +286,26 @@ app.post('/friends', (req, res) => {
 app.post('/profile', (req, res) => {
   const userID = req.session.user.UserID;
   const Description = req.body.Description;
-  const sql = 'UPDATE Users SET Description = ? WHERE UserID = ?';
-  db.query(sql, [Description, userID], (err, results) => {
+  const LearningLanguage = req.body.LearningLanguage;
+  let sql = 'SELECT LanguageID FROM languages WHERE Language = ?';
+  db.query(sql, [LearningLanguage], (err, results) => {
     if(err) {
       console.error(err.message);
       return;
     } else {
-      req.session.user.Description = Description;
-      res.send(req.session.user);
+      req.session.LearningLanguageID = results[0].LanguageID;
+      const LearningLanguageID = results[0].LanguageID;
+      sql = 'UPDATE Users SET Description = ?, LearningLanguageID = ? WHERE UserID = ?';
+      db.query(sql, [Description, LearningLanguageID, userID], (err, results) => {
+        if(err) {
+          console.error(err.message);
+          return;
+        } else {
+          req.session.user.Description = Description;
+          req.session.user.LearningLanguage = LearningLanguage;
+          res.send(req.session.user);
+        }
+      });
     }
   });
 })

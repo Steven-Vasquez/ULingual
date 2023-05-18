@@ -7,7 +7,6 @@ import './stylesheets/Login.css'
 function Login() {
     const [usernameReg, setUsernameReg] = useState("");
     const [passwordReg, setPasswordReg] = useState("");
-    //const navigate = useNavigate();
 
     axios.defaults.withCredentials = true; // Allow cookies to be stored in the browser
 
@@ -33,7 +32,6 @@ function Login() {
                     alert(res.data.message);
                 } else {
                     alert(`Welcome back, ${usernameReg}!`);
-                    //navigate(`/Dashboard`);
                     window.location.href = '/Dashboard'; //Reloads the page so the session can update values in App.js. Then, the user is recognized as logged in
                 }
                 //console.log(res.data);

@@ -5,12 +5,16 @@ import axios from "axios";
 
 const UserProfileEdit = () => {
     const [description, setDescription] = useState("");
+    const [nativeLanguage, setNative] = useState("");
+    const [learningLanguage, setLearning] = useState("");
     
     useEffect(() => {
         axios.post(`https://50.18.108.83.nip.io:3001/user/info`)
         //axios.post(`http://localhost:3001/user/info`)
         .then(res => {
             setDescription(res.data.Description);
+            setNative(res.data.NativeLanguage);
+            setLearning(res.data.LearningLanguage);
         })
         .catch(err => {
             console.log(err);
@@ -19,19 +23,28 @@ const UserProfileEdit = () => {
 
     const submitProfile = (e) => {
         e.preventDefault();
-        axios.post("https://50.18.108.83.nip.io:3001/profile", {
-        //axios.post("http://localhost:3001/profile", {
-            Description: description
-        })
-        .then(res => {
-            console.log(res);
-            alert("Your profile has been updated!")
-            window.location.href = '/UserProfile';
-        })
-        .catch(err => {
-            console.log(err);
-        })
+        if(nativeLanguage == learningLanguage) {
+            alert("You must select a non-native language.")
+        } else {
+            axios.post("https://50.18.108.83.nip.io:3001/profile", {
+            //axios.post("http://localhost:3001/profile", {
+                Description: description,
+                LearningLanguage: learningLanguage
+            })
+            .then(res => {
+                console.log(res);
+                alert("Your profile has been updated!")
+                window.location.href = '/UserProfile';
+            })
+            .catch(err => {
+                console.log(err);
+            })
+        }
     }
+
+    const handleCheckboxChange = (language) => {
+        setLearning(language);
+      };
     
     return(
     <div className="user-entire">
@@ -66,11 +79,11 @@ const UserProfileEdit = () => {
                     <h2>Select Languages</h2>
                     <div className="innerLangSelection">
                         <ul>
-                            <li>English <input type={"checkbox"}/></li>
-                            <li>Korean <input type={"checkbox"}/></li>
-                            <li>Spanish <input type={"checkbox"}/></li>
-                            <li>French <input type={"checkbox"}/></li>
-                            <li>Arabic <input type={"checkbox"}/></li>
+                            <li>English <input checked={learningLanguage === 'English'} onChange={() => handleCheckboxChange('English')} type={"checkbox"}/></li>
+                            <li>Spanish <input checked={learningLanguage === 'Spanish'} onChange={() => handleCheckboxChange('Spanish')} type={"checkbox"}/></li>
+                            <li>French <input checked={learningLanguage === 'French'} onChange={() => handleCheckboxChange('French')} type={"checkbox"}/></li>
+                            <li>Arabic <input checked={learningLanguage === 'Arabic'} onChange={() => handleCheckboxChange('Arabic')} type={"checkbox"}/></li>
+                            <li>Korean <input checked={learningLanguage === 'Korean'} onChange={() => handleCheckboxChange('Korean')} type={"checkbox"}/></li>
                         </ul>
                     </div>
                 </div>
