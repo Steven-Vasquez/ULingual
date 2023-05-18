@@ -10,11 +10,11 @@ const FAQ = () => {
 
             <div className="faq-sec">
                     <button className="faq-drop">
-                    1. Can I get a free trial before I purchase?
+                    1. Why are we free?
                     </button>
                 <div className="faq-context">
-                    <p>Yes, you can get up to two weeks free of premium content
-                    prior to beginning a payment plan.
+                    <p>ULingual is currently free as we are trying to expand our userbase to get more people
+                        to join our community!
                     </p> 
                 </div>
             </div>
@@ -33,13 +33,14 @@ const FAQ = () => {
             </div>
             <div className="faq-sec">
                     <button className="faq-drop">
-                   3.  Will there be a monthly charged to my account?
+                   3.  Will there eventually be charges to my account?
                     </button>
                 
                 <div className="faq-context">
                     <p>
-                        Yes, depending on what plan you have you be charged either monthly
-                        or yearly after your free trial is over.
+                        ULingual will notify you when we eventually switch to a monthly subscription.
+                        We will notify you a month in advance so that way you have time to decide if you'd
+                        like to continue to support us.
                     </p> 
                 </div>
             </div>

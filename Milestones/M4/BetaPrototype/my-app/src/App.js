@@ -8,7 +8,6 @@ import FAQ from './pages/FaqPage';
 import AboutUs from './pages/AboutUs';
 import Register from './pages/Register';
 import Results from './pages/SearchResults';
-import Pricing from './pages/Pricing&Plans';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import MainContent from './components/Maincontent';
@@ -96,7 +95,6 @@ function App() {
           <Route path="/FAQ" element={<FAQ/>}/>
           <Route path="/AboutUs" element={<AboutUs/>}/>
           <Route path="/SearchResults" element={<Results/>}/>
-          <Route path="/Pricing&Plans" element={<Pricing/>}/>
           <Route path="/TermsAndConditions" element={<TermsAndConditions/>}/>
           {loggedIn ? (
             // Routes that can only be accessed if user is logged in
