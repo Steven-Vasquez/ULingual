@@ -10,12 +10,9 @@ const CreateVid = ()  => {
                     <form className="create-id-form">
                     
                         <button type="submit" className="button">
-                             Generate ID!
+                             Generate an ID!
                         </button>
-
                     </form>
-
-
                 </div>
         </div>
     );
