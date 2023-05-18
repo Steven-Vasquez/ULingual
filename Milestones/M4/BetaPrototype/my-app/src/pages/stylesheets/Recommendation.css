@@ -1,12 +1,14 @@
 .container{
+    border: 5px solid black;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.01fr 1fr 1fr 1fr;
+    grid-template-rows: 0.01fr 1fr 1fr;
     grid-gap: 35px;
     padding: 50px;
     padding-bottom: 100px;
   }
   .container1{
+    font-size: larger;
     column-span: all;
     grid-column-start: 1;
     grid-column-end: -1;
@@ -16,31 +18,44 @@
     display: grid;
     grid-template-rows: 50px;
     align-content: end;
+    margin-bottom: 15px;
+  }
+
+  .container2{
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  .container3{
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  .container4{
+    border: 1px solid black;
+    padding: 10px;
   }
   
   .container2 .button__text{
     color:black;
     grid-column-start: 1;
     grid-column-end: 2;
-    background-color: lightcyan;
   }
   
   .container3 .button__text{
     color:black;
     grid-column-start: 1;
     grid-column-end: 2;
-    background-color: lightcyan;
   }
   
   .container4 .button__text{
     color:black;
     grid-column-start: 1;
     grid-column-end: 2;
-    background-color: lightcyan;
   }
 
   .button-text{
-color: black;
+    color: black;
   }
 
 .container5{
@@ -53,12 +68,96 @@ color: black;
   object-fit: cover;
 }
 
-@media only screen and (min-width: 768px) {
-  .container {
-    min-width: 768px;
-    height: 1100px;
+.container1 h1{
+  padding: 10px;
+  color: black;
+}
+
+.container button{
+  color: black;
+}
+
+.container .button{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  width: 100%;
+}
+
+.button .greenbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  background-color: rgb(108, 173, 108);
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+@media (max-width: 1200px) {
+  .container{
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.05fr 1fr 1fr 1fr 1fr;
+    grid-gap: 35px;
+    padding: 50px;
   }
-  .innercontainer1 img{
-    object-fit: cover;
-  }  
+  .container2{
+    border: 1px solid black;
+    padding: 10px;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .container3{
+    border: 1px solid black;
+    padding: 10px;
+    grid-row-start:3;
+    grid-row-end: 4;
+  }
+
+  .container4{
+    border: 1px solid black;
+    padding: 10px;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+  .container .button{
+    grid-column-start: 1;
+    grid-column-start: 2;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    width: 100%;
+  }
+  .button .greenbox{
+    grid-column-start: 1;
+    grid-column-start: 2;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    width: 100%;
+  }
+  .container .button{
+    grid-column-start: 1;
+    grid-column-start: 2;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    width: 100%;
+  }
+  
+  .button .greenbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    background-color: rgb(108, 173, 108);
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    grid-column-start: 1;
+    grid-column-start: 2;
+    grid-row-start: 5;
+    grid-row-end: 6;
+  }
 }
