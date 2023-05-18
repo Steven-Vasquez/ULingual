@@ -99,7 +99,7 @@ function App() {
           <Route path="/AboutUs" element={<AboutUs/>}/>
           <Route path="/SearchResults" element={<Results/>}/>
           <Route path="/TermsAndConditions" element={<TermsAndConditions/>}/>
-          {true ? (
+          {loggedIn ? (
             // Routes that can only be accessed if user is logged in
             <>
               <Route path="/Dashboard" element={<Dashboard/>}/>
