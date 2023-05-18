@@ -103,6 +103,9 @@ For smaller screens we display hamburger option menu.
     padding: 10px;
 }
 
+.username{
+    color:var(--mint-green);
+}
 
 .user-icon{
     padding: 1rem;

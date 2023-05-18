@@ -51,17 +51,31 @@ const Navbar = (props) => {
                         <input type="text" placeholder="Search for a Tutor..." value={searchQuery} onChange={handleSearchInputChange} />
                     </form>
                 </div>
-                <li className="nav-item" onClick={handleClick}>
-                    <Link to="/TutorsPage" >Tutors</Link>
+
+            {!loggedIn ? (
+                <li className="nav-item log" onClick={handleClick}>
+                    <Link to="/Login" >Login</Link>
                 </li>
-                <li className="nav-item" onClick={handleClick}>
-                    <Link to="/Pricing&Plans">Pricing & Plans</Link>
+            ) : 
+                <li className='drop-menu-item' onClick={handleLogoutRequest}>
+                    <Link>Logout</Link>
                 </li>
+            }
+
+            {!loggedIn ? (
+                <li className="nav-item reg" onClick={handleClick}>
+                    <Link to="/register">Sign Up</Link>
+                </li>
+            ) : 
+                null 
+            }
                 {loggedIn ? (
-                <li className="nav-item">
-                    {username}
-                </li>
-                ) : null}
+                    <li className="nav-item username">
+                        {username}
+                    </li>
+                ) : 
+                    null
+                }
                 <li className='hamburger-container'>
                     <div className='user-icon' onClick={() => { setOpen(!open) }}>
                         <VscAccount size={40} />
