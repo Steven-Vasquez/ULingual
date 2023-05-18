@@ -39,6 +39,7 @@ import SelectLanguage from './pages/SelectLanguage';
 import VideoChat from './components/video_components/VideoChat';
 import InboxPage from './pages/InboxPage';
 import FlashCards from './pages/FlashCards';
+import Forum from './pages/Forum';
 
 
 import axios from 'axios';
@@ -104,6 +105,7 @@ function App() {
               <Route path="/Dashboard" element={<Dashboard/>}/>
               <Route path="/Exercise1Page" element={<Exercise1Page/>}/>
               <Route path="/FriendsListPage" element={<FriendsList/>}/>
+              <Route path="/forums/:forumId" element={<Forum/>} />
               <Route path="/GlobalForumPage" element={<GlobalForumPage/>}/>
               <Route path="/LessonPage" element={<Lesson/>}/>
               <Route path="/VideoRoomPage" element={<VideoChat/>}/>

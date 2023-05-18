@@ -3,7 +3,7 @@
   display: grid;
   grid-template-rows: 0.75fr 0.75fr 0.75fr 0.65fr;
   padding: 25px;
-  height: 950px;
+  min-height: 100vh;
   background-color: #707070;
 }
 
@@ -31,7 +31,7 @@
 /*sections*/
 .global-forum-section{
   display: grid;
-  grid-template-columns: 1fr 0.25fr;
+  grid-template-columns: 1fr 0.10fr;
   justify-content: center; 
 }
 .global-forum-create{
@@ -60,9 +60,14 @@
 .global-forum-participants{
   border: 10px solid #f44336;
   border-image: linear-gradient(to bottom right, #f44336, #2196f3) 1;
-  padding: 25px;
+  padding: 50%;
   background-color: #3f3f3f;
 }
+
+.global-forum-button-participation{
+  text-align: center;
+}
+
 .global-forum-return{
   padding: 25px;
   display: flex;

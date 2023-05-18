@@ -52,7 +52,7 @@ const Navbar = (props) => {
 
                 <div className="nav-search-item">
                     <form name="search" onSubmit={handleSearchSubmit}>
-                        <input type="text" placeholder="Search for a Tutor..." value={searchQuery} onChange={handleSearchInputChange} />
+                        <input type="text" placeholder="Search by name or language.." value={searchQuery} onChange={handleSearchInputChange} />
                     </form>
                 </div>
 

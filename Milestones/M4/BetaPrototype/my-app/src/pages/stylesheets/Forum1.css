@@ -4,7 +4,7 @@
   grid-template-rows: 0.35fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
   padding: 25px;
-  height: 950px;
+  min-height: 100vh;
   background-color: #707070;
 }
 
@@ -62,7 +62,7 @@
   padding: 30px;
 }
 .inner-post{
-  width: 80%;
+  width: 100%;
   height: 50px;
   font-size: 24px;
   justify-content: center;
@@ -70,7 +70,7 @@
 .post-button__text{
   justify-content: center;
   width: 80%;
-  font-size: 30px;
+  font-size: 20px;
   color: white;
   border: 5px solid var(--mint-green);
   background-color: #707070;
@@ -78,11 +78,20 @@
   padding: 10px;
 }
 
+.post-button {
+    height: 100%;
+    padding-top: 29px;
+    padding-bottom: 22px;
+    padding-left: 10px;
+    padding-right: 13px;
+    font-weight: bold;
+}
+
 .forum-return {
   grid-column-start: 1;
   grid-column-end: 4;
-  grid-row-start: 6;
-  grid-row-end: 7;
+  grid-row-start: auto;
+  grid-row-end: auto;
   background-color: #707070;
   color: green;
   padding: 25px;
@@ -90,6 +99,7 @@
   justify-content: flex-end;
   color: white;
 }
+
 .return-button__text{
     font-size: 1.2rem;
     padding: 10px 20px;

@@ -12,3 +12,61 @@
     color: var(--primary);
     margin-top: 3rem;
 }
+
+.flashcards-page label{
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: 3rem;
+}
+
+.flashcards-page h4{
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.flash-card{
+    font-size: 24px;
+    line-height: 72px;
+    width: 216px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 18px;
+    background-color: var(--mint-green);
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+}
+
+.flash-card.front{
+    background-color: var(--mint-green);
+
+}
+
+.flash-card.back{
+    background-color: mediumseagreen;
+}
+
+
+.spanish-cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.french-cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Korean-cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Arabic-cards{
+    display: flex;
+    flex-wrap: wrap;
+}
