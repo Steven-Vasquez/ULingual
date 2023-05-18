@@ -9,20 +9,56 @@
     justify-content: center;
 }
 
-.UserProfile {
+.UserProfile {  
+    border: 20px solid black;
+    border-image: linear-gradient(to bottom right, var(--mint-green), #2196f3) 1;  
+    padding: 30px;
     background-color: var(--secondary);
     padding: 5%;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 0.45fr;
     color: white;
     align-self: center;
     border-radius: 10px;
-    
+    justify-items:center;
+    align-items: center;
 }
 
-.User-Info{
-    grid-row-start: 1;
-    grid-row-end: 2;
+.User-Info h4{
+    padding: 10px;
+    text-align: center;
+   
+}
+
+.online h3{
+    border-style: solid;
+    border-radius: 10px;
+    border-color: black;
+}
+
+.online h3:hover{
+    background-color: var(--mint-green);
+}
+
+.offline h3{
+    border-style: solid;
+    border-radius: 10px;
+    border-color: black;
+}
+
+.offline h3:hover{
+    background-color: red;
+}
+
+.dnd h3{
+    border-style: solid;
+    border-radius: 10px;
+    border-color: black;
+}
+
+.dnd h3:hover{
+    background-color: yellow;
 }
 
 .UserProfile .User-Info img {
@@ -32,68 +68,39 @@
     grid-row-start: 1;
     grid-row-end: 2;
 }
-.User-Info h2{
-    font-size: 35px;
-    margin-left: -100px;
-    color: var(--mint-green);
-}
-
 
 .user-status{
+    border: 5px solid black;
+    border-image: linear-gradient(to bottom right, var(--mint-green), #2196f3) 1;  
+    padding: 10px;
     grid-row-start: 1;
     grid-row-end: 2;
-}
-.user-status li{
-    margin-bottom: 35px;
-    margin-left: 600px; 
-    color:black;
-    font-size: 20px;
-    cursor: pointer;
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 
-.online li{
-    border-style: solid;
-    border-radius: 10px;
-    border-color: black;
-}
-
-.online li:hover{
-    background-color: var(--mint-green);
-}
-
-.offline li{
-    border-style: solid;
-    border-radius: 10px;
-    border-color: black;
-}
-
-.offline li:hover{
-    background-color: red;
-}
-
-.dnd li{
-    border-style: solid;
-    border-radius: 10px;
-    border-color: black;
-}
-
-.dnd li:hover{
-    background-color: yellow;
-}
-
-.descriptionContainer input{
-    width: 500px;
-    border-radius: 5px;
-    height: 100px;
-    grid-row-start: 2;
-    grid-row-end: 3;
-}
 .descriptionContainer{
     grid-row-start: 2;
     grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    height: 50%;
+    width: 100%;
+}
+.descriptionContainer input{
+    text-align: start;
 }
 
-.button .greenbox{
+.descriptionContainer .editDescription{
+    border: 5px solid black;
+    border-image: linear-gradient(to bottom right, var(--mint-green), #2196f3) 1;  
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+
+.user-entire .button .greenbox{
     display: flex;
     align-items: center;
     align-self: center;
@@ -106,6 +113,23 @@
     border-radius: 5px;
     gap: 10px;
     margin-top: 12px;
+}
+
+.user-entire .button{
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.langSelectionBox{
     grid-row-start: 3;
     grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    
+}
+
+.innerSelectionBox{
+    
 }
