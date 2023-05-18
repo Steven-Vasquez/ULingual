@@ -42,7 +42,7 @@ const UserProfileEdit = () => {
                 </div>
                         
                 <div className="descriptionContainer">
-                    <input type="text" placeholder="Enter New Description" className="editDescription"
+                    <input type="text" value={description} placeholder="Enter New Description" className="editDescription"
                         onChange={(e) => {
                             setDescription(e.target.value)
                         }}
