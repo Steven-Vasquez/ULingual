@@ -35,8 +35,8 @@ const ContactPage = () => {
             if(message.trim().length == 0) {
                 alert("Please enter your message in the text box.");
             } else {
-                axios.post("https://50.18.108.83.nip.io:3001/contactus", {
-                //axios.post("http://localhost:3001/contactus", {
+                //axios.post("https://50.18.108.83.nip.io:3001/contactus", {
+                axios.post("http://localhost:3001/contactus", {
                     email: email,
                     message: message
                 })

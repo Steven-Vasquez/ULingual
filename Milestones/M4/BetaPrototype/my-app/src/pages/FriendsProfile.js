@@ -17,8 +17,8 @@ const FriendsProfile = () => {
 
     useEffect(() => {
         if(queryParams.user) {
-            axios.get(`https://50.18.108.83.nip.io:3001/friend/profile?user=${queryParams.user}`)
-            //axios.get(`http://localhost:3001/friend/profile?user=${queryParams.user}`)
+            //axios.get(`https://50.18.108.83.nip.io:3001/friend/profile?user=${queryParams.user}`)
+            axios.get(`http://localhost:3001/friend/profile?user=${queryParams.user}`)
             .then(res => {
                 console.log(res.data);
                 setUsername(res.data.Uusername);
@@ -26,8 +26,8 @@ const FriendsProfile = () => {
                 setDescription(res.data.Description);
                 setNative(res.data.NativeLanguage);
                 setLearning(res.data.LearningLanguage);
-                axios.post(`https://50.18.108.83.nip.io:3001/friends/count?user=${res.data.UserID}`)
-                //axios.post(`http://localhost:3001/friends/count?user=${res.data.UserID}`)
+                //axios.post(`https://50.18.108.83.nip.io:3001/friends/count?user=${res.data.UserID}`)
+                axios.post(`http://localhost:3001/friends/count?user=${res.data.UserID}`)
                 .then(res => {
                     setFollowers(res.data.count);
                 })

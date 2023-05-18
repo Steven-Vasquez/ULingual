@@ -14,8 +14,8 @@ const FriendsList = () => {
     }
 
     useEffect(() => {
-        axios.post("https://50.18.108.83.nip.io:3001/friends")
-        //axios.post("http://localhost:3001/friends")
+        //axios.post("https://50.18.108.83.nip.io:3001/friends")
+        axios.post("http://localhost:3001/friends")
         .then(res => {
             if(res.data.message) {
                 alert(res.data.message);

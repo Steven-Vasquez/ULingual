@@ -31,8 +31,8 @@ const Navbar = (props) => {
     
     const handleLogoutRequest = async () => {
         try {
-            await axios.post('https://50.18.108.83.nip.io:3001/logout');
-            //await axios.post('http://localhost:3001/logout');
+            //await axios.post('https://50.18.108.83.nip.io:3001/logout');
+            await axios.post('http://localhost:3001/logout');
             setOpen(false); // close the drop-menu after API request is performed
             window.location.href = '/'; // redirect to home and reload the app so the session can update values in App.js. Then, the user is recognized as logged out
         }
