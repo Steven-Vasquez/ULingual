@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import './stylesheets/VideoRoom.css'
+import './stylesheets/videoSignUp.css'
 import VideoChat from '../components/video_components/VideoChat';
 
 const VideoRoomPage = () => {
 
     return(
-        <div>
+        <div className='video-sign-up'>
             <header>
-                <h1>Video Chat with Hooks</h1>
+                <h1>Video Rooms</h1>
             </header>
             <main>
                 <VideoChat />
