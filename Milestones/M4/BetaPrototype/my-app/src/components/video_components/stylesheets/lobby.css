@@ -47,6 +47,7 @@
     font-weight: 600;
 }
 
+
 .lobby-details button{
     margin: auto;
     cursor: pointer;
@@ -66,5 +67,20 @@
 
 .lobby-details button:hover{
     background-color: whitesmoke;
+}
+
+.lobby-rec p{
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#cust-btn{
+    font-size: 15px;
+    font-weight: 600;
+    align-self: left;
+    margin-left: 55px;
+    margin-top: 0.5rem;
 }
 

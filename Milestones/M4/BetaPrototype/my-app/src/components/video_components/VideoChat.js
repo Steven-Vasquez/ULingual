@@ -50,6 +50,19 @@ const VideoChat = () => {
         },
         [roomName, username]
     );
+        
+    /*
+    // Generates a random 5 digit room code
+    const geneareRoomCode = () => {
+        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        const charactersLength = characters.length;
+        let result = "";
+        for (let i = 0; i < 15; i++) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+    };
+    */
 
     const handleLogout = useCallback(() => {
         setRoom((prevRoom) => {

@@ -34,8 +34,9 @@ import UserProfile from './pages/UserProfile';
 import UserProfileEdit from './pages/UserProfileEdit';
 import FriendsProfile from './pages/FriendsProfile';
 import SelectLanguage from './pages/SelectLanguage';
-import CreateVid from './pages/CreateVid';
-import Lobby from './components/video_components/Lobby';
+//import CreateVid from './pages/CreateVid'; // not in use
+//import Lobby from './components/video_components/Lobby'; // Not in use in this file
+import VideoChat from './components/video_components/VideoChat';
 import InboxPage from './pages/InboxPage';
 import FlashCards from './pages/FlashCards';
 
@@ -97,7 +98,7 @@ function App() {
           <Route path="/AboutUs" element={<AboutUs/>}/>
           <Route path="/SearchResults" element={<Results/>}/>
           <Route path="/TermsAndConditions" element={<TermsAndConditions/>}/>
-          {loggedIn ? (
+          {true ? (
             // Routes that can only be accessed if user is logged in
             <>
               <Route path="/Dashboard" element={<Dashboard/>}/>
@@ -105,7 +106,7 @@ function App() {
               <Route path="/FriendsListPage" element={<FriendsList/>}/>
               <Route path="/GlobalForumPage" element={<GlobalForumPage/>}/>
               <Route path="/LessonPage" element={<Lesson/>}/>
-              <Route path="/VideoRoomPage" element={<VideoRoomPage/>}/>
+              <Route path="/VideoRoomPage" element={<VideoChat/>}/>
               <Route path="/RecommendationPage" element={<RecommendationPage/>}/>
               <Route path="/BookRecommendation" element={<BookRecommendationPage/>}/>
               <Route path="/VideoRecommendation" element={<VideoRecommendationPage/>}/>
@@ -122,8 +123,8 @@ function App() {
               <Route path="/LessonComplete" element={<LessonComplete/>}/>
               <Route path="/FriendsProfile" element={<FriendsProfile/>}/>
               <Route path="/SelectLanguage" element={<SelectLanguage/>}/>
-              <Route path="/CreateVid" element={<CreateVid/>}/>
-              <Route path="/Lobby" element={<Lobby/>}/>
+              
+              
               <Route path="/InboxPage" element={<InboxPage/>}/>
               <Route path="/FlashCards" element={<FlashCards/>}/>
             </>
