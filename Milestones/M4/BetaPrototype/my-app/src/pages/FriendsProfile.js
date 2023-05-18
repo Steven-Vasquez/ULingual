@@ -17,10 +17,9 @@ const FriendsProfile = () => {
 
     useEffect(() => {
         if(queryParams.user) {
-            axios.get(`https://50.18.108.83.nip.io:3001/friend/profile?user=${queryParams.search}`)
+            axios.get(`https://50.18.108.83.nip.io:3001/friend/profile?user=${queryParams.user}`)
             //axios.get(`http://localhost:3001/friend/profile?user=${queryParams.user}`)
             .then(res => {
-                console.log("k");
                 console.log(res.data);
                 setUsername(res.data.Uusername);
                 setEmail(res.data.Uemail);
@@ -37,7 +36,6 @@ const FriendsProfile = () => {
                 });
             })
             .catch(err => {
-              console.log("Error: Users not retrieved via search");
               console.log(err);
             });
         }
