@@ -14,7 +14,7 @@ const VideoRoomPage = () => {
                 <h2>Select an Option!</h2>
                 <div className="video-list">
                     <label className="video-option">
-                        <Link to="/createVideo">
+                        <Link to= "/createVid">
                             Create Video Room
                         </Link>
                     </label>

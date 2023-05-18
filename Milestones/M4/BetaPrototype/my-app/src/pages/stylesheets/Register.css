@@ -99,6 +99,24 @@
 
 }
 
+.language-inits{
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+}
+
+.language-inits label{
+    font-size: 21px;
+    text-decoration: none;
+}
+.language-inits select{
+    margin-left: 1rem;
+    background: var(--mint-green);
+    color: black;
+    font-size: 12px;
+
+}
+
+
 
 
 
