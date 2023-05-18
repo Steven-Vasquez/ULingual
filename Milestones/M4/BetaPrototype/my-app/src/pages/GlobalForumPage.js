@@ -6,21 +6,21 @@ const GlobalForumPage = () => {
     const [forums, setForums] = useState([
         {
             name: 'Name of Forum 1',
-            participants: 'Number of Participants'
+            participants: '3'
         },
         {
             name: 'Name of Forum 2',
-            participants: 'Number of Participants'
+            participants: '3'
         },
         {
             name: 'Name of Forum 3',
-            participants: 'Number of Participants'
+            participants: '3'
         },
     ]);
 
     const addForum = () => {
         const forumName = prompt("Enter forum name");
-        const forumParticipants = prompt("Enter number of participants");
+        const forumParticipants = "1";
         setForums([...forums, { name: forumName, participants: forumParticipants }]);
     }
 
@@ -34,7 +34,7 @@ const GlobalForumPage = () => {
                     </Link>
                     </div>
                     <div className="global-forum-participants">
-                        <a href="#" className="global-forum-button">
+                        <a href="#" className="global-forum-button-participation">
                             <span className="global-forum-button-text">{forum.participants}</span>
                         </a>
                     </div>

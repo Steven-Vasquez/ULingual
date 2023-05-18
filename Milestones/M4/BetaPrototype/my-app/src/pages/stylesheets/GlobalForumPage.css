@@ -31,7 +31,7 @@
 /*sections*/
 .global-forum-section{
   display: grid;
-  grid-template-columns: 1fr 0.25fr;
+  grid-template-columns: 1fr 0.10fr;
   justify-content: center; 
 }
 .global-forum-create{
@@ -63,6 +63,11 @@
   padding: 25px;
   background-color: #3f3f3f;
 }
+
+.global-forum-button-participation{
+  text-align: center;
+}
+
 .global-forum-return{
   padding: 25px;
   display: flex;
