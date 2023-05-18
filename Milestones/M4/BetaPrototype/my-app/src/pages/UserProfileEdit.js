@@ -75,7 +75,9 @@ const UserProfileEdit = () => {
                 </div>
 
                 <div className="button">
-                    <Link to="/UserProfile" className="greenbox">Done</Link>
+                    <button to="/UserProfile" onClick={(e) => submitProfile(e)} className="greenbox">
+                        Done
+                    </button>
                 </div>
             </div>   
     </div>
