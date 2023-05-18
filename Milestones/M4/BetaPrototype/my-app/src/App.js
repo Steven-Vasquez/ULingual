@@ -35,6 +35,9 @@ import UserProfile from './pages/UserProfile';
 import UserProfileEdit from './pages/UserProfileEdit';
 import FriendsProfile from './pages/FriendsProfile';
 import SelectLanguage from './pages/SelectLanguage';
+import createVideo from './pages/createVideo';
+import Lobby from './components/video_components/Lobby';
+
 
 import axios from 'axios';
 
@@ -119,6 +122,8 @@ function App() {
               <Route path="/LessonComplete" element={<LessonComplete/>}/>
               <Route path="/FriendsProfile" element={<FriendsProfile/>}/>
               <Route path="/SelectLanguage" element={<SelectLanguage/>}/>
+              <Route path="/createVideo" element={<createVideo/>}/>
+              <Route path="/Lobby" element={<Lobby/>}/>
             </>
           ) : null}
           <Route path="*" element={<Navigate to="/login" />} />

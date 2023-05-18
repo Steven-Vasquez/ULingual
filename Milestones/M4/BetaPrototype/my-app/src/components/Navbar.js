@@ -57,9 +57,7 @@ const Navbar = (props) => {
                     <Link to="/Login" >Login</Link>
                 </li>
             ) : 
-                <li className='drop-menu-item' onClick={handleLogoutRequest}>
-                    <Link>Logout</Link>
-                </li>
+                null
             }
 
             {!loggedIn ? (

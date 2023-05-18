@@ -1,18 +1,36 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import './stylesheets/videoSignUp.css'
-import VideoChat from '../components/video_components/VideoChat';
+//import VideoChat from '../components/video_components/VideoChat';
 
 const VideoRoomPage = () => {
 
     return(
         <div className='video-sign-up'>
             <header>
-                <h1>Video Rooms</h1>
+                <h1>Video Room Hub</h1>
             </header>
-            <main>
-                <VideoChat />
-            </main>
+            <div className='video-page'>
+                <h2>Select an Option!</h2>
+                <div className="video-list">
+                    <label className="video-option">
+                        <Link to="/createVideo">
+                            Create Video Room
+                        </Link>
+                    </label>
+                    <br></br>
+                    <label className="video-option">
+                        <Link to="/Lobby">
+                            Join Video Room
+                        </Link>
+                    </label>
+                </div>
+                {/*
+                <main>
+                    <VideoChat />
+                </main>
+                */}
+            </div>
         </div>
     );
     /*
