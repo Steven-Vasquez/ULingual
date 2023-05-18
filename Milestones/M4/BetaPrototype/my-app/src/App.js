@@ -37,6 +37,7 @@ import FriendsProfile from './pages/FriendsProfile';
 import SelectLanguage from './pages/SelectLanguage';
 import createVid from './pages/createVid';
 import Lobby from './components/video_components/Lobby';
+import InboxPage from './pages/InboxPage';
 
 
 import axios from 'axios';
@@ -124,6 +125,7 @@ function App() {
               <Route path="/SelectLanguage" element={<SelectLanguage/>}/>
               <Route path="/createVid" element={<createVid/>}/>
               <Route path="/Lobby" element={<Lobby/>}/>
+              <Route path="/InboxPage" element={<InboxPage/>}/>
             </>
           ) : null}
           <Route path="*" element={<Navigate to="/login" />} />

@@ -46,7 +46,7 @@ const UserProfile = () => {
                 <img className="ProfileImages1" src ={"https://placehold.jp/150x150.png"}/>
                 <h2 className="ProfileNames1">{username}</h2>
                 <div className="button">
-                    <Link to="/FriendsListPage" className="purplebox">Inbox</Link>
+                    <Link to="/InboxPage" className="purplebox">Inbox</Link>
                 </div>
 
                 <div className="button">

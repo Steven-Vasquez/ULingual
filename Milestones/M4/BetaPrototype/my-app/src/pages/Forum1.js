@@ -33,14 +33,14 @@ const Forum1 = () => {
             </div>
 
             <div className="forum-post">
-            <div className="inner-post">
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                <input type="text" className="post-input-for" placeholder="Something to say?!..." style={{ width: '8000000000000000000000000%', height: '25px', fontSize: '20px' }} />
-                <a href="#" className="post-button">
-                    <span className="post-button__text">Post</span>
-                </a>
+                <div className="inner-post">
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <input type="text" className="post-input-for" placeholder="Something to say?!..." style={{ width: '8000000000000000000000000%', height: '25px', fontSize: '20px' }} />
+                    <a href="#" className="post-button">
+                        <span className="post-button__text">Post</span>
+                    </a>
+                    </div>
                 </div>
-            </div>
             </div>
 
             <div className="forum-return">
