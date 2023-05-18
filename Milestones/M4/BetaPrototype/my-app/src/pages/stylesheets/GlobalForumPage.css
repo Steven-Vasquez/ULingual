@@ -60,7 +60,7 @@
 .global-forum-participants{
   border: 10px solid #f44336;
   border-image: linear-gradient(to bottom right, #f44336, #2196f3) 1;
-  padding: 25px;
+  padding: 50%;
   background-color: #3f3f3f;
 }
 
