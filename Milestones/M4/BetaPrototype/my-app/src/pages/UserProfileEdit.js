@@ -7,8 +7,8 @@ const UserProfileEdit = () => {
     <div className="user-entire">
             <div className='UserProfile'>
                 <div className="User-Info">
-                    <h4>Edit Photo</h4>
                     <img className="ProfileImage" src ={"https://placehold.jp/150x150.png"}/>
+                    <h4>Edit Photo</h4>
                 </div>
                         
                 <div className="descriptionContainer">
@@ -29,16 +29,16 @@ const UserProfileEdit = () => {
                 </div>
 
                 <div className="langSelectionBox">
-                <h2>Select Languages</h2>
-                <div className="innerLangSelection">
-                    <ul>
-                        <li>English <input type={"checkbox"}/></li>
-                        <li>Korean <input type={"checkbox"}/></li>
-                        <li>Spanish <input type={"checkbox"}/></li>
-                        <li>French <input type={"checkbox"}/></li>
-                        <li>Arabic <input type={"checkbox"}/></li>
-                    </ul>
-                </div>
+                    <h2>Select Languages</h2>
+                    <div className="innerLangSelection">
+                        <ul>
+                            <li>English <input type={"checkbox"}/></li>
+                            <li>Korean <input type={"checkbox"}/></li>
+                            <li>Spanish <input type={"checkbox"}/></li>
+                            <li>French <input type={"checkbox"}/></li>
+                            <li>Arabic <input type={"checkbox"}/></li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div className="button">
