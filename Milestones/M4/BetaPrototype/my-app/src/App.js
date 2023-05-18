@@ -37,6 +37,7 @@ import SelectLanguage from './pages/SelectLanguage';
 import CreateVid from './pages/CreateVid';
 import Lobby from './components/video_components/Lobby';
 import InboxPage from './pages/InboxPage';
+import FlashCards from './pages/FlashCards';
 
 
 import axios from 'axios';
@@ -124,6 +125,7 @@ function App() {
               <Route path="/CreateVid" element={<CreateVid/>}/>
               <Route path="/Lobby" element={<Lobby/>}/>
               <Route path="/InboxPage" element={<InboxPage/>}/>
+              <Route path="/FlashCards" element={<FlashCards/>}/>
             </>
           ) : null}
           <Route path="*" element={<Navigate to="/login" />} />

@@ -21,7 +21,7 @@ const Dashboard = () => {
                     </div>
                 </div>
                 <div className="pkg-buy-btn">
-                    <Link to="/LessonPage"><button>Go to Flashcards</button></Link>
+                    <Link to="/FlashCards "><button>Go to Flashcards</button></Link>
                 </div>
             </div>
 
