@@ -48,7 +48,6 @@ function MainContent(props) {
                                         Sign Up Here!
                                     </label>
                                 </Link>
-                                <span className='spn'>Get your first two weeks free!</span>
                             </div>
                             )}
                         </div>

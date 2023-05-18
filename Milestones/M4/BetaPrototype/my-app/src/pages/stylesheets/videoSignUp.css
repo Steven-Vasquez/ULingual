@@ -7,7 +7,58 @@
 
 .video-sign-up h1{
     text-align: center;
-    font-size: 50px;
-    font-weight: 600;
+    font-size: 60px;
+    font-weight: 700;
     margin-top: 2rem;
+}
+
+.video-page{
+    display: block;
+    background-color: var(--primary);
+    border-radius: 6px;
+    margin:40px auto;
+    max-width: 800px;
+    max-height: 800px;
+    padding: 20px;
+    margin-top: 100px;
+    padding-top: 10px;
+}
+
+.video-page h2{
+    color: var(--mint-green);
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.video-page .video-list{
+    text-align: center;
+    margin-top: 3rem;
+    font-family: 'Comme', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+}
+.video-list label.video-option{
+    display: inline-block;
+    padding: 0;
+    margin: 0 auto;
+    color: black;
+    background: var(--mint-green);
+    height: 48px;
+    line-height: 48px;
+    width: 256px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+.video-list label.video-option:hover{
+    background: whitesmoke;
+}
+
+.video-list a{
+    color:black;
 }
