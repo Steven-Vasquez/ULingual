@@ -121,7 +121,7 @@ function App() {
               <Route path="/LessonComplete" element={<LessonComplete/>}/>
               <Route path="/FriendsProfile" element={<FriendsProfile/>}/>
               <Route path="/SelectLanguage" element={<SelectLanguage/>}/>
-              <Route path="/createVid" element={<createVid/>}/>
+              <Route path="/CreateVid" element={<CreateVid/>}/>
               <Route path="/Lobby" element={<Lobby/>}/>
               <Route path="/InboxPage" element={<InboxPage/>}/>
             </>
