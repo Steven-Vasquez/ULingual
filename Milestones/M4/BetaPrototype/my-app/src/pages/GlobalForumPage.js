@@ -20,6 +20,9 @@ const GlobalForumPage = () => {
 
     const addForum = () => {
         const forumName = prompt("Enter forum name");
+        if (forumName === null || forumName.length === 0) {
+            return;
+        }
         const forumParticipants = "1";
         setForums([...forums, { name: forumName, participants: forumParticipants }]);
     }
