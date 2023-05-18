@@ -279,6 +279,23 @@ app.post('/friends', (req, res) => {
   });
 });
 
+//API enpoint that updates the user's profile description
+//TODO: allow image upload
+app.post('/profile', (req, res) => {
+  const userID = req.session.user.UserID;
+  const Description = req.body.Description;
+  const sql = 'UPDATE Users SET Description = ? WHERE UserID = ?';
+  db.query(sql, [Description, userID], (err, results) => {
+    if(err) {
+      console.error(err.message);
+      return;
+    } else {
+      req.session.user.Description = Description;
+      res.send(req.session.user);
+    }
+  });
+})
+
 // API endpoint that returns friend's information
 app.get('/friend/profile', (req, res) => {
   const user = req.query.user;
