@@ -1,92 +1,162 @@
 .user-entire{
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: auto;
     background: whitesmoke;
 }
 
-.UserProfile {
+.UserProfile {  
+    border: 20px solid black;
+    border-image: linear-gradient(to bottom right, var(--mint-green), #2196f3) 1;  
+    padding: 30px;
     background-color: var(--secondary);
     padding: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 0.45fr 0.45fr;
     color: white;
-    width:900px;
-    height: 700px;
     border-radius: 10px;
-    margin-left: 250px;
-    margin-top: 50px;
-    
+    justify-items:center;
+    align-items: center;
 }
 
-.UserProfile .User-Info{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; 
-    align-items: center;
+.User-Info h4{
+    padding: 10px;
+    text-align: center;
+   
+}
 
+.online h3{
+    border-style: solid;
+    border-radius: 10px;
+    border-color: black;
+}
+
+.online h3:hover{
+    background-color: var(--mint-green);
+}
+
+.offline h3{
+    border-style: solid;
+    border-radius: 10px;
+    border-color: black;
+}
+
+.offline h3:hover{
+    background-color: red;
+}
+
+.dnd h3{
+    border-style: solid;
+    border-radius: 10px;
+    border-color: black;
+}
+
+.dnd h3:hover{
+    background-color: yellow;
 }
 
 .UserProfile .User-Info img {
     border-radius: 50%;
     border-style: solid;
     border-color: var(--mint-green);
- 
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
-.User-Info h2{
-    font-size: 35px;
-    margin-left: -100px;
-    color: var(--mint-green);
-}
-
-.UserDetails h3{
-    padding-top:-200px;
-    color: var(--mint-green);
-   
+.User-Info{
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 
-.UserDetails h4{
-    font-size: 22px;
-    margin-top:-34.5px;
-    margin-left: 600px;
-    text-decoration: underline;
-    color: var(--mint-green);
-}
-.user-status li{
-    margin-bottom: 35px;
-    margin-left: 600px; 
-    color:black;
-    font-size: 20px;
-    cursor: pointer;
+.user-status{
+    border: 5px solid black;
+    border-image: linear-gradient(to bottom right, var(--mint-green), #2196f3) 1;  
+    padding: 30px;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width: 100%;
 }
 
-.online li{
-    border-style: solid;
-    border-radius: 10px;
-    border-color: black;
+.descriptionContainer{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    height: 100%;
+    width: 100%;
+}
+.descriptionContainer input{
+    text-align: start;
 }
 
-.online li:hover{
-    background-color: var(--mint-green);
+.descriptionContainer .editDescription{
+    border: 5px solid black;
+    border-image: linear-gradient(to bottom right, var(--mint-green), #2196f3) 1;  
+    padding: 10px;
+    height: 100%;
+    width: 100%;
 }
 
-.offline li{
-    border-style: solid;
-    border-radius: 10px;
-    border-color: black;
+
+.user-entire .button .greenbox{
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    background-color: lightseagreen;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    gap: 10px;
 }
 
-.offline li:hover{
-    background-color: red;
+.user-entire .button{
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 3;
+    grid-column-end: 4;
 }
 
-.dnd li{
-    border-style: solid;
-    border-radius: 10px;
-    border-color: black;
+.langSelectionBox{
+    border: 5px solid black;
+    border-image: linear-gradient(to bottom right, var(--mint-green), #2196f3) 1;  
+    padding: 10px;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+    text-align: center;
+}
+.innerLangSelection{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.innerLangSelection ul{
+    list-style: none;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+.innerLangSelection ul li{
+    margin-right: 50px;
+    text-align: center;
 }
 
-.dnd li:hover{
-    background-color: yellow;
-}
+@media (max-width: 1300px) {
+    .innerLangSelection ul li{
+        margin-right: 15px;
+        text-align: center;
+    }
+  }

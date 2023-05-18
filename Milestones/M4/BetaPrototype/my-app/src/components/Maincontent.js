@@ -48,7 +48,6 @@ function MainContent(props) {
                                         Sign Up Here!
                                     </label>
                                 </Link>
-                                <span className='spn'>Get your first two weeks free!</span>
                             </div>
                             )}
                         </div>
@@ -72,24 +71,17 @@ function MainContent(props) {
                 <h2 className='hp-sec3-title'>ULinguals Dashboard</h2>
                 <div className='hp-sec3-info'>
                     <p>Get access to our dashboard that offers
-                        lessons, exercises, global forums, video rooms & curated
-                        content.
+                        Flashcards, Global Forums, Video Rooms, and Recommended
+                        Content.
                     </p>
                 </div>
                 <div className='card-setup'>
                     <article className='hp-card'>
-                        <h3 className='hp-card-title'>Lessons</h3> 
-                        <p>Access our array of lessons that take you from zero
-                            to pro in any of our offerable languages!
+                        <h3 className='hp-card-title'>Flashcards</h3> 
+                        <p>Access our array of flashcards that test your knowledge
+                            in the language you're learning!
                         </p>
                     </article>
-                    <article className='hp-card'>
-                        <h3 className='hp-card-title'>Exercises</h3>
-                        <p>Ready for a test? Access our array of exercises
-                            to test your knowledge in the language you're
-                            learning.
-                        </p>
-                        </article>
                     <article className='hp-card'>
                         <h3 className='hp-card-title'>Global Forums</h3>
                         <p>Want to chat globally? Access our global Forums
@@ -103,9 +95,9 @@ function MainContent(props) {
                         </p>
                         </article>
                     <article className='hp-card'>
-                        <h3 className='hp-card-title'>Curated Content</h3>
+                        <h3 className='hp-card-title'>Rec. Content</h3>
                         <p>
-                            Access our curated contenting including custom books, tv shows, and
+                            Access our recommended content including custom books, tv shows, and
                             music playlist to expand your learning outside of ULingual.
                         </p>
                     </article>

@@ -8,7 +8,6 @@ import FAQ from './pages/FaqPage';
 import AboutUs from './pages/AboutUs';
 import Register from './pages/Register';
 import Results from './pages/SearchResults';
-import Pricing from './pages/Pricing&Plans';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import MainContent from './components/Maincontent';
@@ -35,6 +34,11 @@ import UserProfile from './pages/UserProfile';
 import UserProfileEdit from './pages/UserProfileEdit';
 import FriendsProfile from './pages/FriendsProfile';
 import SelectLanguage from './pages/SelectLanguage';
+import CreateVid from './pages/CreateVid';
+import Lobby from './components/video_components/Lobby';
+import InboxPage from './pages/InboxPage';
+import FlashCards from './pages/FlashCards';
+
 
 import axios from 'axios';
 
@@ -44,9 +48,11 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState("");
 
+  axios.defaults.withCredentials = true; // Allow cookies to be stored in the browser
+
   useEffect(() => {
-    //axios.post('http://50.18.108.83:3001/checkLogin')
-    axios.post("http://localhost:3001/checkLogin")
+    axios.post('https://50.18.108.83.nip.io:3001/checkLogin')
+    //axios.post("http://localhost:3001/checkLogin")
       .then(res => {
         console.log("The response from the login get in App.js is: is: ");
         console.log(res.data.user);
@@ -90,7 +96,6 @@ function App() {
           <Route path="/FAQ" element={<FAQ/>}/>
           <Route path="/AboutUs" element={<AboutUs/>}/>
           <Route path="/SearchResults" element={<Results/>}/>
-          <Route path="/Pricing&Plans" element={<Pricing/>}/>
           <Route path="/TermsAndConditions" element={<TermsAndConditions/>}/>
           {loggedIn ? (
             // Routes that can only be accessed if user is logged in
@@ -117,6 +122,10 @@ function App() {
               <Route path="/LessonComplete" element={<LessonComplete/>}/>
               <Route path="/FriendsProfile" element={<FriendsProfile/>}/>
               <Route path="/SelectLanguage" element={<SelectLanguage/>}/>
+              <Route path="/CreateVid" element={<CreateVid/>}/>
+              <Route path="/Lobby" element={<Lobby/>}/>
+              <Route path="/InboxPage" element={<InboxPage/>}/>
+              <Route path="/FlashCards" element={<FlashCards/>}/>
             </>
           ) : null}
           <Route path="*" element={<Navigate to="/login" />} />

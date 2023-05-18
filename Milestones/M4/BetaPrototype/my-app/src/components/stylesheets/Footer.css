@@ -4,19 +4,28 @@ footer{
     height: 75px;
     
 }
-.footing-item{
+
+.footing{
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
-    padding-top: 1em;
-  
+    
 }
 
-
-.footing-item li{
+.footing-item{
     font-size: 22px;
+    box-sizing: border-box;
+
+}
+.footing .footing-item-focus{
+    font-size: 22px;
+    margin-right: 3.5rem;
 }
 
-.footing-item li :hover{
-    color: white;
+.footing a:hover{
+    color:white;
+
 }
+

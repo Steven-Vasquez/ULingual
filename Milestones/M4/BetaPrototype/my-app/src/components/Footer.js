@@ -5,22 +5,20 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
     return(
-    <footer>
-        <ul className="footing-item">
-            <li>
-                <Link to="ContactUs">Contact Us</Link>
-            </li>
-            <li>
-                <Link to="AboutUs">About Us</Link>
-            </li>
-            <li>
+    <footer className="footing">
+        <div className='footing-item'>
+                <Link to="ContactUs">Contact Us </Link>
+            </div>
+            <div className='footing-item-focus'>
+                <Link to="AboutUs">About Us </Link>
+            </div>
+            <div className='footing-item'>
                 <Link to="FAQ">FAQ</Link>
-            </li>
-        </ul> 
+            </div>    
     </footer>
         /* FOOTER
         * - ULingual actions:
-        * - Tutors by language
+        * - Tutors by language 
         * - Socials
         * - Terms & privacy
         */

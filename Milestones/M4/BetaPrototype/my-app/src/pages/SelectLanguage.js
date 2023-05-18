@@ -24,5 +24,5 @@ const SelectLanguage = () => {
             </label>
         </div>
     );
-}
+};
 export default SelectLanguage;

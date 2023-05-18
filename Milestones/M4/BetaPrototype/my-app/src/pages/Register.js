@@ -14,6 +14,8 @@ const Register = () => {
     const [passwordReg, setPasswordReg] = useState("");
     const [emailReg, setEmailReg] = useState("");
     const [isChecked, setIsChecked] = useState(false);
+    const [nativeLanguage, setNative] = useState(1);
+    const [learningLanguage, setLearning] = useState(1);
     const navigate = useNavigate();
     const usernameChecker = /^\S{4,20}$/;
     const passwordChecker = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,}$/;
@@ -50,6 +52,14 @@ const Register = () => {
         }
         setErrorMessage((prevState) => ({ ...prevState, email: error }));
     };
+
+    const changeNative = (e) => {
+        setNative(e.target.value);
+    }
+
+    const changeLearning = (e) => {
+        setLearning(e.target.value);
+    }
   
     const createAccount = (e) => {
         e.preventDefault();
@@ -62,26 +72,32 @@ const Register = () => {
             isChecked
         );
         if(allConditionsMet) {
-            //axios.post("http://50.18.108.83:3001/register", {
-            axios.post("http://localhost:3001/register", {
-                Ufirstname: firstnameReg,
-                Ulastname: lastnameReg,
-                Uusername: usernameReg,
-                Upassword: passwordReg,
-                Uemail: emailReg
-            })
-            .then(res => {
-                if(typeof res.data.message !== 'undefined' && res.data.message.length > 0) {
-                    alert(res.data.message);
-                } else {
-                    alert(`New Account created for ${usernameReg}!`)
-                    navigate(`/login`);
-                }
-                console.log(res);
-            })
-            .catch(err => {
-                console.log(err);
-            });
+            if(nativeLanguage == learningLanguage) {
+                alert("Your selected language to learn cannot be the same as your native language.")
+            } else {
+                axios.post("https://50.18.108.83.nip.io:3001/register", {
+                //axios.post("http://localhost:3001/register", {
+                    Ufirstname: firstnameReg,
+                    Ulastname: lastnameReg,
+                    Uusername: usernameReg,
+                    Upassword: passwordReg,
+                    Uemail: emailReg,
+                    NativeLanguageID: nativeLanguage,
+                    LearningLanguageID: learningLanguage
+                })
+                .then(res => {
+                    if(typeof res.data.message !== 'undefined' && res.data.message.length > 0) {
+                        alert(res.data.message);
+                    } else {
+                        alert(`New Account created for ${usernameReg}!`)
+                        navigate(`/login`);
+                    }
+                    console.log(res);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+            }
         } else {
             alert("One or more fields are incomplete!");
         }
@@ -159,6 +175,33 @@ const Register = () => {
                             Accept Terms & Conditions
                             </Link>
                         </label>
+                        {/*
+
+                            Note to backend team:
+                            This needs to be validated and stored in database:
+
+                            Both Native Language & Language Learning!
+                        
+                        */}
+                        <div className="language-inits">
+                            <label htmlFor="native-select">Select Native Language:</label>
+                            <select name="native-select" id="native-select" defaultValue={nativeLanguage} onChange={changeNative}>
+                                <option value="1">English</option>
+                                <option value="2">Spanish</option>
+                                <option value="3">French</option>
+                                <option value="4">Arabic</option>
+                                <option value="5">Korean</option>
+                            </select>
+
+                            <label htmlFor="learn-select">Select Language To Learn:</label>
+                            <select name="learn-select" id="learn-select" defaultValue={learningLanguage} onChange={changeLearning}>
+                                <option value="1">English</option>
+                                <option value="2">Spanish</option>
+                                <option value="3">French</option>
+                                <option value="4">Arabic</option>
+                                <option value="5">Korean</option>
+                            </select>
+                        </div>
                         
                     </div>
                     <button onClick={(e) => createAccount(e)} className="reg-1">

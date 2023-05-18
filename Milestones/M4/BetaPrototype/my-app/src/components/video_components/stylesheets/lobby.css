@@ -1,31 +1,30 @@
-.login-page{
+.lobby-page{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     background: whitesmoke;
 }
 
-.login-form h1{
-    font-size: 60px;
-    color: var(--mint-green);
-    padding-bottom: 25px;
-    margin: 15px auto;
+.lobby-details h2{
     text-align: center;
+    font-size: 60px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: 3rem;
 }
 
-.login-box form{
+.lobby-details form{
     display: block;
     background-color: var(--primary);
     border-radius: 6px;
     margin:40px auto;
     max-width: 800px;
-    max-height: 1000px;
+    max-height: 800px;
     padding: 20px;
-    margin-top: 150px;
+    margin-top: 50px;
     padding-top: 10px;
 }
-
-.login-sectioning input{
+.lobby-credentials input{
     width: 85%;
     display: flex;
     flex-direction: column;
@@ -39,44 +38,24 @@
     background-color: var(--secondary);
     color: var(--mint-green);
 }
-.login-sectioning label{
+.lobby-credentials label{
     color:var(--mint-green);
-    font-size: 22px;
+    font-size: 25px;
     padding-top: 10px;
     padding-left: 45px;
     padding-bottom: 10px;
-}
-
-.login-sectioning span{
-    color:rgb(253, 34, 122);
-    padding-left: 45px;
-}
-
-/*
-.login-form button{
-    background-color: var(--mint-green);
-    margin-top: 20px;
-    margin-left: 230px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    width: 45px;
-    height:35px;
-    border: 1px solid black;
-    border-radius: 10px;
-    font-size: 16px;
     font-weight: 600;
 }
-*/
 
-.login-form button{
+.lobby-details button{
     margin: auto;
     cursor: pointer;
     background: var(--mint-green);
-    width:150px;
+    width:175px;
     height:35px;
     border-radius: 10px;
     border: 1px solid black;
-    font-size: 17px;
+    font-size: 22px;
     font-weight: 700;
     font-family: 'Comme', sans-serif;
     display: flex;
@@ -85,23 +64,7 @@
     margin-top: 3em;
 }
 
-.login-form button:hover{
+.lobby-details button:hover{
     background-color: whitesmoke;
 }
-
-.login-form p{
-    font-size: 22px;
-    text-align: center;
-    padding-top: 15px;
-    text-decoration: underline;
-    margin-top: 1em;
-    font-weight: 600;
-}
-
-
-.log-1 a{
-    color:black;
-
-}
-
 

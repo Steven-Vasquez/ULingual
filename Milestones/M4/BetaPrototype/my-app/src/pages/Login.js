@@ -7,7 +7,6 @@ import './stylesheets/Login.css'
 function Login() {
     const [usernameReg, setUsernameReg] = useState("");
     const [passwordReg, setPasswordReg] = useState("");
-    //const navigate = useNavigate();
 
     axios.defaults.withCredentials = true; // Allow cookies to be stored in the browser
 
@@ -19,8 +18,8 @@ function Login() {
         );
         //console.log(usernameReg);
         if(allConditionsMet) {
-            //axios.post("http://50.18.108.83:3001/login", {
-            axios.post("http://localhost:3001/login", {
+            axios.post("https://50.18.108.83.nip.io:3001/login", {
+            //axios.post("http://localhost:3001/login", {
                 Uusername: usernameReg,
                 Upassword: passwordReg
             }, {
@@ -32,8 +31,7 @@ function Login() {
                 if(typeof res.data.message !== 'undefined' && res.data.message.length > 0) {
                     alert(res.data.message);
                 } else {
-                    alert(`Welcome back, ${usernameReg}!`)
-                    //navigate(`/Dashboard`);
+                    alert(`Welcome back, ${usernameReg}!`);
                     window.location.href = '/Dashboard'; //Reloads the page so the session can update values in App.js. Then, the user is recognized as logged in
                 }
                 //console.log(res.data);

@@ -112,6 +112,8 @@ app.post('/register', (req, res) => {
   const Uusername = req.body.Uusername;
   const Upassword = req.body.Upassword;
   const Uemail = req.body.Uemail;
+  const NativeLanguageID = req.body.NativeLanguageID;
+  const LearningLanguageID = req.body.LearningLanguageID;
 
   // For username verification
   const usernameQuery = 'SELECT * FROM Users WHERE Uusername = ?';
@@ -141,9 +143,9 @@ app.post('/register', (req, res) => {
                 console.error(err.message);
                 return;
               }
-              const sql = 'INSERT INTO Users (Ufirstname, Ulastname, Uusername, Upassword, Uemail) VALUES (?,?,?,?,?)';
+              const sql = 'INSERT INTO Users (Ufirstname, Ulastname, Uusername, Upassword, Uemail, NativeLanguageID, LearningLanguageID) VALUES (?,?,?,?,?,?,?)';
               db.query(sql, 
-                [Ufirstname, Ulastname, Uusername, hash, Uemail], 
+                [Ufirstname, Ulastname, Uusername, hash, Uemail, NativeLanguageID, LearningLanguageID], 
                 (error, result) => {
                 if(error){
                   console.error(error.message);
@@ -161,8 +163,8 @@ app.post('/register', (req, res) => {
 
 // API endpoint that checks if a user is logged in
 app.post("/checkLogin", (req, res) => {
-  if (req.app.locals.user !== undefined) { // There is a user session active
-    res.send({loggedIn: true, user: req.app.locals.user});
+  if (req.session.user) { // There is a user session active
+    res.send({loggedIn: true, user: req.session.user});
   } else { // There is no user session active
     res.send({ loggedIn: false });
    }
@@ -189,15 +191,13 @@ app.post('/login', (req, res) => {
         }
         if (response) {
           req.session.user = foundUser;
-          req.app.locals.user = foundUser; // Set the session local to the user that just logged in so login session can persist across pages
+          //req.app.locals.user = foundUser; // Set the session local to the user that just logged in so login session can persist across pages
           res.send(foundUser);
-        }
-        else { // Invalid password (display both for security reasons)
+        } else { // Invalid password (display both for security reasons)
           res.send({message: "Invalid Username/Password."})
         }
       });
-    }
-    else { // User not found (display both for security reasons)
+    } else { // User not found (display both for security reasons)
       res.send({message: "Invalid Username/Password."})
     }
   });
@@ -215,7 +215,7 @@ app.post('/logout', (req, res) => {
       res.send('User logged out successfully');
     }
   });
-  req.app.locals.user = undefined; // Reset the session local to undefined
+  //req.app.locals.user = undefined; // Reset the session local to undefined
 });
 
 // API endpoint that allows the user to send an email to the company email
@@ -245,9 +245,128 @@ app.post('/contactus', (req, res) => {
   })
 });
 
-//API endpoint that returns user id of logged in user.
-app.post('/userinfo', (req, res) => {
-  res.send(req.app.locals.user.UserID);
+//API endpoint that returns user's info
+app.post("/user/info", (req, res) => {
+  const userID = req.session.user.UserID;
+  var sql = 'SELECT L.Language FROM languages L, Users U WHERE U.UserID = ? && U.LearningLanguageID = L.LanguageID';
+  db.query(sql, [userID], (err, results) => {
+    if(err) {
+      console.log(err.message);
+      return;
+    } else {
+      req.session.user.LearningLanguage = results[0].Language;
+      sql = 'SELECT L.Language FROM languages L, Users U WHERE U.UserID = ? && U.NativeLanguageID = L.LanguageID';
+      db.query(sql, [userID], (err, results) => {
+        if(err) {
+          console.log(err.message);
+          return;
+        } else {
+          req.session.user.NativeLanguage = results[0].Language;
+          res.send(req.session.user);
+        }
+      })
+    }
+  })
+});
+
+//API endpoint that returns user's friend count
+app.post('/friends/count', (req, res) => {
+  let userID = req.session.user.UserID;
+  if(req.query.user) {
+    userID = req.query.user;
+  }
+
+  const sql = 'SELECT COUNT(*) as count FROM friends WHERE UserID1 = ?';
+  db.query(sql, [userID], (err, results) => {
+    if(err) {
+      console.error(err.message);
+      return;
+    } else {
+    res.send({count: results[0].count});
+    }
+  });
+});
+
+//API endpoint that returns user's friends
+app.post('/friends', (req, res) => {
+  const userID = req.session.user.UserID;
+
+  const sql = 'SELECT U.UserID, U.Uusername, U.Image FROM Users U, friends F WHERE F.UserID1 = ? && U.UserID = F.UserID2';
+  db.query(sql, [userID], (err, results) => {
+    if(err) {
+      console.error(err.message);
+      return;
+    } else {
+    res.send(results);
+    }
+  });
+});
+
+//API enpoint that updates the user's profile description
+//TODO: allow image upload
+app.post('/profile', (req, res) => {
+  const userID = req.session.user.UserID;
+  const Description = req.body.Description;
+  const LearningLanguage = req.body.LearningLanguage;
+  let sql = 'SELECT LanguageID FROM languages WHERE Language = ?';
+  db.query(sql, [LearningLanguage], (err, results) => {
+    if(err) {
+      console.error(err.message);
+      return;
+    } else {
+      req.session.LearningLanguageID = results[0].LanguageID;
+      const LearningLanguageID = results[0].LanguageID;
+      sql = 'UPDATE Users SET Description = ?, LearningLanguageID = ? WHERE UserID = ?';
+      db.query(sql, [Description, LearningLanguageID, userID], (err, results) => {
+        if(err) {
+          console.error(err.message);
+          return;
+        } else {
+          req.session.user.Description = Description;
+          req.session.user.LearningLanguage = LearningLanguage;
+          res.send(req.session.user);
+        }
+      });
+    }
+  });
+})
+
+// API endpoint that returns friend's information
+app.get('/friend/profile', (req, res) => {
+  const user = req.query.user;
+  let friend;
+  let sql = 'SELECT * FROM Users WHERE Users.Uusername = ?';
+  db.query(sql, [user], (err, results) => {
+    if(err) {
+      console.log(err.message);
+      return;
+    } else {
+      friend = results[0];
+      console.log(friend);
+      console.log(friend.UserID);
+      sql = 'SELECT L.Language FROM languages L, Users U WHERE U.UserID = ? && U.LearningLanguageID = L.LanguageID';
+      db.query(sql, [friend.UserID], (err, results) => {
+        if(err) {
+          console.log(err.message);
+          return;
+        } else {
+          console.log(results[0]);
+          console.log(results[0].Language);
+          friend.LearningLanguage = results[0].Language;
+          sql = 'SELECT L.Language FROM languages L, Users U WHERE U.UserID = ? && U.NativeLanguageID = L.LanguageID';
+          db.query(sql, [friend.UserID], (err, results) => {
+            if(err) {
+              console.log(err.message);
+              return;
+            } else {
+              friend.NativeLanguage = results[0].Language;
+              res.send(friend);
+            }
+          })
+        }
+      })
+    }
+  })
 });
 
 // API endpoint that returns all the tutors from the database
@@ -263,15 +382,28 @@ app.get('/tutors', (req, res) => {
 });
 
 // API endpoint that returns a search result for tutors from the database
-app.get('/tutors/search', (req, res) => {
+app.get('/user/search', (req, res) => {
   const search = req.query.search;
-  const sql = `SELECT * FROM Tutors WHERE TutorFirstName LIKE '%${search}%' OR TutorLastName LIKE '%${search}%'`;
+  //const sql = `SELECT * FROM Tutors WHERE TutorFirstName LIKE '%${search}%' OR TutorLastName LIKE '%${search}%'`;
+  const sql = (
+    `SELECT U.UserID, U.Uusername, L.Language
+    FROM Users U, languages L
+    WHERE L.LanguageID = U.NativeLanguageID AND U.Uusername LIKE '%${search}%'
+    UNION
+    SELECT U.UserID, U.Uusername, L.Language
+    FROM Users U, languages L
+    WHERE L.LanguageID = U.NativeLanguageID AND L.Language = '${search}'`
+  );
   db.query(sql, (error, result) => {
     if (error) {
       console.error(error.message);
       return;
     }
-    res.send(result);
+    if(result.length === 0) {
+      res.send({message: "No results found."})
+    } else {
+      res.send(result);
+    }
   });
 });
 
