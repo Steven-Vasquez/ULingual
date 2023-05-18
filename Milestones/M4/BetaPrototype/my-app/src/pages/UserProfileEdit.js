@@ -3,6 +3,35 @@ import './stylesheets/UserProfileEdit.css'
 import { Link } from "react-router-dom";
 
 const UserProfileEdit = () => {
+    const [description, setDescription] = useState("");
+    
+    useEffect(() => {
+        axios.post(`https://50.18.108.83.nip.io:3001/user/info`)
+        //axios.post(`http://localhost:3001/user/info`)
+        .then(res => {
+            setDescription(res.data.Description);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }, []);
+
+    const submitProfile = (e) => {
+        e.preventDefault();
+        axios.post("https://50.18.108.83.nip.io:3001/profile", {
+        //axios.post("http://localhost:3001/profile", {
+            Description: description
+        })
+        .then(res => {
+            console.log(res);
+            alert("Your profile has been updated!")
+            window.location.href = '/UserProfile';
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+    
     return(
     <div className="user-entire">
             <div className='UserProfile'>
@@ -12,7 +41,11 @@ const UserProfileEdit = () => {
                 </div>
                         
                 <div className="descriptionContainer">
-                    <input type="text" placeholder="Enter New Description" className="editDescription"/>
+                    <input type="text" placeholder="Enter New Description" className="editDescription"
+                        onChange={(e) => {
+                            setDescription(e.target.value)
+                        }}
+                    />
                 </div>
                             
                 <div className="user-status">
@@ -24,7 +57,7 @@ const UserProfileEdit = () => {
                         <h3>Offline</h3>
                     </div>
                     <div className="dnd">
-                        <h3>Do No Disturb</h3>
+                        <h3>Do Not Disturb</h3>
                     </div>
                 </div>
 

@@ -18,7 +18,11 @@ const Navbar = (props) => {
 
     const handleSearchSubmit = (event) => {
         event.preventDefault();
-        window.location.href = `/SearchResults?search=${searchQuery}`;
+        if(searchQuery.length == 0) {
+            alert("Please enter a search term.");
+        } else {
+            window.location.href = `/SearchResults?search=${searchQuery}`;
+        }
     }
 
     const handleSearchInputChange = (event) => {

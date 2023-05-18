@@ -243,9 +243,36 @@ app.post('/contactus', (req, res) => {
   })
 });
 
+//API endpoint that returns user's info
+app.post("/user/info", (req, res) => {
+  const userID = req.session.user.UserID;
+  var sql = 'SELECT L.Language FROM languages L, Users U WHERE U.UserID = ? && U.LearningLanguageID = L.LanguageID';
+  db.query(sql, [userID], (err, results) => {
+    if(err) {
+      console.log(err.message);
+      return;
+    } else {
+      req.session.user.LearningLanguage = results[0].Language;
+      sql = 'SELECT L.Language FROM languages L, Users U WHERE U.UserID = ? && U.NativeLanguageID = L.LanguageID';
+      db.query(sql, [userID], (err, results) => {
+        if(err) {
+          console.log(err.message);
+          return;
+        } else {
+          req.session.user.NativeLanguage = results[0].Language;
+          res.send(req.session.user);
+        }
+      })
+    }
+  })
+});
+
 //API endpoint that returns user's friend count
 app.post('/friends/count', (req, res) => {
-  const userID = req.session.user.userID;
+  let userID = req.session.user.UserID;
+  if(req.query.user) {
+    userID = req.query.user;
+  }
 
   const sql = 'SELECT COUNT(*) as count FROM friends WHERE UserID1 = ?';
   db.query(sql, [userID], (err, results) => {
@@ -260,9 +287,9 @@ app.post('/friends/count', (req, res) => {
 
 //API endpoint that returns user's friends
 app.post('/friends', (req, res) => {
-  const userID = req.session.user.userID;
+  const userID = req.session.user.UserID;
 
-  const sql = 'SELECT U.Uusername FROM Users U, friends F WHERE F.UserID1 = ? && U.UserID = F.UserID2';
+  const sql = 'SELECT U.UserID, U.Uusername, U.Image FROM Users U, friends F WHERE F.UserID1 = ? && U.UserID = F.UserID2';
   db.query(sql, [userID], (err, results) => {
     if(err) {
       console.error(err.message);
@@ -271,6 +298,61 @@ app.post('/friends', (req, res) => {
     res.send(results);
     }
   });
+});
+
+//API enpoint that updates the user's profile description
+//TODO: allow image upload
+app.post('/profile', (req, res) => {
+  const userID = req.session.user.UserID;
+  const Description = req.body.Description;
+  const sql = 'UPDATE Users SET Description = ? WHERE UserID = ?';
+  db.query(sql, [Description, userID], (err, results) => {
+    if(err) {
+      console.error(err.message);
+      return;
+    } else {
+      req.session.user.Description = Description;
+      res.send(req.session.user);
+    }
+  });
+})
+
+// API endpoint that returns friend's information
+app.get('/friend/profile', (req, res) => {
+  const user = req.query.user;
+  let friend;
+  let sql = 'SELECT * FROM Users WHERE Users.Uusername = ?';
+  db.query(sql, [user], (err, results) => {
+    if(err) {
+      console.log(err.message);
+      return;
+    } else {
+      friend = results[0];
+      console.log(friend);
+      console.log(friend.UserID);
+      sql = 'SELECT L.Language FROM languages L, Users U WHERE U.UserID = ? && U.LearningLanguageID = L.LanguageID';
+      db.query(sql, [friend.UserID], (err, results) => {
+        if(err) {
+          console.log(err.message);
+          return;
+        } else {
+          console.log(results[0]);
+          console.log(results[0].Language);
+          friend.LearningLanguage = results[0].Language;
+          sql = 'SELECT L.Language FROM languages L, Users U WHERE U.UserID = ? && U.NativeLanguageID = L.LanguageID';
+          db.query(sql, [friend.UserID], (err, results) => {
+            if(err) {
+              console.log(err.message);
+              return;
+            } else {
+              friend.NativeLanguage = results[0].Language;
+              res.send(friend);
+            }
+          })
+        }
+      })
+    }
+  })
 });
 
 // API endpoint that returns all the tutors from the database
