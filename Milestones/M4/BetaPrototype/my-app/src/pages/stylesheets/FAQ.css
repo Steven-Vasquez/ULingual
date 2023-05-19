@@ -1,27 +1,26 @@
-
-.ab-pg{
+.faq-pg{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     background: whitesmoke;
 }
 
-
-.ab{
+.FAQ{
     max-width: 75%;
     margin: auto;
 }
-.ab h1{
+.FAQ h1{
     font-size: 50px;
     text-align: center;
     margin-bottom: 1em;
     font-weight: 600;
     margin-top: 1em;
+    font-family: 'Comme', sans-serif;
 }
 
-.ab-drop{ 
-    background-color: var(--mint-green);
-    color: var(--primary);
+.faq-drop{ 
+    background-color: var(--primary);
+    color: white;
     font-size: 1.2rem;
     width: 100%;
     padding: 2rem 2rem;
@@ -31,25 +30,35 @@
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 
-.ab-context p{
-    color: white;
-    font-size: 25px;
-    line-height: 1.8;
+.faq-context p{
+    color: black;
+    font-size: 22px;
+    line-height: 1.5;
     font-family: 'Comme', sans-serif;
     margin-top: 1em;
     margin-bottom: 1em;
-    font-weight: 550;
+    font-weight: 600;
     padding-left: 30px;
 }
 
 
-.ab-context{
+.faq-context{
     border: 1px solid black;
     margin-bottom: 2em;
-    background-color: var(--primary);
+    background-color: wheat;
 
 }
+
+
+
+
+
+ 
+
+
+
+

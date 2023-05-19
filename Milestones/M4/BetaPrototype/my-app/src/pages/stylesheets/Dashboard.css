@@ -1,0 +1,89 @@
+
+.db{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: whitesmoke;
+}
+
+.db h1{
+  font-size: 60px;
+  color: black;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  font-family: 'Comme', sans-serif;
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+.db .db-grid{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 15px;
+  padding: 15px;
+
+}
+.db .db-grid .db-card a{
+  color: black;
+}
+
+.db .db-grid .db-card{
+   width: 400px;
+   border: 1px solid black;
+   text-align: center;
+   padding: 20px;
+   background: var(--primary);
+   border-radius: 8px;
+}
+
+.db .db-grid .db-card .db-name{
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.db .db-grid .db-card .db-info{
+  margin-bottom: 20px;
+  color: white;
+}
+
+
+.db .db-grid .db-card .db-info b{
+  display: block;
+  font-size: 50px;
+  margin-bottom: -5px;
+  color: white;
+}
+
+.db .db-grid .db-card .db-features > *{
+  padding: 8px 0px;
+  color: white;
+  border-bottom: 1px solid white;
+}
+.db .db-grid .db-card span{
+  color: white;
+}
+
+.db .db-grid .db-card .pkg-buy-btn button{
+  width: 100%;
+  margin: 25px 0px 0px;
+  padding: 10px;
+  background: white;
+  border-radius: 5px;
+  outline: none;
+  border:none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+.db .db-grid .db-card .db-name{
+  color: var(--mint-green);
+}
+
+.pkg-buy-btn button:hover{
+  font-size: 18px;
+}

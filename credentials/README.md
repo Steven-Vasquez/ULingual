@@ -7,7 +7,7 @@
 
 # Below is a list of items required. Missing items will causes points to be deducted from multiple milestone submissions.
 
-1. Server URL or IP: http://50.18.108.83/
+1. Server URL or IP: https://50.18.108.83.nip.io/
 2. SSH username: ubuntu
 3. SSH password or key.
     <br> If a ssh key is used please upload the key to the credentials folder.
