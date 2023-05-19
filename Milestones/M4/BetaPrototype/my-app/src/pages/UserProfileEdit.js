@@ -9,8 +9,8 @@ const UserProfileEdit = () => {
     const [learningLanguage, setLearning] = useState("");
     
     useEffect(() => {
-        //axios.post(`https://50.18.108.83.nip.io:3001/user/info`)
-        axios.post(`http://localhost:3001/user/info`)
+        axios.post(`https://50.18.108.83.nip.io:3001/user/info`)
+        //axios.post(`http://localhost:3001/user/info`)
         .then(res => {
             setDescription(res.data.Description);
             setNative(res.data.NativeLanguage);
@@ -26,8 +26,8 @@ const UserProfileEdit = () => {
         if(nativeLanguage == learningLanguage) {
             alert("You must select a non-native language.")
         } else {
-            //axios.post("https://50.18.108.83.nip.io:3001/profile", {
-            axios.post("http://localhost:3001/profile", {
+            axios.post("https://50.18.108.83.nip.io:3001/profile", {
+            //axios.post("http://localhost:3001/profile", {
                 Description: description,
                 LearningLanguage: learningLanguage
             })

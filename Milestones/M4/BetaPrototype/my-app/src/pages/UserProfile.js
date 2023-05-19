@@ -13,8 +13,8 @@ const UserProfile = () => {
     const [followers, setFollowers] = useState();
 
     useEffect(() => {
-        //axios.post(`https://50.18.108.83.nip.io:3001/user/info`)
-        axios.post(`http://localhost:3001/user/info`)
+        axios.post(`https://50.18.108.83.nip.io:3001/user/info`)
+        //axios.post(`http://localhost:3001/user/info`)
         .then(res => {
             setUsername(res.data.Uusername);
             setEmail(res.data.Uemail);
@@ -25,8 +25,8 @@ const UserProfile = () => {
         .catch(err => {
             console.log(err);
         });
-        //axios.post(`https://50.18.108.83.nip.io:3001/friends/count`)
-        axios.post(`http://localhost:3001/friends/count`)
+        axios.post(`https://50.18.108.83.nip.io:3001/friends/count`)
+        //axios.post(`http://localhost:3001/friends/count`)
         .then(res => {
             setFollowers(res.data.count);
         })

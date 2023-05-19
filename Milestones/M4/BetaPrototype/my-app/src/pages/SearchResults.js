@@ -16,8 +16,8 @@ const Results = () => {
 
   useEffect(() => {
       if(pageLoaded && queryParams.search) {
-        //axios.get(`https://50.18.108.83.nip.io:3001/user/search?search=${queryParams.search}`)
-        axios.get(`http://localhost:3001/user/search?search=${queryParams.search}`)
+        axios.get(`https://50.18.108.83.nip.io:3001/user/search?search=${queryParams.search}`)
+        //axios.get(`http://localhost:3001/user/search?search=${queryParams.search}`)
           .then(res => {
             if(res.data.message) {
               alert(res.data.message);

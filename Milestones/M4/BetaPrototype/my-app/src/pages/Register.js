@@ -75,8 +75,8 @@ const Register = () => {
             if(nativeLanguage == learningLanguage) {
                 alert("Your selected language to learn cannot be the same as your native language.")
             } else {
-                //axios.post("https://50.18.108.83.nip.io:3001/register", {
-                axios.post("http://localhost:3001/register", {
+                axios.post("https://50.18.108.83.nip.io:3001/register", {
+                //axios.post("http://localhost:3001/register", {
                     Ufirstname: firstnameReg,
                     Ulastname: lastnameReg,
                     Uusername: usernameReg,
