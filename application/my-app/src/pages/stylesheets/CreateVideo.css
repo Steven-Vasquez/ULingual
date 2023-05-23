@@ -1,0 +1,59 @@
+.create-pg{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: whitesmoke;
+}
+
+
+.create-pg h2{
+    text-align: center;
+    font-size: 60px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: 3rem;
+}
+
+.create-id-pg form{
+    display: block;
+    background-color: var(--primary);
+    border-radius: 6px;
+    margin:40px auto;
+    max-width: 800px;
+    max-height: 800px;
+    padding: 20px;
+    margin-top: 50px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.create-id-pg .create-id-form label{
+    color:var(--mint-green);
+    font-size: 25px;
+    padding-top: 10px;
+    padding-left: 45px;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+.create-id-pg button{
+    margin: auto;
+    cursor: pointer;
+    background: var(--mint-green);
+    width:375px;
+    height:125px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'Comme', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+    margin-bottom: 4rem;
+}
+
+.create-id-pg button:hover{
+    background-color: whitesmoke;
+}
