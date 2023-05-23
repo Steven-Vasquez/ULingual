@@ -21,6 +21,7 @@ const moment = require('moment'); // For date and time formatting
 const app = express();
 const port = 3001;
 
+// used for image uploading
 const path = require('path')
 const multer = require('multer')
 app.use(express.static('uploads'));
@@ -30,9 +31,7 @@ const storage = multer.diskStorage({
     cb(null,'uploads');
   },
   filename: function(req, file, cb) {
-    console.log(file);
     cb(null, Date.now() + path.extname(file.originalname));
-    console.log(file);
   }
 });
 
@@ -374,7 +373,7 @@ app.post('/profile', (req, res) => {
       console.error(err.message);
       return;
     } else {
-      req.session.LearningLanguageID = results[0].LanguageID;
+      req.session.user.LearningLanguageID = results[0].LanguageID;
       const LearningLanguageID = results[0].LanguageID;
       sql = 'UPDATE Users SET Description = ?, LearningLanguageID = ?, Uusername = ? WHERE UserID = ?';
       db.query(sql, [Description, LearningLanguageID, Uusername, userID], (err, results) => {
@@ -499,6 +498,40 @@ app.post('/addForum', (req, res) => {
       return;
     }
     res.send({DateCreated: DateCreated});
+  });
+});
+
+// API endpoint to display all usermade flashcards from the database
+app.post('/flashcards/display', (req, res) => {
+  const UserID = req.session.user.UserID;
+  const LanguageID = req.session.user.LearningLanguageID;
+  const sql = 'SELECT FlashcardID, Question, Answer FROM flashcards WHERE LanguageID = ? AND (UserID = ? OR UserID = ?)'
+
+  db.query(sql, [LanguageID, UserID, 75], (err, results) => {
+    if(err) {
+      console.error(err.message);
+      return;
+    } else {
+      res.send(results);
+    }
+  });
+});
+
+
+app.post('/flashcards/create', (req, res) => {
+  const UserID = req.session.user.UserID;
+  const LanguageID = req.session.user.LearningLanguageID;
+  const Question = req.body.Question;
+  const Answer = req.body.Answer;
+
+  const sql = 'INSERT INTO flashcards (UserID, Question, Answer, LanguageID) VALUES (?, ?, ?, ?)';
+  db.query(sql, [UserID, Question, Answer, LanguageID], (err) => {
+    if(err) {
+      console.error(err.message);
+      return;
+    } else {
+      res.send({message: "Flashcard created!"})
+    }
   });
 });
 

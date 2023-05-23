@@ -41,6 +41,11 @@
     text-align: center;
 }
 
+.flashcards-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .flash-card.front{
     background-color: var(--mint-green);
 
