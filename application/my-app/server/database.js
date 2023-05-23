@@ -443,6 +443,42 @@ app.get('/user/search', (req, res) => {
   });
 });
 
+app.get('/forums', (req, res) => {
+  const sql = 'SELECT * FROM forumposts';
+  db.query(sql, (error, results) => {
+    if (error) {
+      console.error(error.message);
+      res.status(500).send({ message: 'An error occurred while fetching forums' });
+      return;
+    }
+    res.send(results);
+  });
+});
+
+// API endpoint to add a forum
+app.post('/addForum', (req, res) => {
+  const UserID = req.session.user.UserID;
+  const Title = req.body.Title;
+  const myDate = new Date();
+  const DateCreated = myDate.toISOString().slice(0, 19).replace('T', ' ');
+
+
+  if (Title === null || Title.length === 0) {
+      res.status(400).send({message: 'Forum name cannot be empty'});
+      return;
+  }
+
+  const sql = 'INSERT INTO forumposts (UserID, Title, DateCreated, Comments) VALUES (?, ?, ?, 0)';
+  db.query(sql, [UserID, Title, DateCreated], (error, results) => {
+    if(error){
+      console.error(error.message);
+      res.status(500).send({message: 'An error occurred while creating forum'});
+      return;
+    }
+    res.send({DateCreated: DateCreated});
+  });
+});
+
 // A link to the video chat-related API endpoints
 app.use(videoIndex);
 
