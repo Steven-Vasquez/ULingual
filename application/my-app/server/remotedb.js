@@ -467,7 +467,7 @@ app.get('/user/search', (req, res) => {
 });
 
 app.get('/forums', (req, res) => {
-  const sql = 'SELECT * FROM forumposts';
+  const sql = 'SELECT * FROM forumposts ORDER BY DateCreated DESC';
   db.query(sql, (error, results) => {
     if (error) {
       console.error(error.message);
@@ -482,10 +482,8 @@ app.get('/forums', (req, res) => {
 app.post('/addForum', (req, res) => {
   const UserID = req.session.user.UserID;
   const Title = req.body.Title;
-  const myDate = new Date();
-  const DateCreated = myDate.toISOString().slice(0, 19).replace('T', ' ');
-
-
+  const DateCreated = moment().format('YYYY-MM-DD HH:mm:ss');
+  
   if (Title === null || Title.length === 0) {
       res.status(400).send({message: 'Forum name cannot be empty'});
       return;
