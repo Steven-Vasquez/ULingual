@@ -19,6 +19,8 @@ const session = require('express-session'); // For sessions to be stored in the 
 
 const nodemailer = require('nodemailer'); // Allows emails to be sent to company email
 
+const moment = require('moment'); // For date and time formatting
+
 const app = express();
 const port = 3001;
 

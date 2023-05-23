@@ -16,6 +16,8 @@ const session = require('express-session'); // For sessions to be stored in the 
 
 const nodemailer = require('nodemailer'); // Allows emails to be sent to company email
 
+const moment = require('moment'); // For date and time formatting
+
 const app = express();
 const port = 3001;
 
@@ -483,7 +485,7 @@ app.post('/addForum', (req, res) => {
   const UserID = req.session.user.UserID;
   const Title = req.body.Title;
   const DateCreated = moment().format('YYYY-MM-DD HH:mm:ss');
-  
+
   if (Title === null || Title.length === 0) {
       res.status(400).send({message: 'Forum name cannot be empty'});
       return;
