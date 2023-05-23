@@ -33,7 +33,7 @@ const FriendsList = () => {
             {friends.map(user => (
                 <div key={user.UserID} class="containerfrl2">
                     <div class="innercontainerfrl11">
-                        <a href="FriendsProfile" class="button">
+                        <a onClick={(e) => navigateFriendsPage(e, user.Uusername)} class="button">
                             <img class="button__text" src={user.Image ? "https://50.18.108.83.nip.io:3001/"+user.Image : "https://placehold.jp/150x150.png"}/>
                             {/* <img class="button__text" src={user.Image ? "http://localhost:3001/"+user.Image : "https://placehold.jp/150x150.png"}/> */}
                         </a>
