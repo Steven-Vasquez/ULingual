@@ -22,7 +22,6 @@ const UserProfile = () => {
             setDescription(res.data.Description);
             setNative(res.data.NativeLanguage);
             setLearning(res.data.LearningLanguage);
-            setUserImage(res.data.Image);
             if(res.data.Image != null) {
                 setUserImage("https://50.18.108.83.nip.io:3001/"+res.data.Image);
                 // setUserImage("http://localhost:3001/"+res.data.Image);

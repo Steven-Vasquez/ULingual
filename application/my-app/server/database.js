@@ -250,7 +250,7 @@ app.post("/user/info", (req, res) => {
       return;
     } else {
       req.session.user.LearningLanguage = results[0].Language;
-      sql = 'SELECT L.Language FROM languages L, Users U WHERE U.UserID = ? && U.NativeLanguageID = L.LanguageID';
+      sql = 'SELECT L.Language, U.Image FROM languages L, Users U WHERE U.UserID = ? && U.NativeLanguageID = L.LanguageID';
       db.query(sql, [userID], (err, results) => {
         if(err) {
           console.log(err.message);
@@ -378,16 +378,12 @@ app.get('/friend/profile', (req, res) => {
       return;
     } else {
       friend = results[0];
-      console.log(friend);
-      console.log(friend.UserID);
       sql = 'SELECT L.Language FROM languages L, Users U WHERE U.UserID = ? && U.LearningLanguageID = L.LanguageID';
       db.query(sql, [friend.UserID], (err, results) => {
         if(err) {
           console.log(err.message);
           return;
         } else {
-          console.log(results[0]);
-          console.log(results[0].Language);
           friend.LearningLanguage = results[0].Language;
           sql = 'SELECT L.Language FROM languages L, Users U WHERE U.UserID = ? && U.NativeLanguageID = L.LanguageID';
           db.query(sql, [friend.UserID], (err, results) => {
