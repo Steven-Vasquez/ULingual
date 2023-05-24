@@ -31,10 +31,14 @@
     color: black;
     text-align: center;
     object-fit: cover;
-    background-color:  white;
 }
 .englishBooks:hover{
-    background-color:  var(--mint-green);
+  border: 10px solid var(--mint-green);
+  border-image: linear-gradient(to bottom right, var(--mint-green), ) 1;
+  background-color: black;
+}
+.englishBooks:hover h2 {
+  color: var(--mint-green);
 }
 
 
@@ -42,6 +46,7 @@
     display: grid;
     grid-template-columns: 0.25fr 0.5fr 1fr 0.75fr;
     background-color:  white;
+    
 }
 .secondary{
     display: grid;
@@ -76,10 +81,27 @@
 .bookLink{
     border: 1px solid black;
     overflow-x: hidden;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.bookLink button {
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    width: 100%;
+}
+.bookLink button h3{
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .innerBook{
     height: max-content;
+    color: white;
+    background-color: black;
 }
 /*----------------------------*/
 .pbookTitle{
