@@ -107,7 +107,7 @@ const UserProfileEdit = () => {
             <div className='UserProfile'>
                 <div className="User-Info">
                     <img className="ProfileImage" src ={userImage || "https://placehold.jp/150x150.png"}/>
-                    <div>
+                    <div className="editProfile">
                         {uploading ? (
                             <input type="file" accept="image/*" onChange={handleFile} name="image"/>
                         ) : (
@@ -139,9 +139,9 @@ const UserProfileEdit = () => {
                       </span>
                       
                     )}
-                    {editing && <button onClick={handleSaveName}>Save</button>}
+                    {editing && <button onClick={handleSaveName} className= "saveBtn">Save</button>}
                     </div>
-                    <h4>Change Status</h4> 
+                    <h4>Change Profile Status</h4> 
                     <div className="online">
                         <h3>Online</h3>
                     </div>
@@ -154,7 +154,7 @@ const UserProfileEdit = () => {
                 </div>
 
                 <div className="langSelectionBox">
-                    <h2>Select Languages</h2>
+                    <h2>Edit Language Choice</h2>
                     <div className="innerLangSelection">
                         <ul>
                             <li>English <input checked={learningLanguage === 'English'} onChange={() => handleCheckboxChange('English')} type={"checkbox"}/></li>

@@ -6,8 +6,6 @@
 }
 
 .UserProfile {  
-    border: 20px solid black;
-    border-image: linear-gradient(to bottom right, var(--mint-green), #2196f3) 1;  
     padding: 30px;
     background-color: var(--secondary);
     padding: 5%;
@@ -15,7 +13,6 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 0.45fr 0.45fr;
     color: white;
-    border-radius: 10px;
     justify-items:center;
     align-items: center;
 }
@@ -23,13 +20,38 @@
 .User-Info h4{
     padding: 10px;
     text-align: center;
-   
+}
+ .editProfile button{
+   width: 150px;
+   height: 30px;
+   margin-bottom: 1rem;
+   margin-top: 1rem;
+   background: var(--mint-green);
+   border-radius: 5px;
+   cursor: pointer;
+   font-weight: 600;
+   font-size: 18px;
+}
+.editProfile input[type=file]::file-selector-button{
+    width: 125px;
+    height: 30px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    background: var(--mint-green);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+}
+.editProfile input[type=file]::file-selector-button:hover{
+    background-color: whitesmoke;
 }
 
 .online h3{
     border-style: solid;
     border-radius: 10px;
     border-color: black;
+    color:whitesmoke;
 }
 
 .online h3:hover{
@@ -40,6 +62,7 @@
     border-style: solid;
     border-radius: 10px;
     border-color: black;
+    color:whitesmoke;
 }
 
 .offline h3:hover{
@@ -50,6 +73,7 @@
     border-style: solid;
     border-radius: 10px;
     border-color: black;
+    color:whitesmoke;
 }
 
 .dnd h3:hover{
@@ -62,6 +86,8 @@
     border-color: var(--mint-green);
     grid-row-start: 1;
     grid-row-end: 2;
+    max-width: 180px;
+    max-height: 180px;
 }
 .User-Info{
     grid-column-start: 2;
@@ -69,8 +95,9 @@
 }
 
 .user-status{
-    border: 5px solid black;
-    border-image: linear-gradient(to bottom right, var(--mint-green), #2196f3) 1;  
+    border: 3px solid black;
+    border-color: var(--mint-green);
+    border-bottom-color: var(--secondary);
     padding: 30px;
     grid-row-start: 2;
     grid-row-end: 3;
@@ -79,12 +106,28 @@
     width: 100%;
 }
 
+.user-status button{
+    width: 150px;
+    height: 30px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    background: var(--mint-green);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+}
+.user-status h4{
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
 .descriptionContainer{
     grid-row-start: 3;
     grid-row-end: 4;
     grid-column-start: 1;
     grid-column-end: 4;
-    height: 100%;
+    height: 5rem;
     width: 100%;
 }
 .descriptionContainer input{
@@ -92,26 +135,26 @@
 }
 
 .descriptionContainer .editDescription{
-    border: 5px solid black;
-    border-image: linear-gradient(to bottom right, var(--mint-green), #2196f3) 1;  
+    border: 3px solid black;
+    border-color: var(--mint-green);
     padding: 10px;
     height: 100%;
     width: 100%;
 }
-
-
 .user-entire .button .greenbox{
     display: flex;
     align-items: center;
     align-self: center;
     justify-content: center;
-    background-color: lightseagreen;
-    color: white;
-    padding: 10px;
-    font-size: 16px;
+    background-color: var(--mint-green);
+    color: var(--primary);
+    font-size: 18px;
+    font-weight: 600;
     text-decoration: none;
     border-radius: 5px;
+    padding: 10px;
     gap: 10px;
+    cursor: pointer;
 }
 
 .user-entire .button{
@@ -119,11 +162,13 @@
     grid-row-end: 5;
     grid-column-start: 3;
     grid-column-end: 4;
+    margin-left: 12rem;
 }
 
 .langSelectionBox{
-    border: 5px solid black;
-    border-image: linear-gradient(to bottom right, var(--mint-green), #2196f3) 1;  
+    border: 3px solid black;
+    border-color: var(--mint-green);
+    border-bottom-color: var(--secondary);
     padding: 10px;
     grid-row-start: 2;
     grid-row-end: 3;
@@ -133,6 +178,11 @@
     height: 100%;
     justify-self: center;
     text-align: center;
+}
+.langSelectionBox h2{
+    color:whitesmoke;
+    font-weight: 700;
+    font-size: 45px;
 }
 .innerLangSelection{
     margin-top: 60px;

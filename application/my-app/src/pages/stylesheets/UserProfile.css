@@ -1,3 +1,6 @@
+.userHeader{
+    background-color: whitesmoke;
+}
 .userHeader img{
     width: 100%;
     height: 300px;
@@ -15,7 +18,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
+    border: 2px solid black;
     height: auto;
 }
 .rightUser h3{
@@ -32,7 +35,7 @@
     margin-top: -80px;
     display: block;
     box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.18);
-    border: 10px solid black;
+    border: 5px solid black;
     border-style: solid;
     border-color: var(--mint-green);
 }
@@ -40,27 +43,36 @@
     color: black;
 }
 .rightUser{
-    border: 1px solid black;
+    border: 2px solid black;
     display: grid;
     grid-template-rows: auto;
     gap: 15px;
     padding: 10px;
 }
 
-.friendsBox{
-    border: 20px solid black;
-    border-image: linear-gradient(to bottom right, var(--mint-green), #2196f3) 1;  
+.userData li{
+    list-style: none;
+    font-weight: 600;
+    font-size: 19px;
+}
+
+.descriptionBox{
+    border: 5px solid black;
+    border-left-color: var(--mint-green);
+    border-bottom-color: var(--mint-green); 
     padding: 30px;
 }
-.descriptionBox{
-    border: 20px solid black;
-    border-image: linear-gradient(to bottom right, var(--mint-green), #2196f3) 1;  
-    padding: 30px;
+.descriptionBox h3{
+    font-weight: 500;
 }
 .languageBox{
-    border: 20px solid black;
-    border-image: linear-gradient(to bottom right, var(--mint-green), #2196f3) 1;  
+    border: 5px solid black;
+    border-left-color: var(--mint-green);
+    border-bottom-color: var(--mint-green);
     padding: 30px;
+}
+.languageBox h3{
+    font-weight: 500;
 }
 
 .leftUser .button .button__text{
@@ -72,14 +84,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: lightseagreen;
-    color: white;
+    background-color: var(--mint-green);
+    color: var(--primary);
     padding: 10px;
-    font-size: 16px;
+    font-size: 18px;
     text-decoration: none;
     border-radius: 5px;
     gap: 10px;
     margin-top: 12px;
+    
 }
 
 @media (min-width: 1300px) {
