@@ -75,3 +75,63 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.create-card{
+    display: flex;
+    justify-content:  center;
+}
+.create-card button{
+    background: var(--primary);
+    color: whitesmoke;
+    width: 175px;
+    height: 50px;
+    border-radius: 5px;
+    font-size:  16px;
+    font-weight: 600;
+    cursor: pointer;
+
+}
+
+.create-card button:hover{
+    background: var(--mint-green);
+    color: var(--primary);
+}
+
+.create-card .card-question{
+    color: var(--primary);
+    font-size: 25px;
+    font-weight: 600;
+}
+.create-card .card-answer{
+    color: var(--primary);
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.card-question input[type="text"]{
+    width: 200px;
+    height: 40px;
+    background: whitesmoke;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 1rem;
+}
+.card-question input[type="text"]::placeholder{
+   color: var(--primary);
+   font-size: 16px;
+}
+.card-answer input[type="text"]{
+    width: 200px;
+    height: 40px;
+    background: whitesmoke;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 1rem;
+    margin-left: 1.36rem;
+}
+.card-answer input[type="text"]::placeholder{
+   color: var(--primary);
+   font-size: 16px;
+}

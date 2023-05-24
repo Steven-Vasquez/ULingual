@@ -94,17 +94,17 @@ const FlashCards = () => {
                     ))}
                 </div>
 
-                <div>
+                <div className="create-card">
                     {!creating ? (
                         <button onClick={(e) => handleCreate(e)}>
                             Create New Flashcard
                         </button>
                     ) : (
                         <div>
-                            <div>
+                            <div className="card-question">
                                 Question: <input type="text" placeholder="Front side of card here..." onChange={(e) => setQuestion(e.target.value)}/>
                             </div>
-                            <div>
+                            <div className="card-answer">
                                 Answer: <input type="text" placeholder="Back side of card here..." onChange={(e) => setAnswer(e.target.value)}/>
                             </div>
                             <button onClick={(e) => handleSubmit(e)}>Submit</button>
