@@ -8,6 +8,7 @@ import axios from 'axios'
 const FriendsProfile = () => {
     const location = useLocation();
     const queryParams = queryString.parse(location.search);
+    const [userID, setUserID] = useState();
     const [username, setUsername] = useState();
     const [email, setEmail] = useState();
     const [nativeLanguage, setNative] = useState();
@@ -15,6 +16,24 @@ const FriendsProfile = () => {
     const [description, setDescription] = useState();
     const [followers, setFollowers] = useState();
     const [userImage, setUserImage] = useState(null);
+    const [following, setFollowing] = useState(true);
+
+    const follow = (e) => {
+        console.log(userID);
+        e.preventDefault();
+        axios.post(`https://50.18.108.83.nip.io:3001/friend/add`, {
+        // axios.post(`http://localhost:3001/friend/add`, {
+            username: username,
+            UserID: userID
+        })
+        .then(res => {
+            if(res.data.message) {
+                alert(res.data.message);
+                setFollowing(true);
+            }
+        })
+
+    }
 
     useEffect(() => {
         if(queryParams.user) {
@@ -22,6 +41,7 @@ const FriendsProfile = () => {
             // axios.get(`http://localhost:3001/friend/profile?user=${queryParams.user}`)
             .then(res => {
                 console.log(res.data);
+                setUserID(res.data.UserID);
                 setUsername(res.data.Uusername);
                 setEmail(res.data.Uemail);
                 setDescription(res.data.Description);
@@ -39,6 +59,19 @@ const FriendsProfile = () => {
                 .catch(err => {
                     console.log(err);
                 });
+                axios.post('https://50.18.108.83.nip.io:3001/friend/following', {
+                //axios.post('http://localhost:3001/friend/following', {
+                    FriendID: res.data.UserID
+                })
+                .then(res => {
+                    if(res.data.message) {
+                        console.log(res.data.message);
+                        setFollowing(false);
+                    }
+                })
+                .catch(err => {
+                    console.log(err)
+                })
             })
             .catch(err => {
               console.log(err);
@@ -60,9 +93,11 @@ const FriendsProfile = () => {
                     <li>Followers: {followers}</li>
                     <li>Native Language: {nativeLanguage}</li>
                 </div>
+                {!following ? (
                 <div className="button">
-                    <Link to="/FriendsListPage" className="bluebox">Follow</Link>
+                    <button onClick={(e) => follow(e)} className="bluebox">Follow</button>
                 </div>
+                ) : null}
                 <div className="button">
                     <Link to="/FriendsListPage" className="bluebox">Return</Link>
                 </div>

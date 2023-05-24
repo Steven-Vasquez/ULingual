@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react'
 import axios from 'axios'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import './stylesheets/SearchResults.css'
 import queryString from 'query-string';
@@ -13,6 +13,12 @@ const Results = () => {
   console.log(queryParams.search);
 
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate();
+
+  const navigateFriendsPage = (e, username) => {
+    e.preventDefault();
+    navigate(`/FriendsProfile?user=${username}`);
+  }
 
   useEffect(() => {
       if(pageLoaded && queryParams.search) {
@@ -42,7 +48,7 @@ const Results = () => {
           <ul>
             {users.map(user => (
               <li key={user.UserID}>
-                <h3>Username: {user.Uusername} || Native Language: {user.Language}</h3>
+                <a onClick={(e) => navigateFriendsPage(e, user.Uusername)}>Username: {user.Uusername} || Native Language: {user.Language}</a>
               </li>
             ))}
           </ul>

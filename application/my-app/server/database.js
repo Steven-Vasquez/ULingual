@@ -401,6 +401,103 @@ app.get('/friend/profile', (req, res) => {
   })
 });
 
+// API endpoint to "follow" someone / add as a friend
+app.post('/friend/add', (req, res) => {
+  const UserID = req.session.user.UserID;
+  const Username = req.session.user.Uusername;
+  const FriendUsername = req.body.username;
+  const FriendID = req.body.UserID;
+
+  let sql = 'SELECT * FROM friends WHERE UserID1 = ? AND UserID2 = ?';
+  db.query(sql, [UserID, FriendID], (err, results) => {
+    if(err) {
+      console.error(err);
+      return;
+    }
+    if(results.length > 0) {
+      res.send({message: `You are already following ${FriendUsername}`});
+    } else {
+      sql = 'INSERT INTO friends (UserID1, UserID2) VALUES (?, ?)';
+      db.query(sql, [UserID, FriendID], (err) => {
+        if(err) {
+          console.error(err);
+          return;
+        } else { // check if they are already following you
+          sql = 'SELECT * FROM friends WHERE UserID1 = ? AND UserID2 = ?';
+          db.query(sql, [FriendID, UserID], (err, results) => {
+            if(err) {
+              console.error(err);
+              return;
+            }
+            if(results.length > 0) {
+              res.send({message: `You are now following ${FriendUsername}`});
+            } else {
+              const DateCreated = moment().format('YYYY-MM-DD HH:mm:ss');
+              const Title = `${Username} followed you!`;
+              const Content = `${Username} started following you. Would you like to follow them back?`
+              sql = 'INSERT INTO inbox (UserID1, UserID2, Username, Title, Content, DateSent) VALUES (?, ?, ?, ?, ?, ?)';
+              // UserID1 is the sender, UserID2 is the receiver
+              db.query(sql, [UserID, FriendID, Username, Title, Content, DateCreated], (err) => {
+                if(err) {
+                  console.error(err);
+                  return;
+                } else {
+                  res.send({message: `You are now following ${FriendUsername}`});
+                }
+              });
+            }
+          });
+        }
+      });
+    }
+  });
+});
+
+// API endpoint that checks if you're already following someone.
+app.post('/friend/following', (req, res) => {
+  const UserID = req.session.user.UserID;
+  const FriendID = req.body.FriendID;
+  const sql = 'SELECT * FROM friends WHERE UserID1 = ? AND UserID2 = ?'
+  db.query(sql, [UserID, FriendID], (err, results) => {
+    if(err) {
+      console.error(err);
+      return;
+    } else if(results.length > 0){
+      return;
+    } else {
+      res.send({message: "You are not following this user."})
+    }
+  });
+});
+
+//API endpoint that gets all messages for a user
+app.post('/inbox/messages', (req, res) => {
+  const UserID = req.session.user.UserID;
+  const sql = 'SELECT * FROM inbox WHERE UserID2 = ?';
+  db.query(sql, [UserID], (err, results) => {
+    if(err) {
+      console.error(err);
+      return;
+    } else {
+      res.send(results);
+    }
+  });
+});
+
+//API endpoint that deletes a message
+app.post('/inbox/delete', (req, res) => {
+  const MessageID = req.body.MessageID;
+  const sql = 'DELETE FROM inbox WHERE MessageID = ?';
+  db.query(sql, [MessageID], (err) => {
+    if(err) {
+      console.error(err);
+      return;
+    } else {
+      res.send({message: "Message deleted!"});
+    }
+  });
+});
+
 // API endpoint that returns all the tutors from the database
 app.get('/tutors', (req, res) => {
   const sql = 'SELECT * FROM Tutors';
