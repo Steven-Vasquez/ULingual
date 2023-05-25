@@ -1,0 +1,67 @@
+.room {
+    min-height: 84.5vh;
+}
+
+h2, h3 {
+    color: var(--primary);
+    text-align: center;
+}
+
+h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    margin-top: 0;
+}
+
+h3, p, span {
+    color: var(--mint-green);
+}
+
+.participants {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: var(--primary);
+    min-height: 67vh;
+}
+
+.local-participant {
+    margin: auto;
+}
+
+.remote-participants {
+    margin: auto;
+}
+
+.button-box {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    background-color: var(--secondary);
+}
+
+button.video-button {
+    margin: auto;
+    cursor: pointer;
+    background: var(--mint-green);
+    width: 175px;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'Comme', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3em;
+}

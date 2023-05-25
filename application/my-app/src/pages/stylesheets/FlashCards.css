@@ -1,0 +1,137 @@
+.flashcards-page{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: whitesmoke;
+}
+
+.flashcards-page h2{
+    text-align: center;
+    font-size: 60px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: 3rem;
+}
+
+.flashcards-page label{
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: 3rem;
+}
+
+.flashcards-page h4{
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.flash-card{
+    font-size: 24px;
+    line-height: 72px;
+    width: 216px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 18px;
+    background-color: var(--mint-green);
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+}
+
+.flashcards-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flash-card.front{
+    background-color: var(--mint-green);
+
+}
+
+.flash-card.back{
+    background-color: mediumseagreen;
+}
+
+
+.spanish-cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.french-cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Korean-cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Arabic-cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.create-card{
+    display: flex;
+    justify-content:  center;
+}
+.create-card button{
+    background: var(--primary);
+    color: whitesmoke;
+    width: 175px;
+    height: 50px;
+    border-radius: 5px;
+    font-size:  16px;
+    font-weight: 600;
+    cursor: pointer;
+
+}
+
+.create-card button:hover{
+    background: var(--mint-green);
+    color: var(--primary);
+}
+
+.create-card .card-question{
+    color: var(--primary);
+    font-size: 25px;
+    font-weight: 600;
+}
+.create-card .card-answer{
+    color: var(--primary);
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.card-question input[type="text"]{
+    width: 200px;
+    height: 40px;
+    background: whitesmoke;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 1rem;
+}
+.card-question input[type="text"]::placeholder{
+   color: var(--primary);
+   font-size: 16px;
+}
+.card-answer input[type="text"]{
+    width: 200px;
+    height: 40px;
+    background: whitesmoke;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 1rem;
+    margin-left: 1.36rem;
+}
+.card-answer input[type="text"]::placeholder{
+   color: var(--primary);
+   font-size: 16px;
+}

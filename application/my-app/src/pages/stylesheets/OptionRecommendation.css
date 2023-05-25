@@ -1,0 +1,147 @@
+.doubleContainer{
+    min-height: 100vh;
+}
+.bookContainer{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-gap: 35px;
+    margin-top: 10px;
+    padding: 40px;
+    margin: 50px;
+}
+.bookContainer1{
+    font-size: larger;
+    column-span: all;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    justify-content: center;
+    justify-self: center;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 50px;
+    align-content: end;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+.englishBooks{
+    display: grid;
+    grid-template-rows:1fr auto;
+    padding: 40px;
+    border: 1px solid black;
+    color: black;
+    text-align: center;
+    object-fit: cover;
+}
+.englishBooks:hover{
+  border: 10px solid var(--mint-green);
+  border-image: linear-gradient(to bottom right, var(--mint-green), ) 1;
+  background-color: black;
+}
+.englishBooks:hover h2 {
+  color: var(--mint-green);
+}
+
+
+.primary{
+    display: grid;
+    grid-template-columns: 0.25fr 0.5fr 1fr 0.75fr;
+    background-color:  white;
+    
+}
+.secondary{
+    display: grid;
+    grid-template-columns: 0.25fr 0.5fr 1fr 0.75fr;
+    height: 50%;
+    background-color:  white;
+}
+.englishBooks h2{
+    text-align: start;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+.englishBooks h3{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+.bookTitle{
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+.bookRank{
+    border: 1px solid black;
+}
+.bookName{
+    border: 1px solid black;
+}
+.bookDescription{
+    border: 1px solid black;
+    overflow-y: auto;
+}
+.bookLink{
+    border: 1px solid black;
+    overflow-x: hidden;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.bookLink button {
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    width: 100%;
+}
+.bookLink button h3{
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.innerBook{
+    height: max-content;
+    color: white;
+    background-color: black;
+}
+/*----------------------------*/
+.pbookTitle{
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+.pbookRank{
+    border: 1px solid black;
+}
+.pbookName{
+    border: 1px solid black;
+}
+.pbookDescription{
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+.pbookLink{
+    border: 1px solid black;
+}
+
+.bookContainer .button{
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
+    font-size: 20x;
+}
+
+@media (max-width: 1800px) {
+    .primary{
+        display: grid;
+        grid-template-columns:1fr 1fr;
+    }
+    .secondary{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 50%;
+    }
+
+    .bookDescription,
+    .bookRank {
+        display: none;
+    }
+}

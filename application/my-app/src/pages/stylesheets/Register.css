@@ -1,0 +1,126 @@
+.register-page{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: whitesmoke;
+}
+
+.register-box form{
+    display: block;
+    background-color: var(--primary);
+    border-radius: 6px;
+    margin:40px auto;
+    max-width: 850px;
+    max-height: 1000px;
+    padding: 20px;
+}
+
+.register-form h1{
+    font-size: 50px;
+    color: var(--mint-green);
+    padding-bottom: 25px;
+    text-align: center;
+}
+.register-form input{
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    margin: 15px auto;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--mint-green);
+    resize: none;
+    background-color: var(--secondary);
+    color: var(--mint-green);
+}
+
+.register-form label{
+    color:var(--mint-green);
+    font-size: 22px;
+    padding-top: 10px;
+    padding-left: 45px;
+    padding-bottom: 10px;
+}
+
+.register-form span{
+    display: inline-block;
+    color:rgb(253, 34, 122);
+    padding-left: 45px;
+}
+
+.register-form button{
+    margin: auto;
+    cursor: pointer;
+    background: var(--mint-green);
+    width:250px;
+    height:35px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 17px;
+    font-weight: 700;
+    font-family: 'Comme', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.TOS label{
+    text-decoration: underline;
+    display: inline-flex;
+    gap: 1rem;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.TOS a:hover{
+    color: whitesmoke;
+}
+
+.register-form button:hover{
+    background-color: whitesmoke;
+}
+
+.reg-1 a{
+    color: black;
+}
+
+.register-form p{
+    text-decoration: underline;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    font-weight: 600;
+    font-size: 22px;
+
+}
+
+.language-inits{
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+}
+
+.language-inits label{
+    font-size: 21px;
+    text-decoration: none;
+}
+.language-inits select{
+    margin-left: 1rem;
+    background: var(--mint-green);
+    color: black;
+    font-size: 12px;
+
+}
+
+
+
+
+
+
+
+
+ 
