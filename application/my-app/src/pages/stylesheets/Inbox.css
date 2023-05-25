@@ -21,72 +21,53 @@
     grid-row-end: 2;
     padding: 20px;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-
 }
+.inboxHeader h1 {
+  font-size: 60px;
+  text-align: center;
+  font-weight: 600;
+  }
+
 
 .innerInbox{
-    grid-row-start: 2;
-    grid-row-end: 3;
-    border: 1px solid black;
-    display: grid;
-    grid-template-columns: 0.5fr 1fr;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
+.innerInbox ul {
+  font-size: 22px;
+}
+.inbox-request {
+  color: var(--mint-green);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.innerInbox button {
+  background: black;
+  color: white;
+  width: 75px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-right: 1rem;
+}
+
+.innerInbox button:hover {
+  background:var(--mint-green);
+}
+
+
+
                     
-.friendsInbox{
-    border: 1px solid black;
-    overflow-y: auto;
-}
+              
 
-.leftInbox{
-    height: 100px;
-    padding: 10px;
-    border: 1px solid black;
-    height: auto;   
-}
 
-.rightInbox{
-    border: 1px solid black;
-    display: grid;
-    grid-template-rows: 0.25fr 1fr 0.25fr;
-    gap: 15px;
-    padding: 10px;
-}
 
-.userDetailInbox{
-    border: 1px solid black;
-}
-                    
-.contentInbox{
-    border: 1px solid black;
-    overflow-y: auto;
-}
 
-.typeMessage{
-    border: 1px solid black;
-}
-.typeMessage input {
-    height: 100%;
-    width: 80%;
-    border: 1px solid black;
-}
-.typeMessage post-button {
-    height: 100%;
-    width: 20%;
-    border: 1px solid black;
-}
-.typeMessage{
-    border: 1px solid black;
-}
-.submitButtonText{
-    height: 100%;
-    width: 20%; 
-    border: 20px solid var(--mint-green);
-    padding: 30px;
-    font-size: 20px;
-}
-.inboxInputText{
-    margin-top: 0;
-}
+
 
 @media (min-width: 1300px) {
     .InboxContainer {
