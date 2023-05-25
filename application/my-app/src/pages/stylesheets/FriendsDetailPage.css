@@ -32,7 +32,7 @@
     margin-top: -80px;
     display: block;
     box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.18);
-    border: 10px solid black;
+    border: 5px solid black;
     border-style: solid;
     border-color: rgb(146, 87, 218);
 }
@@ -54,13 +54,15 @@
     padding: 30px;
 }
 .descriptionPacket{
-    border: 20px solid #f44336;
-    border-image: linear-gradient(to bottom right, rgb(118, 41, 212), #2196f3) 1;
+    border: 5px solid black;
+    border-left-color: #9257da;
+    border-bottom-color: #9257da; 
     padding: 30px;
 }
 .languagePacket{
-    border: 20px solid #f44336;
-    border-image: linear-gradient(to bottom right, rgb(118, 41, 212), #2196f3) 1;
+    border: 5px solid black;
+    border-left-color: #9257da;
+    border-bottom-color: #9257da; 
     padding: 30px;
 }
 
@@ -79,12 +81,26 @@
     align-items: center;
     justify-content: center;
     margin-top: 12px;
-    background-color: #2196f3;
+    background-color: #9257da;
     color: white;
     padding: 10px;
     font-size: 16px;
     text-decoration: none;
     border-radius: 5px;
+}
+.button button.bluebox{
+    align-items: center;
+    background-color: #9257da;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    font-size: 16px;
+    justify-content: center;
+    margin-top: 12px;
+    padding: 10px;
+    text-decoration: none;
+    width: 240px;
+    cursor: pointer;
 }
 
 @media (min-width: 1300px) {

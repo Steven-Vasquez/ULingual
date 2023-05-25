@@ -1,6 +1,20 @@
   .friends-button{
     color: black;
   }
+  /*
+  This is for the images on the friends list to fix properly
+  */
+  .button img.button__text{
+    border: 5px solid #000;
+    border-color: #9257da;
+    border-radius: 50%;
+    box-shadow: 1px 3px 12px rgba(0,0,0,.18);
+    display: block;
+    height: 150px;
+    margin-top: -46px;
+    object-fit: cover;
+    width: 170px;
+  }
   .containerfrl{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -121,6 +135,7 @@
     font: bold;
     text-shadow: 0 0 15px black;
     }
+
     .containerfrl3 {
       grid-column-start: 1;
       grid-column-end: 4;

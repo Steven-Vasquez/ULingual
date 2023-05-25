@@ -17,6 +17,11 @@
     color: black;
     font-size: 35px;
     font-weight: 600;
+    cursor: pointer;
+}
+.Seach-Results a:hover{
+    color: var(--mint-green);
+    font-size: 40px;
 }
 
 .Seach-Results p{
