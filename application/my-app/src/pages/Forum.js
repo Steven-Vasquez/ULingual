@@ -65,6 +65,8 @@ const Forum = () => {
       <div className="forum-header">
         <h1>{forum.Title}</h1>
       </div>
+
+      <div className="forum-main">
       {comments.map((comment, index) => (
         <div className="forum-section" key={index}>
           <div className="forum-comment">
@@ -72,6 +74,7 @@ const Forum = () => {
           </div>
         </div>
       ))}
+      </div>
 
     <div className="forum-post">
       <div className="inner-post">
