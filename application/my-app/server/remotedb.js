@@ -595,41 +595,33 @@ app.post('/addForum', (req, res) => {
 });
 
 app.get('/forums/:PostID', (req, res) => {
-  console.log("1");
-  console.log(req.params);
   const sql = 'SELECT * FROM forumposts WHERE PostID = ?';
   db.query(sql, [req.params.PostID], (error, results) => {
     if (error) {
-      console.log("2");
       console.error(error.message);
       res.status(500).send({ message: 'An error occurred while fetching the forum' });
       return;
     }
-    console.log("3");
-    console.log(results)
     res.send(results[0]); // send the first result
   });
 });
 
 app.get('/forums/:PostID/comments', (req, res) => {
-  console.log("4");
-  console.log(req.params);
   const sql = 'SELECT * FROM comment WHERE PostID = ?';
   db.query(sql, [req.params.PostID], (error, results) => {
     if (error) {
-      console.log("5");
       console.error(error.message);
       res.status(500).send({ message: 'An error occurred while fetching the comments' });
       return;
     }
-    console.log("6");
     res.send(results);
   });
 });
 
 app.post('/forums/:PostID/comments', (req, res) => {
-  const sql = 'INSERT INTO comment (PostID, UserID, CommentContent, CommentDate) VALUES (?, ?, ?, NOW())';
-  db.query(sql, [req.params.PostID, req.session.user.UserID, req.body.CommentContent], (error, results) => {
+  const CommentDate = moment().format('YYYY-MM-DD HH:mm:ss');
+  const sql = 'INSERT INTO comment (PostID, UserID, CommentContent, CommentDate) VALUES (?, ?, ?, ?)';
+  db.query(sql, [req.params.PostID, req.session.user.UserID, req.body.CommentContent, CommentDate], (error, results) => {
     if(error){
       console.error(error.message);
       res.status(500).send({message: 'An error occurred while adding comment'});
