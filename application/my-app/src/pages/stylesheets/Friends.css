@@ -125,9 +125,9 @@
       grid-row-start: 4;
       grid-row-end: 5;
       color: white;
-      background-color: #3f3f3f;
-      border: 10px solid #f44336;
-      border-image: linear-gradient(to bottom right, #f44336, #2196f3) 1;
+      background-color: var(--primary);
+      border: 5px solid #9257da;
+      border-radius: 5px;
     }
     .button__text{
     color: white;
@@ -151,17 +151,17 @@
 
 @media (min-width: 1000px) {
   .containerfrl2{
+    grid-gap: 20px;
+    background-color: var(--primary);
+    border: 5px solid #9257da;
+    color: #000;
     display: grid;
+    grid-column-end: 4;
+    grid-column-start: 1;
     grid-template-columns: 1fr 7fr;
     grid-template-rows: 1fr;
-    grid-gap: 20px;
     padding: 25px;
-    color:black;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    background-color: #3f3f3f;
-    border: 10px solid #f44336;
-    border-image: linear-gradient(to bottom right, #f44336, #2196f3) 1;
+    border-radius: 5px;
   }
 
   /*inner-containers*/
@@ -177,12 +177,12 @@
     grid-column-end: 2;
   }
   .innercontainerfrl12{
-    border: 10px solid #f44336;
-    border-image: linear-gradient(to bottom right, #f44336, #2196f3) 1;
-    grid-column-start: 2;
+    border: 5px solid #9257da;
     grid-column-end: 4;
-    grid-row-start: 1;
+    grid-column-start: 2;
     grid-row-end: 2;
+    grid-row-start: 1;
+    border-radius: 5px;
   }
   .innercontainerfrl21{
     background-color: #707070;
