@@ -133,7 +133,7 @@ const Room = ({ roomName, room, handleLogout, }) => {
         <div className="remote-participants">{remoteParticipants}</div>
       </div>
       <div className="button-box">
-        <button className="video-button" onClick={handleLogout}>Log out</button>
+        <button className="video-button" onClick={handleLogout}>Leave Call</button>
         <button className="video-button" onClick={toggleCamera}> {isVideoOn ? "Turn Video Off" : "Turn Video On"}</button>
         <button className="video-button" onClick={toggleMute}> {!isMuted ? "Mute" : "Unmute"}</button>
       </div>

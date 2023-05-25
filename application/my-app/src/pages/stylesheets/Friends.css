@@ -1,6 +1,8 @@
   .friends-button{
     color: black;
   }
+
+
   /*
   This is for the images on the friends list to fix properly
   */
@@ -14,6 +16,16 @@
     margin-top: -46px;
     object-fit: cover;
     width: 170px;
+  }
+
+  span.button__text{
+      align-items: center;
+      color: whitesmoke;
+      display: flex;
+      height: 100%;
+      width: 100%;
+      font-size: 25px;
+      font-weight: 600;
   }
   .containerfrl{
     display: grid;
