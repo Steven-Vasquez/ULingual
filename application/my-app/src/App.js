@@ -105,7 +105,7 @@ function App() {
               <Route path="/Dashboard" element={<Dashboard/>}/>
               <Route path="/Exercise1Page" element={<Exercise1Page/>}/>
               <Route path="/FriendsListPage" element={<FriendsList/>}/>
-              <Route path="/forums/:forumId" element={<Forum/>} />
+              <Route path="/forums/:PostID" element={<Forum/>} />
               <Route path="/GlobalForumPage" element={<GlobalForumPage/>}/>
               <Route path="/LessonPage" element={<Lesson/>}/>
               <Route path="/VideoRoomPage" element={<VideoChat/>}/>

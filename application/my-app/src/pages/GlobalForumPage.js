@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './stylesheets/GlobalForumPage.css';
 
 const GlobalForumPage = () => {
     const [forums, setForums] = useState([]);
+    const navigate = useNavigate();
 
     const fetchForums = () => {
-        axios.get('https://50.18.108.83.nip.io:3001/forums') 
+         axios.get('https://50.18.108.83.nip.io:3001/forums') 
         //axios.get('http://localhost:3001/forums')
             .then(res => {
                 console.log(res.data);
@@ -40,14 +41,18 @@ const GlobalForumPage = () => {
         });
     }
 
+    const goToForum = (postId, userId) => {
+        navigate(`/forums/${postId}`, { state: { postId} });
+    };
+      
     return( 
         <div className="global-forum-container">
             {forums.map((forum, index) => (
                 <div className="global-forum-section" key={index}> 
                     <div className="global-forum-name">
-                    <Link to={`/forums/${forum.id}`} className="global-forum-button">
+                    <button onClick={() => goToForum(forum.PostID)} className="global-forum-button">
                         <span className="global-forum-button-text">{forum.Title}</span>
-                    </Link>
+                    </button>
                         <p>Date Created: {new Date(forum.DateCreated).toLocaleTimeString()}, {new Date(forum.DateCreated).toLocaleDateString()}
                         </p>
                     </div>

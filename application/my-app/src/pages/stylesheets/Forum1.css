@@ -25,6 +25,12 @@
 
 }
 
+.loading {
+  min-height: 100vh;
+  text-align: center;
+  font-size: 40px;
+}
+
 .forum-comment {
   display: grid;
   grid-gap: 20px;
