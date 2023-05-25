@@ -8,8 +8,8 @@ const GlobalForumPage = () => {
     const navigate = useNavigate();
 
     const fetchForums = () => {
-         axios.get('https://50.18.108.83.nip.io:3001/forums') 
-        //axios.get('http://localhost:3001/forums')
+        axios.get('https://50.18.108.83.nip.io:3001/forums') 
+        // axios.get('http://localhost:3001/forums')
             .then(res => {
                 console.log(res.data);
                 setForums(res.data);
@@ -29,7 +29,7 @@ const GlobalForumPage = () => {
 
         // Post the new forum to the server
         axios.post('https://50.18.108.83.nip.io:3001/addForum', {
-        //axios.post('http://localhost:3001/addForum', {    
+        // axios.post('http://localhost:3001/addForum', {    
             Title: forumName
         })
         .then(res => {

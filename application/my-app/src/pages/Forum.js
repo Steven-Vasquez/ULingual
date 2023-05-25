@@ -13,7 +13,7 @@ const Forum = () => {
 
   useEffect(() => {
     axios.get(`https://50.18.108.83.nip.io:3001/forums/${PostID}`)
-    //axios.get(`http://localhost:3001/forums/${PostID}`)
+    // axios.get(`http://localhost:3001/forums/${PostID}`)
       .then(res => {
         console.log(res.data);
         setForum(res.data);
@@ -22,8 +22,8 @@ const Forum = () => {
   }, [PostID]);
 
   const fetchComments = () => {
-     axios.get(`https://50.18.108.83.nip.io:3001/forums/${PostID}/comments`)
-    //axios.get(`http://localhost:3001/forums/${PostID}/comments`)
+    axios.get(`https://50.18.108.83.nip.io:3001/forums/${PostID}/comments`)
+    // axios.get(`http://localhost:3001/forums/${PostID}/comments`)
     .then(res => {
         console.log(res.data);
         setComments(res.data);
@@ -43,7 +43,7 @@ const Forum = () => {
     e.preventDefault();
 
     axios.post(`https://50.18.108.83.nip.io:3001/forums/${PostID}/comments`, {
-    //axios.post(`http://localhost:3001/forums/${PostID}/comments`, {
+    // axios.post(`http://localhost:3001/forums/${PostID}/comments`, {
       CommentContent: newComment
     })
     .then(res => {
