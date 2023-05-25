@@ -1,12 +1,13 @@
 /*format*/
 .global-forum-container {
   display: grid;
-  grid-template-rows: 0.75fr 0.75fr 0.75fr 0.65fr;
-  padding: 25px;
+  grid-template-rows: 0.5fr 0.75fr 0.5fr;
+  padding: 50px;
   min-height: 100vh;
-  background-color: #707070;
 }
-
+.global-forum-mainevent{
+  padding: 10px;
+}
 .global-forum-container-1 {
   display: grid;
   grid-gap: 20px;
@@ -38,9 +39,9 @@
   display: grid;
   padding: 25px;
   justify-content: center; 
-  background-color: #3f3f3f;
-  border: 10px solid #f44336;
-  border-image: linear-gradient(to bottom right, #f44336, #2196f3) 1;
+  align-items: center;
+  background-color: black;
+  border: 4px solid var(--mint-green);
 }
 .global-forum-button-text-create{
   display: grid;
@@ -49,19 +50,17 @@
   grid-column-end: 3;
 }
 .global-forum-name{
-  border: 10px solid #f44336;
-  border-image: linear-gradient(to bottom right, #f44336, #2196f3) 1;
+  border: 4px solid var(--mint-green);
   padding: 50px;
-  background-color: #3f3f3f;
+  background-color: black;
   font-size: 24px;
   font-weight: bold;
 
 }
 .global-forum-participants{
-  border: 10px solid #f44336;
-  border-image: linear-gradient(to bottom right, #f44336, #2196f3) 1;
+  border: 4px solid var(--mint-green);
   padding: 50%;
-  background-color: #3f3f3f;
+  background-color: black;
 }
 
 .global-forum-button-participation{
@@ -81,12 +80,10 @@
     border: 2px solid white;
     border-radius: 5px;  
 }
-/*making the button bigger*/
+
 .global-forum-button-text{
-  transition: transform 0.2s ease-in-out;
-}
-.global-forum-button-text:hover{
-  transform: scale(1.1);
+  color: white;
+  font-size: 30px;
 }
 /*-----------------------------*/
 
@@ -160,4 +157,11 @@
 .global-forum-container-4 {
   grid-column-start: 1;
   grid-column-end: 4;
+}
+
+.global-forum-create .global-forum-button-text-create .gb{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 60px;
 }
