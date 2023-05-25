@@ -33,13 +33,13 @@
   border: 1px solid #000;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 .innerInbox ul {
   font-size: 22px;
 }
 .inbox-request {
-  color: var(--mint-green);
+  color: var(--primary);
   font-weight: 600;
   margin-bottom: 1rem;
   margin-top: 1rem;
