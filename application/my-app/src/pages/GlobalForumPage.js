@@ -47,6 +47,17 @@ const GlobalForumPage = () => {
       
     return( 
         <div className="global-forum-container">
+             <div className="global-forum-header">
+                <div className="global-forum-section2"> 
+                        <div className="global-forum-name2">
+                            <h1>Forum Name</h1>
+                        </div>
+                        <div className="global-forum-participants2">
+                            <h2>Participants</h2>
+                        </div>
+                </div>
+            </div>
+            <div className="global-forum-main">
             {forums.map((forum, index) => (
                 <div className="global-forum-section" key={index}> 
                     <div className="global-forum-name">
@@ -63,6 +74,8 @@ const GlobalForumPage = () => {
                     </div>
                 </div>
             ))}
+            </div>
+            
             <div className="global-forum-create" onClick={addForum}>
                 <a href="#" className="global-forum-button-text-create">
                     <span className="gb">Create Forum</span>
@@ -78,3 +91,4 @@ const GlobalForumPage = () => {
 }
 
 export default GlobalForumPage;
+

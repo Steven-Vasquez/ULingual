@@ -1,12 +1,33 @@
 /*format*/
 .global-forum-container {
   display: grid;
-  grid-template-rows: 0.5fr 0.75fr 0.5fr;
-  padding: 50px;
+  grid-template-rows: 0.1fr 0.9fr 0.3fr 0.3fr;
   min-height: 100vh;
+  padding: 50px;
+  border: 4px solid var(--mint-green);
 }
-.global-forum-mainevent{
+.global-forum-header{
+  width: auto;
+  height: max-content;
+}
+/*overflow checker*/
+.global-forum-main{
   padding: 10px;
+  border: 4px solid var(--mint-green);
+  overflow: auto;
+  background-color: grey;
+}
+.global-forum-section{
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  justify-content: center; 
+  margin: 10px;
+  height: 30%;
+}
+.global-forum-section2{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: center; 
 }
 .global-forum-container-1 {
   display: grid;
@@ -29,12 +50,6 @@
   grid-column-start: 2;
   grid-column-end: 3;
 }
-/*sections*/
-.global-forum-section{
-  display: grid;
-  grid-template-columns: 1fr 0.10fr;
-  justify-content: center; 
-}
 .global-forum-create{
   display: grid;
   padding: 25px;
@@ -55,12 +70,31 @@
   background-color: black;
   font-size: 24px;
   font-weight: bold;
-
+}
+.global-forum-name2{
+  border: 4px solid var(--mint-green);
+  padding: 50px;
+  background-color: black;
+  font-size: 24px;
+  font-weight: bold;
+}
+.global-forum-name2 h1{
+  color: white;
 }
 .global-forum-participants{
   border: 4px solid var(--mint-green);
   padding: 50%;
   background-color: black;
+}
+.global-forum-participants2{
+  border: 4px solid var(--mint-green);
+  padding: 50px;
+  background-color: black;
+  font-size: 24px;
+  font-weight: bold;
+}
+.global-forum-participants2 h2{
+  color: white;
 }
 
 .global-forum-button-participation{
@@ -74,11 +108,12 @@
   color: white;
 }
 .global-forum-button-text-return{
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     padding: 10px 20px;
     color: white;
-    border: 2px solid white;
+    border: 2px solid var(--mint-green);
     border-radius: 5px;  
+    background-color: black;
 }
 
 .global-forum-button-text{
@@ -164,4 +199,15 @@
   justify-content: center;
   text-align: center;
   font-size: 60px;
+}
+
+.global-forum-header1{
+  border: 4px solid var(--mint-green);
+  padding: 50%;
+  background-color: black;
+}
+.global-forum-header2{
+  border: 4px solid var(--mint-green);
+  padding: 50%;
+  background-color: black;
 }

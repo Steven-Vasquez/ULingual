@@ -1,11 +1,10 @@
 .forum-container {
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-rows: 0.35fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: .35fr 1fr 0.5fr 0.4fr;
   grid-gap: 10px;
   padding: 25px;
   min-height: 100vh;
-  background-color: #707070;
+  background-color: white;
 }
 
 .forum-header {
@@ -20,8 +19,9 @@
   color: white;
   justify-content: center;
   align-items: center;
-  border: 10px solid #f44336;
-  border-image: linear-gradient(to bottom right, #f44336, #2196f3) 1;
+  border: 4px solid var(--mint-green);
+  padding: 50%;
+  background-color: black;
 
 }
 
@@ -41,8 +41,9 @@
   grid-column-end: 4;
   justify-content: center;
   align-items: center;
-  border: 10px solid #f44336;
-  border-image: linear-gradient(to bottom right, #f44336, #2196f3) 1;
+  border: 4px solid var(--mint-green);
+  padding: 50%;
+  background-color: black;
 }
 .comment-button__text{
  color: white;
@@ -57,8 +58,9 @@
   background-color: #3f3f3f;
   grid-column-start: 1;
   grid-column-end: 4;
-  border: 10px solid #f44336;
-  border-image: linear-gradient(to bottom right, #f44336, #2196f3) 1;
+  border: 4px solid var(--mint-green);
+  padding: 50%;
+  background-color: black;
 }
 .post-input-for{
   border: 5px solid var(--mint-green);
@@ -72,6 +74,8 @@
   height: 50px;
   font-size: 24px;
   justify-content: center;
+  display: grid;
+  grid-template-columns: auto 1fr;
 }
 .post-button__text{
   justify-content: center;
@@ -98,19 +102,18 @@
   grid-column-end: 4;
   grid-row-start: auto;
   grid-row-end: auto;
-  background-color: #707070;
-  color: green;
+  background-color: white;
   padding: 25px;
   display: flex;
   justify-content: flex-end;
-  color: white;
+  color: black;
 }
 
 .return-button__text{
     font-size: 1.2rem;
     padding: 10px 20px;
-    color: white;
-    border: 2px solid white;
+    color: black;
+    border: 2px solid black;
     border-radius: 5px;  
 }
 
