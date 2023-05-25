@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Participant from "./Participant";
 import Video from "twilio-video";
+import "./stylesheets/Room.css";
 
 const Room = ({ roomName, room, handleLogout, }) => {
   const [participants, setParticipants] = useState([]);
@@ -117,22 +118,25 @@ const Room = ({ roomName, room, handleLogout, }) => {
   return (
     <div className="room">
       <h2>Room: {roomName}</h2>
-      <button onClick={handleLogout}>Log out</button>
-      <button onClick={toggleCamera}> {isVideoOn ? "Turn Video Off" : "Turn Video On"}</button>
-      <button onClick={toggleMute}> {!isMuted ? "Mute" : "Unmute"}</button>
-      <div className="local-participant">
-        {room ? (
-          <Participant
-            key={room.localParticipant.sid}
-            participant={room.localParticipant}
-            localParticipantIdentity={room.localParticipant.identity}
-          />
-        ) : (
-          ""
-        )}
+      <div className="participants">
+        <div className="local-participant">
+          {room ? (
+            <Participant
+              key={room.localParticipant.sid}
+              participant={room.localParticipant}
+              localParticipantIdentity={room.localParticipant.identity}
+            />
+          ) : (
+            ""
+          )}
+        </div>
+        <div className="remote-participants">{remoteParticipants}</div>
       </div>
-      <h3>Remote Participants</h3>
-      <div className="remote-participants">{remoteParticipants}</div>
+      <div className="button-box">
+        <button className="video-button" onClick={handleLogout}>Log out</button>
+        <button className="video-button" onClick={toggleCamera}> {isVideoOn ? "Turn Video Off" : "Turn Video On"}</button>
+        <button className="video-button" onClick={toggleMute}> {!isMuted ? "Mute" : "Unmute"}</button>
+      </div>
     </div>
   );
 };
